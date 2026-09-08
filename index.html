@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kuiyi (Cory) Gao — AI safety & agent robustness</title>
+<meta name="description" content="Kuiyi (Cory) Gao — undergraduate researcher at UNC-Chapel Hill working on AI safety: multimodal safety benchmarks, GUI-agent robustness under interface noise, and runtime defenses for agent skills.">
+<meta property="og:title" content="Kuiyi (Cory) Gao">
+<meta property="og:description" content="AI safety · agent robustness · auditable agents. UNC-Chapel Hill, B.A. CS expected May 2027.">
+<meta property="og:type" content="profile">
+<meta property="og:image" content="https://kuiyigao.github.io/og-card.png">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F4F1E8; --surface:#FBF9F2; --ink:#1B1A15; --ink-2:#565247; --ink-3:#615D50;
+    --rule:#E1DBCC; --rule-2:#CFC8B4; --accent:#1A5560; --accent-soft:#1a556015;
+    --serif:"Newsreader",Georgia,"Times New Roman",serif; --sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif; --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  }
+  :root[data-theme="dark"]{
+    --paper:#16130F; --surface:#1D1A15; --ink:#EDE8DB; --ink-2:#A7A08E; --ink-3:#8E8776;
+    --rule:#2E2A22; --rule-2:#403A2F; --accent:#6FC1CC; --accent-soft:#6fc1cc18;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#16130F; --surface:#1D1A15; --ink:#EDE8DB; --ink-2:#A7A08E; --ink-3:#8E8776;
+      --rule:#2E2A22; --rule-2:#403A2F; --accent:#6FC1CC; --accent-soft:#6fc1cc18;
+    }
+  }
+  *{box-sizing:border-box}
+  html{background:var(--paper)}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent}
+  a:hover{border-bottom-color:var(--accent)}
+  .wrap{max-width:940px;margin:0 auto;padding:0 24px}
+  /* masthead */
+  header.masthead{padding:64px 0 40px;border-bottom:1px solid var(--rule-2)}
+  .mast{display:grid;grid-template-columns:1fr 160px;gap:40px;align-items:end}
+  .name{font-family:var(--serif);font-weight:400;font-size:62px;line-height:1;margin:0 0 14px;letter-spacing:-.01em}
+  .tag{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--ink-2);margin:0 0 22px;max-width:640px}
+  .meta{font-family:var(--mono);font-size:13px;color:var(--ink-3);display:flex;flex-wrap:wrap;gap:8px 22px}
+  .photo{width:160px;height:160px;object-fit:cover;border-radius:3px;border:1px solid var(--rule-2);background:var(--surface)}
+  .photo-cap{font-family:var(--mono);font-size:12px;color:var(--ink-3);margin-top:8px;text-align:center}
+  .toggle{position:absolute;right:24px;top:20px;font-family:var(--mono);font-size:12px;color:var(--ink-3);background:none;border:1px solid var(--rule-2);border-radius:3px;padding:4px 10px;cursor:pointer}
+  .toggle:hover{color:var(--accent);border-color:var(--accent)}
+  /* sections */
+  section{display:grid;grid-template-columns:96px 1fr;gap:0 24px;padding:44px 0;border-bottom:1px solid var(--rule)}
+  section:last-of-type{border-bottom:0}
+  .marg{position:sticky;top:24px;align-self:start;font-family:var(--mono);font-size:12px;color:var(--ink-3);line-height:1.4}
+  .marg b{display:block;color:var(--accent);font-weight:500;font-size:13px;margin-bottom:6px}
+  h2{font-family:var(--serif);font-weight:500;font-size:28px;margin:0 0 18px;line-height:1.15}
+  p{margin:0 0 14px;max-width:70ch;color:var(--ink)}
+  .muted{color:var(--ink-2)}
+  /* focus table */
+  table.focus{border-collapse:collapse;width:100%;max-width:760px;margin-top:6px}
+  table.focus td{vertical-align:top;padding:12px 0;border-top:1px solid var(--rule)}
+  table.focus tr:last-child td{border-bottom:1px solid var(--rule)}
+  table.focus td:first-child{width:200px;font-family:var(--serif);font-size:18px;padding-right:20px}
+  table.focus td:last-child{color:var(--ink-2);font-size:15px}
+  /* publications */
+  ol.refs{list-style:none;margin:0;padding:0;counter-reset:ref}
+  ol.refs li{position:relative;padding:0 0 22px 44px;counter-increment:ref;max-width:760px}
+  ol.refs li::before{content:"[" counter(ref) "]";position:absolute;left:0;top:2px;font-family:var(--mono);font-size:13px;color:var(--ink-3)}
+  .ptitle{font-family:var(--serif);font-size:20px;line-height:1.3;margin:0 0 4px}
+  .authors{font-size:15px;color:var(--ink-2);margin:0 0 6px}
+  .authors .me{color:var(--ink);border-bottom:2px solid var(--accent)}
+  .venue{display:inline-block;font-family:var(--mono);font-size:12px;color:var(--accent);border:1px solid var(--accent);border-radius:2px;padding:1px 7px;margin-right:8px;background:var(--accent-soft)}
+  .venue.preprint{border-style:dashed;color:var(--ink-3);border-color:var(--rule-2);background:transparent}
+  .links{font-family:var(--mono);font-size:12px;color:var(--ink-3)}
+  .links a{margin-right:12px}
+  details{margin-top:8px}
+  summary{cursor:pointer;font-family:var(--mono);font-size:12px;color:var(--ink-3)}
+  pre{font-family:var(--mono);font-size:12px;line-height:1.5;background:var(--surface);border:1px solid var(--rule);border-radius:3px;padding:12px;overflow-x:auto;margin:8px 0 0}
+  /* timeline */
+  dl.tl{margin:0;max-width:760px}
+  dl.tl div{display:grid;grid-template-columns:120px 1fr;gap:0 20px;padding:10px 0;border-top:1px solid var(--rule)}
+  dl.tl dt{font-family:var(--mono);font-size:13px;color:var(--ink-3);margin:0}
+  dl.tl dd{margin:0;color:var(--ink);font-size:15px}
+  dl.tl dd .muted{font-size:14px}
+  /* projects */
+  ul.proj{list-style:none;padding:0;margin:0;max-width:760px}
+  ul.proj li{padding:12px 0;border-top:1px solid var(--rule)}
+  ul.proj li:last-child{border-bottom:1px solid var(--rule)}
+  ul.proj .pt{font-family:var(--serif);font-size:19px}
+  ul.proj .pd{color:var(--ink-2);font-size:15px;margin-top:2px}
+  ul.proj .pl{font-family:var(--mono);font-size:12px;color:var(--ink-3);margin-top:4px}
+  footer{padding:32px 0 56px;font-family:var(--mono);font-size:12px;color:var(--ink-3);border-top:1px solid var(--rule-2)}
+  .edit{color:#b3261e;font-family:var(--mono);font-size:12px;border:1px dashed #b3261e;padding:0 4px}
+  @media (max-width:820px){
+    .mast{grid-template-columns:1fr}
+    .photo{width:120px;height:120px}
+    .name{font-size:44px}
+    section{grid-template-columns:1fr;padding:32px 0}
+    .marg{position:static;margin-bottom:10px}
+    table.focus td:first-child{width:140px;font-size:16px}
+    dl.tl div{grid-template-columns:1fr;gap:2px}
+  }
+  @media print{
+    .toggle,details{display:none}
+    body{background:#fff;color:#000}
+    a{color:#000}
+  }
+</style>
+</head>
+<body>
+<button class="toggle" id="themeToggle" aria-label="Toggle theme">theme</button>
+
+<header class="masthead">
+  <div class="wrap mast">
+    <div>
+      <h1 class="name">Kuiyi Gao</h1>
+      <p class="tag">Building the evaluations and defenses that let people trust AI agents on real interfaces.</p>
+      <div class="meta">
+        <span>UNC-Chapel Hill · B.A. Computer Science, expected May 2027</span>
+        <span><a href="mailto:kuiyigao@unc.edu">kuiyigao@unc.edu</a></span>
+        <span><a href="https://github.com/KuiyiGao">github.com/KuiyiGao</a></span>
+        <span><a href="Kuiyi_Gao_CV.pdf">CV (PDF)</a></span>
+        <span><a href="https://aclanthology.org/people/k/kuiyi-gao/">ACL Anthology</a></span>
+      </div>
+    </div>
+    <div>
+      <img class="photo" src="photo.jpg" alt="Kuiyi Gao">
+      <div class="photo-cap">高揆一 · Cory</div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section id="focus">
+  <div class="marg"><b>§01</b>Focus</div>
+  <div>
+    <h2>What I work on</h2>
+    <p>I study how AI systems stay trustworthy when they meet real people and real interfaces. My work so far runs along one line: a benchmark locates a failure, an attack shows how it is exploited, and a defense closes it — measured in the environment where the system is actually deployed rather than in a clean simulation.</p>
+    <table class="focus">
+      <tr><td>Agent robustness</td><td>How GUI agents behave under everyday interface noise — overlays, dynamic content, deceptive widgets — and how noise changes not just success rates but the trajectory and the safety of the actions taken.</td></tr>
+      <tr><td>Agent supply chain</td><td>Runtime, evidence-producing defenses for the skills and tools that agents load: does the code do what it declared it would do?</td></tr>
+      <tr><td>Multimodal safety</td><td>Benchmarks for safety awareness and jailbreak resistance in multimodal and image-generation models.</td></tr>
+      <tr><td>Next</td><td>Persona and memory safety — how an agent's behaviour drifts under long interaction, and how to audit what it retains. Proposal stage; see §04.</td></tr>
+    </table>
+  </div>
+</section>
+
+<section id="publications">
+  <div class="marg"><b>§02</b>Publications</div>
+  <div>
+    <h2>Publications</h2>
+    <ol class="refs">
+      <li>
+        <p class="ptitle">Can't See the Forest for the Trees: Benchmarking Multimodal Safety Awareness for Multimodal LLMs</p>
+        <p class="authors">Wenxuan Wang, Xiaoyuan Liu, <span class="me">Kuiyi Gao</span>, Jen-tse Huang, Youliang Yuan, Pinjia He, Shuai Wang, Zhaopeng Tu</p>
+        <div><span class="venue">ACL 2025 · Main</span> <span class="links"><a href="https://aclanthology.org/2025.acl-long.832/">anthology</a><a href="https://arxiv.org/abs/2502.11184">arXiv</a></span></div>
+        <details><summary>BibTeX</summary><pre>@inproceedings{wang-etal-2025-cant,
+  title     = {Can't See the Forest for the Trees: Benchmarking Multimodal Safety Awareness for Multimodal {LLM}s},
+  author    = {Wang, Wenxuan and Liu, Xiaoyuan and Gao, Kuiyi and Huang, Jen-tse and Yuan, Youliang and He, Pinjia and Wang, Shuai and Tu, Zhaopeng},
+  booktitle = {Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)},
+  year      = {2025},
+  url       = {https://aclanthology.org/2025.acl-long.832/}
+}</pre></details>
+      </li>
+      <li>
+        <p class="ptitle">Chain-of-Jailbreak Attack for Image Generation Models via Step by Step Editing</p>
+        <p class="authors">Wenxuan Wang, <span class="me">Kuiyi Gao</span>, Youliang Yuan, Jen-tse Huang, Qiuzhi Liu, Shuai Wang, Wenxiang Jiao, Zhaopeng Tu</p>
+        <div><span class="venue">Findings of ACL 2025</span> <span class="links"><a href="https://aclanthology.org/2025.findings-acl.571/">anthology</a><a href="https://arxiv.org/abs/2410.03869">arXiv</a></span></div>
+        <details><summary>BibTeX</summary><pre>@inproceedings{wang-etal-2025-chain,
+  title     = {Chain-of-Jailbreak Attack for Image Generation Models via Step by Step Editing},
+  author    = {Wang, Wenxuan and Gao, Kuiyi and Yuan, Youliang and Huang, Jen-tse and Liu, Qiuzhi and Wang, Shuai and Jiao, Wenxiang and Tu, Zhaopeng},
+  booktitle = {Findings of the Association for Computational Linguistics: ACL 2025},
+  year      = {2025},
+  url       = {https://aclanthology.org/2025.findings-acl.571/}
+}</pre></details>
+      </li>
+      <li>
+        <p class="ptitle">RealGUINoise: A Dynamic Cross-Platform Benchmark for GUI Agent Robustness under Real-World Interface Noise</p>
+        <p class="authors"><span class="me">Kuiyi Gao</span>* and collaborators at CUHK (co-first author; full author list with the preprint)</p>
+        <div><span class="venue preprint">under review · 2026</span> <span class="links">preprint on request</span></div>
+        <p class="muted" style="font-size:14px;margin-top:6px">Co-first author. 42 interface-noise types across web, desktop and mobile; 7 agent frameworks evaluated in live, executable environments against task-level rubrics. Noise does not only lower success — it redirects trajectories and raises the rate of unsafe actions.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="affiliations">
+  <div class="marg"><b>§03</b>Affiliations</div>
+  <div>
+    <h2>Where the work happened</h2>
+    <dl class="tl">
+      <div><dt>2026 – 2027</dt><dd>University of North Carolina at Chapel Hill — B.A. in Computer Science (transfer), expected May 2027. <span class="muted">Exchange student Jan – May 2026 before transferring.</span></dd></div>
+      <div><dt>2026 Jun – Jul</dt><dd>MBZUAI UGRIP 2026 — Skill Firewall for AI agents, with Dr. Steve Liu's team. <span class="muted">Intent–action congruence as a zero-trust check on agent skills.</span></dd></div>
+      <div><dt>2025 Sep –</dt><dd>CUHK, Prof. Michael R. Lyu — GUI-agent robustness benchmark (RealGUINoise, under review).</dd></div>
+      <div><dt>2025 May – Aug</dt><dd>CUHK, Prof. Farzan Farnia — summer research on kernel-based novelty scores for text and personality-conditioned alignment (proposal stage).</dd></div>
+      <div><dt>2023 Dec – 2025 Feb</dt><dd>Tencent AI Lab (now Tencent Hunyuan), with Zhaopeng Tu and Wenxuan Wang — multimodal safety awareness [1] and chain-of-jailbreak attacks on image-generation models [2].</dd></div>
+      <div><dt>2023 – 2026</dt><dd>The Chinese University of Hong Kong — B.Sc. program in Computer Science, Faculty of Engineering ELITE Stream.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="marg"><b>§04</b>Projects</div>
+  <div>
+    <h2>Selected projects</h2>
+    <ul class="proj">
+      <li>
+        <div class="pt">Agent Skill Firewall</div>
+        <div class="pd">Runtime egress firewall for agent skills: static scan, then intent–action–result verification through an HTTP proxy with canaries; PASS / DEFER / BLOCK with an evidence record per decision. 23 passing tests, CI on Linux and macOS. Recall 98.7% / precision 1.00 on our own 112-case corpus.</div>
+        <div class="pl"><a href="https://github.com/KuiyiGao/OpenClaw-Skill-Hack">github.com/KuiyiGao/OpenClaw-Skill-Hack</a></div>
+      </li>
+      <li>
+        <div class="pt">Memory × persona safety — a pre-registered research program</div>
+        <div class="pd">Five studies designed and pre-registered in July 2026 (steering dose law, retrieval-induced forgetting, memory confidence without metadata, memory-mediated sycophancy drift, deletion-influence residual audit) with a shared test harness (28 smoke tests). Proposal stage; results to follow.</div>
+      </li>
+      <li>
+        <div class="pt">MemSlot saliency + DeepSeek-OCR compression for long contracts</div>
+        <div class="pd">Frozen RoBERTa with 32 learnable memory slots learns question-agnostic saliency; salient spans are rendered and compressed through DeepSeek-OCR; evaluated on CUAD with ten control arms. Course project, UNC COMP 586.</div>
+        <div class="pl"><a href="https://github.com/KuiyiGao/Distorted-OCR-Compression">github.com/KuiyiGao/Distorted-OCR-Compression</a></div>
+      </li>
+      <li>
+        <div class="pt">Objectivity in Imagist poetry, measured with text-to-image models</div>
+        <div class="pd">Do Imagist poems describe a more determinate scene than Romantic ones? 20 images per poem from Flux.1-dev and SD3, CLIP-embedding variance as the statistic: Imagism 0.12 vs Romanticism 0.28 (Flux, p = 0.0499). Course project, CUHK ENGE3940 "AI and Language".</div>
+      </li>
+      <li>
+        <div class="pt">Course AI teaching assistant (CUHK GEWS2011)</div>
+        <div class="pd">Flask web app whose two-stage LLM pipeline drafts an outline under the course's academic-integrity guideline before answering — an assistant designed to guide rather than to do the homework.</div>
+      </li>
+      <li>
+        <div class="pt">Movability segmentation for embodied safety</div>
+        <div class="pd">DeepLabV3 with a custom ASPP head, COCO-Stuff relabelled into four movability levels: mIoU 0.638 at 58 FPS. Course project, CUHK ELEG 5491.</div>
+        <div class="pl"><a href="https://github.com/KuiyiGao/QuickMotionDetection">github.com/KuiyiGao/QuickMotionDetection</a></div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="marg"><b>§05</b>Contact</div>
+  <div>
+    <h2>Get in touch</h2>
+    <p>I am applying to PhD programs for Fall 2027 in AI safety, agent security and trustworthy human–AI interaction. Email is the fastest way to reach me: <a href="mailto:kuiyigao@unc.edu">kuiyigao@unc.edu</a>.</p>
+    <p class="muted">Chapel Hill, North Carolina.</p>
+  </div>
+</section>
+
+</main>
+
+<footer><div class="wrap">Kuiyi Gao · last updated <span id="upd">September 2026</span> · set in Newsreader, Inter and IBM Plex Mono.</div></footer>
+
+<script>
+  (function(){
+    var root=document.documentElement, key='kg-theme', btn=document.getElementById('themeToggle');
+    try{var saved=localStorage.getItem(key); if(saved) root.setAttribute('data-theme',saved);}catch(e){}
+    btn.addEventListener('click',function(){
+      var cur=root.getAttribute('data-theme');
+      var sys=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+      var next=(cur||sys)==='dark'?'light':'dark';
+      root.setAttribute('data-theme',next);
+      try{localStorage.setItem(key,next);}catch(e){}
+    });
+  })();
+</script>
+</body>
+</html>
