@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kuiyi (Cory) Gao — AI safety & agent robustness</title>
-<meta name="description" content="Kuiyi (Cory) Gao — undergraduate researcher at UNC-Chapel Hill working on AI safety: multimodal safety benchmarks, GUI-agent robustness under interface noise, and runtime defenses for agent skills.">
+<title>Kuiyi (Cory) Gao</title>
+<meta name="description" content="Kuiyi (Cory) Gao — undergraduate researcher, UNC-Chapel Hill. Evaluations and runtime defenses for AI agents.">
 <meta property="og:title" content="Kuiyi (Cory) Gao">
-<meta property="og:description" content="AI safety · agent robustness · auditable agents. UNC-Chapel Hill, B.A. CS expected May 2027.">
+<meta property="og:description" content="Evaluations and runtime defenses for AI agents. UNC-Chapel Hill.">
 <meta property="og:type" content="profile">
 <meta property="og:image" content="https://kuiyigao.github.io/og-card.png">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -36,20 +36,21 @@
   a:hover{border-bottom-color:var(--accent)}
   .wrap{max-width:940px;margin:0 auto;padding:0 24px}
   /* masthead */
-  header.masthead{padding:64px 0 40px;border-bottom:1px solid var(--rule-2)}
-  .mast{display:grid;grid-template-columns:1fr 160px;gap:40px;align-items:end}
-  .name{font-family:var(--serif);font-weight:400;font-size:62px;line-height:1;margin:0 0 14px;letter-spacing:-.01em}
-  .tag{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--ink-2);margin:0 0 22px;max-width:640px}
-  .meta{font-family:var(--mono);font-size:13px;color:var(--ink-3);display:flex;flex-wrap:wrap;gap:8px 22px}
-  .photo{width:160px;height:160px;object-fit:cover;border-radius:3px;border:1px solid var(--rule-2);background:var(--surface)}
+  header.masthead{padding:76px 0 44px;border-bottom:1px solid var(--rule-2)}
+  .mast{display:grid;grid-template-columns:1fr 132px;gap:48px;align-items:end}
+  .name{font-family:var(--serif);font-weight:400;font-size:58px;line-height:1;margin:0 0 16px;letter-spacing:-.012em}
+  .tag{font-family:var(--serif);font-size:20px;color:var(--ink-2);margin:0 0 26px;max-width:600px;line-height:1.45}
+  .meta{font-family:var(--mono);font-size:12.5px;color:var(--ink-3);display:flex;flex-wrap:wrap;gap:6px 18px;letter-spacing:.01em}
+  .meta span:not(:last-child)::after{content:"";}
+  .photo{width:132px;height:132px;object-fit:cover;border-radius:2px;border:1px solid var(--rule-2);background:var(--surface);filter:saturate(.92)}
   .photo-cap{font-family:var(--mono);font-size:12px;color:var(--ink-3);margin-top:8px;text-align:center}
   .toggle{position:absolute;right:24px;top:20px;font-family:var(--mono);font-size:12px;color:var(--ink-3);background:none;border:1px solid var(--rule-2);border-radius:3px;padding:4px 10px;cursor:pointer}
   .toggle:hover{color:var(--accent);border-color:var(--accent)}
   /* sections */
-  section{display:grid;grid-template-columns:96px 1fr;gap:0 24px;padding:44px 0;border-bottom:1px solid var(--rule)}
+  section{display:grid;grid-template-columns:96px 1fr;gap:0 32px;padding:52px 0;border-bottom:1px solid var(--rule)}
   section:last-of-type{border-bottom:0}
   .marg{position:sticky;top:24px;align-self:start;font-family:var(--mono);font-size:12px;color:var(--ink-3);line-height:1.4}
-  .marg b{display:block;color:var(--accent);font-weight:500;font-size:13px;margin-bottom:6px}
+  .marg b{display:block;color:var(--ink-3);font-weight:400;font-size:12px;letter-spacing:.06em}
   h2{font-family:var(--serif);font-weight:500;font-size:28px;margin:0 0 18px;line-height:1.15}
   p{margin:0 0 14px;max-width:70ch;color:var(--ink)}
   .muted{color:var(--ink-2)}
@@ -105,46 +106,44 @@
 </style>
 </head>
 <body>
+
 <button class="toggle" id="themeToggle" aria-label="Toggle theme">theme</button>
 
 <header class="masthead">
   <div class="wrap mast">
     <div>
       <h1 class="name">Kuiyi Gao</h1>
-      <p class="tag">Building the evaluations and defenses that let people trust AI agents on real interfaces.</p>
+      <p class="tag">I build evaluations and runtime defenses for AI agents — measured where the system is deployed, not in a clean simulation.</p>
       <div class="meta">
-        <span>UNC-Chapel Hill · B.A. Computer Science, expected May 2027</span>
+        <span>UNC-Chapel Hill · B.A. Computer Science, 2027</span>
         <span><a href="mailto:kuiyigao@unc.edu">kuiyigao@unc.edu</a></span>
-        <span><a href="https://github.com/KuiyiGao">github.com/KuiyiGao</a></span>
-        <span><a href="Kuiyi_Gao_CV.pdf">CV (PDF)</a></span>
-        <span><a href="https://aclanthology.org/people/k/kuiyi-gao/">ACL Anthology</a></span>
+        <span><a href="Kuiyi_Gao_CV.pdf">CV</a></span>
+        <span><a href="https://scholar.google.com/citations?user=Yobg_TQAAAAJ">Scholar</a></span>
+        <span><a href="https://github.com/KuiyiGao">GitHub</a></span>
       </div>
     </div>
     <div>
       <img class="photo" src="photo.jpg" alt="Kuiyi Gao">
-      <div class="photo-cap">高揆一 · Cory</div>
     </div>
   </div>
 </header>
 
 <main class="wrap">
 
-<section id="focus">
-  <div class="marg"><b>§01</b>Focus</div>
+<section id="research">
+  <div class="marg"><b>§01</b></div>
   <div>
-    <h2>What I work on</h2>
-    <p>I study how AI systems stay trustworthy when they meet real people and real interfaces. My work so far runs along one line: a benchmark locates a failure, an attack shows how it is exploited, and a defense closes it — measured in the environment where the system is actually deployed rather than in a clean simulation.</p>
+    <h2>Research</h2>
     <table class="focus">
-      <tr><td>Agent robustness</td><td>How GUI agents behave under everyday interface noise — overlays, dynamic content, deceptive widgets — and how noise changes not just success rates but the trajectory and the safety of the actions taken.</td></tr>
-      <tr><td>Agent supply chain</td><td>Runtime, evidence-producing defenses for the skills and tools that agents load: does the code do what it declared it would do?</td></tr>
+      <tr><td>Agent robustness</td><td>How GUI agents behave under everyday interface noise — overlays, dynamic content, deceptive widgets — and how noise changes trajectories and the rate of unsafe actions, not only success.</td></tr>
+      <tr><td>Agent supply chain</td><td>Runtime, evidence-producing defenses for the skills and tools an agent loads: does the code do what it declared it would do?</td></tr>
       <tr><td>Multimodal safety</td><td>Benchmarks for safety awareness and jailbreak resistance in multimodal and image-generation models.</td></tr>
-      <tr><td>Next</td><td>Persona and memory safety — how an agent's behaviour drifts under long interaction, and how to audit what it retains. Proposal stage; see §04.</td></tr>
     </table>
   </div>
 </section>
 
 <section id="publications">
-  <div class="marg"><b>§02</b>Publications</div>
+  <div class="marg"><b>§02</b></div>
   <div>
     <h2>Publications</h2>
     <ol class="refs">
@@ -152,99 +151,71 @@
         <p class="ptitle">Can't See the Forest for the Trees: Benchmarking Multimodal Safety Awareness for Multimodal LLMs</p>
         <p class="authors">Wenxuan Wang, Xiaoyuan Liu, <span class="me">Kuiyi Gao</span>, Jen-tse Huang, Youliang Yuan, Pinjia He, Shuai Wang, Zhaopeng Tu</p>
         <div><span class="venue">ACL 2025 · Main</span> <span class="links"><a href="https://aclanthology.org/2025.acl-long.832/">anthology</a><a href="https://arxiv.org/abs/2502.11184">arXiv</a></span></div>
-        <details><summary>BibTeX</summary><pre>@inproceedings{wang-etal-2025-cant,
-  title     = {Can't See the Forest for the Trees: Benchmarking Multimodal Safety Awareness for Multimodal {LLM}s},
-  author    = {Wang, Wenxuan and Liu, Xiaoyuan and Gao, Kuiyi and Huang, Jen-tse and Yuan, Youliang and He, Pinjia and Wang, Shuai and Tu, Zhaopeng},
-  booktitle = {Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)},
-  year      = {2025},
-  url       = {https://aclanthology.org/2025.acl-long.832/}
-}</pre></details>
       </li>
       <li>
         <p class="ptitle">Chain-of-Jailbreak Attack for Image Generation Models via Step by Step Editing</p>
         <p class="authors">Wenxuan Wang, <span class="me">Kuiyi Gao</span>, Youliang Yuan, Jen-tse Huang, Qiuzhi Liu, Shuai Wang, Wenxiang Jiao, Zhaopeng Tu</p>
         <div><span class="venue">Findings of ACL 2025</span> <span class="links"><a href="https://aclanthology.org/2025.findings-acl.571/">anthology</a><a href="https://arxiv.org/abs/2410.03869">arXiv</a></span></div>
-        <details><summary>BibTeX</summary><pre>@inproceedings{wang-etal-2025-chain,
-  title     = {Chain-of-Jailbreak Attack for Image Generation Models via Step by Step Editing},
-  author    = {Wang, Wenxuan and Gao, Kuiyi and Yuan, Youliang and Huang, Jen-tse and Liu, Qiuzhi and Wang, Shuai and Jiao, Wenxiang and Tu, Zhaopeng},
-  booktitle = {Findings of the Association for Computational Linguistics: ACL 2025},
-  year      = {2025},
-  url       = {https://aclanthology.org/2025.findings-acl.571/}
-}</pre></details>
       </li>
       <li>
-        <p class="ptitle">RealGUINoise: A Dynamic Cross-Platform Benchmark for GUI Agent Robustness under Real-World Interface Noise</p>
-        <p class="authors"><span class="me">Kuiyi Gao</span>* and collaborators at CUHK (co-first author; full author list with the preprint)</p>
+        <p class="ptitle">A Dynamic Cross-Platform Benchmark for GUI-Agent Robustness under Real-World Interface Noise</p>
+        <p class="authors"><span class="me">Kuiyi Gao</span>* et al. — co-first author</p>
         <div><span class="venue preprint">under review · 2026</span> <span class="links">preprint on request</span></div>
-        <p class="muted" style="font-size:14px;margin-top:6px">Co-first author. 42 interface-noise types across web, desktop and mobile; 7 agent frameworks evaluated in live, executable environments against task-level rubrics. Noise does not only lower success — it redirects trajectories and raises the rate of unsafe actions.</p>
+        <p class="muted" style="font-size:14px;margin-top:6px">42 interface-noise types across web, desktop and mobile; seven agent frameworks evaluated in live environments against task-level rubrics.</p>
       </li>
     </ol>
   </div>
 </section>
 
-<section id="affiliations">
-  <div class="marg"><b>§03</b>Affiliations</div>
-  <div>
-    <h2>Where the work happened</h2>
-    <dl class="tl">
-      <div><dt>2026 – 2027</dt><dd>University of North Carolina at Chapel Hill — B.A. in Computer Science (transfer), expected May 2027. <span class="muted">Exchange student Jan – May 2026 before transferring.</span></dd></div>
-      <div><dt>2026 Jun – Jul</dt><dd>MBZUAI UGRIP 2026 — Skill Firewall for AI agents, with Dr. Steve Liu's team. <span class="muted">Intent–action congruence as a zero-trust check on agent skills.</span></dd></div>
-      <div><dt>2025 Sep –</dt><dd>CUHK, Prof. Michael R. Lyu — GUI-agent robustness benchmark (RealGUINoise, under review).</dd></div>
-      <div><dt>2025 May – Aug</dt><dd>CUHK, Prof. Farzan Farnia — summer research on kernel-based novelty scores for text and personality-conditioned alignment (proposal stage).</dd></div>
-      <div><dt>2023 Dec – 2025 Feb</dt><dd>Tencent AI Lab (now Tencent Hunyuan), with Zhaopeng Tu and Wenxuan Wang — multimodal safety awareness [1] and chain-of-jailbreak attacks on image-generation models [2].</dd></div>
-      <div><dt>2023 – 2026</dt><dd>The Chinese University of Hong Kong — B.Sc. program in Computer Science, Faculty of Engineering ELITE Stream.</dd></div>
-    </dl>
-  </div>
-</section>
-
 <section id="projects">
-  <div class="marg"><b>§04</b>Projects</div>
+  <div class="marg"><b>§03</b></div>
   <div>
-    <h2>Selected projects</h2>
+    <h2>Systems</h2>
     <ul class="proj">
       <li>
         <div class="pt">Agent Skill Firewall</div>
-        <div class="pd">Runtime egress firewall for agent skills: static scan, then intent–action–result verification through an HTTP proxy with canaries; PASS / DEFER / BLOCK with an evidence record per decision. 23 passing tests, CI on Linux and macOS. Recall 98.7% / precision 1.00 on our own 112-case corpus.</div>
+        <div class="pd">A runtime egress firewall for agent skills: static scan, then intent–action–result verification through an HTTP proxy with canaries. Every PASS / DEFER / BLOCK decision carries the evidence it was made from. Built with a four-student team at MBZUAI UGRIP 2026.</div>
         <div class="pl"><a href="https://github.com/KuiyiGao/OpenClaw-Skill-Hack">github.com/KuiyiGao/OpenClaw-Skill-Hack</a></div>
       </li>
       <li>
-        <div class="pt">Memory × persona safety — a pre-registered research program</div>
-        <div class="pd">Five studies designed and pre-registered in July 2026 (steering dose law, retrieval-induced forgetting, memory confidence without metadata, memory-mediated sycophancy drift, deletion-influence residual audit) with a shared test harness (28 smoke tests). Proposal stage; results to follow.</div>
-      </li>
-      <li>
-        <div class="pt">MemSlot saliency + DeepSeek-OCR compression for long contracts</div>
-        <div class="pd">Frozen RoBERTa with 32 learnable memory slots learns question-agnostic saliency; salient spans are rendered and compressed through DeepSeek-OCR; evaluated on CUAD with ten control arms. Course project, UNC COMP 586.</div>
+        <div class="pt">MemSlot — saliency-guided compression for long documents</div>
+        <div class="pd">A frozen encoder with 32 learnable memory slots learns question-agnostic saliency; salient spans are rendered and compressed through an OCR model. Evaluated on CUAD against ten control arms.</div>
         <div class="pl"><a href="https://github.com/KuiyiGao/Distorted-OCR-Compression">github.com/KuiyiGao/Distorted-OCR-Compression</a></div>
       </li>
       <li>
-        <div class="pt">Objectivity in Imagist poetry, measured with text-to-image models</div>
-        <div class="pd">Do Imagist poems describe a more determinate scene than Romantic ones? 20 images per poem from Flux.1-dev and SD3, CLIP-embedding variance as the statistic: Imagism 0.12 vs Romanticism 0.28 (Flux, p = 0.0499). Course project, CUHK ENGE3940 "AI and Language".</div>
-      </li>
-      <li>
-        <div class="pt">Course AI teaching assistant (CUHK GEWS2011)</div>
-        <div class="pd">Flask web app whose two-stage LLM pipeline drafts an outline under the course's academic-integrity guideline before answering — an assistant designed to guide rather than to do the homework.</div>
-      </li>
-      <li>
-        <div class="pt">Movability segmentation for embodied safety</div>
-        <div class="pd">DeepLabV3 with a custom ASPP head, COCO-Stuff relabelled into four movability levels: mIoU 0.638 at 58 FPS. Course project, CUHK ELEG 5491.</div>
+        <div class="pt">Movability segmentation</div>
+        <div class="pd">DeepLabV3 with a custom ASPP head over COCO-Stuff relabelled into four movability levels — a perception prior for embodied safety. mIoU 0.638 at 58 FPS.</div>
         <div class="pl"><a href="https://github.com/KuiyiGao/QuickMotionDetection">github.com/KuiyiGao/QuickMotionDetection</a></div>
       </li>
     </ul>
   </div>
 </section>
 
-<section id="contact">
-  <div class="marg"><b>§05</b>Contact</div>
+<section id="background">
+  <div class="marg"><b>§04</b></div>
   <div>
-    <h2>Get in touch</h2>
-    <p>I am applying to PhD programs for Fall 2027 in AI safety, agent security and trustworthy human–AI interaction. Email is the fastest way to reach me: <a href="mailto:kuiyigao@unc.edu">kuiyigao@unc.edu</a>.</p>
-    <p class="muted">Chapel Hill, North Carolina.</p>
+    <h2>Background</h2>
+    <dl class="tl">
+      <div><dt>2026 –</dt><dd>University of North Carolina at Chapel Hill — B.A. Computer Science, 2027</dd></div>
+      <div><dt>2026</dt><dd>MBZUAI UGRIP — Skill Firewall for AI agents, with Dr. Steve Liu</dd></div>
+      <div><dt>2025 –</dt><dd>The Chinese University of Hong Kong — GUI-agent robustness, with Prof. Michael R. Lyu</dd></div>
+      <div><dt>2025</dt><dd>The Chinese University of Hong Kong — kernel-based novelty measures for text, with Prof. Farzan Farnia</dd></div>
+      <div><dt>2023 – 2025</dt><dd>Tencent AI Lab — research intern, multimodal safety and red teaming</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="marg"><b>§05</b></div>
+  <div>
+    <h2>Contact</h2>
+    <p>Applying to PhD programs for Fall 2027. <a href="mailto:kuiyigao@unc.edu">kuiyigao@unc.edu</a></p>
   </div>
 </section>
 
 </main>
 
-<footer><div class="wrap">Kuiyi Gao · last updated <span id="upd">September 2026</span> · set in Newsreader, Inter and IBM Plex Mono.</div></footer>
+<footer><div class="wrap">Kuiyi Gao · <span id="upd">September 2026</span></div></footer>
 
 <script>
   (function(){
