@@ -120,12 +120,7 @@
     <div>
       <h1 class="name">Kuiyi Gao</h1>
       <p class="role">University of North Carolina at Chapel Hill · B.A. Computer Science, 2027</p>
-      <p class="intro">I work on <strong>trustworthy AI</strong> &mdash; how systems behave once they leave the lab and meet real interfaces, real tools and real people. So far that has meant multimodal safety benchmarks, jailbreak attacks and the defenses against them, agent robustness under interface noise, and runtime evidence for what an agent actually did. I am moving toward the human side of it: how persona and memory drift under interaction, and what it takes for a model&rsquo;s behaviour to be auditable rather than merely reported.</p>
-      <p class="hook">The question I keep coming back to: when an agent does something it shouldn't, <em>does anything actually see it?</em> On stored runs of 65 malicious agent skills, our runtime detector flagged none of them — not because it judged wrongly, but because 46 of the 65 never produced traffic a monitor could observe. Reported recall was measuring the wrong thing. I'm writing that up now.</p>
-      <blockquote class="epi" style="margin:20px 0 24px">
-        <p>“… we had better be quite sure that the purpose put into the machine is the purpose which we really desire.”</p>
-        <cite>Norbert Wiener, <em>Some Moral and Technical Consequences of Automation</em>, Science, 1960</cite>
-      </blockquote>
+      <p class="intro">I work on <strong>trustworthy AI</strong> &mdash; how systems behave once they leave the lab and meet real interfaces, real tools and real people. So far that has meant multimodal safety benchmarks, jailbreak attacks and the defenses against them, agent robustness under interface noise, and runtime evidence for what an agent actually did. I am moving toward the human side of it: how persona and memory drift under interaction, and what it takes to audit an agent&rsquo;s behaviour after the fact.</p>
       <div class="meta">
         <span><a href="mailto:kuiyigao@unc.edu">kuiyigao@unc.edu</a></span>
         <span><a href="Kuiyi_Gao_CV.pdf">CV</a></span>
@@ -162,19 +157,19 @@
         <p class="ptitle">Can't See the Forest for the Trees: Benchmarking Multimodal Safety Awareness for Multimodal LLMs</p>
         <p class="authors">Wenxuan Wang, Xiaoyuan Liu, <span class="me">Kuiyi Gao</span>, Jen-tse Huang, Youliang Yuan, Pinjia He, Shuai Wang, Zhaopeng Tu</p>
         <div><span class="venue">ACL 2025 · Main Conference</span> <span class="links"><a href="https://aclanthology.org/2025.acl-long.832/">anthology</a><a href="https://arxiv.org/abs/2502.11184">arXiv</a></span></div>
-        <p class="note">Multimodal models miss unsafe intent when it is split across the image and the text — and refuse harmless requests for the same reason. We built the benchmark that separates the two failures, then fine-tuned against it.</p>
+        <p class="note">Multimodal models miss unsafe intent when it is split across the image and the text, and refuse harmless requests for the same reason. The benchmark scores both failures separately; we then fine-tuned against it.</p>
       </li>
       <li>
         <p class="ptitle">Chain-of-Jailbreak Attack for Image Generation Models via Step by Step Editing</p>
         <p class="authors">Wenxuan Wang, <span class="me">Kuiyi Gao</span>, Youliang Yuan, Jen-tse Huang, Qiuzhi Liu, Shuai Wang, Wenxiang Jiao, Zhaopeng Tu</p>
         <div><span class="venue">Findings of ACL 2025</span> <span class="links"><a href="https://aclanthology.org/2025.findings-acl.571/">anthology</a><a href="https://arxiv.org/abs/2410.03869">arXiv</a></span></div>
-        <p class="note">Never ask for the unsafe image at once. Each edit step is individually benign, so no single step is the one a filter can refuse — and the filter never sees the composition. I designed the attack, ran the attack and defense experiments, and wrote the paper.</p>
+        <p class="note">The attack decomposes one harmful request into a chain of individually benign edits, so no single step is one a filter would refuse and the filter never sees the composition. I designed the attack methodology, ran the attack and defense experiments, and wrote the paper.</p>
       </li>
       <li>
         <p class="ptitle">GUI-agent robustness under interface noise</p>
         <p class="authors"><span class="me">Kuiyi Gao</span>* et al. — co-first author</p>
         <div><span class="venue preprint">under review · 2026</span></div>
-        <p class="note">Real interfaces are noisy: overlays, dynamic content, deceptive widgets. Noise does not simply lower an agent&rsquo;s success rate — it redirects the trajectory and raises the rate of unsafe actions. Success rate alone hides that.</p>
+        <p class="note">Real interfaces are noisy: overlays, dynamic content, deceptive widgets. Interface noise does not only lower success rate; it also changes which action an agent takes and raises the rate of unsafe actions.</p>
       </li>
     </ol>
   </div>
@@ -184,7 +179,6 @@
   <div class="marg">Research</div>
   <div>
     <h2>What I work on</h2>
-    <p class="muted">One line runs through all of it: a benchmark locates the failure, an attack shows how it is reached, a defense closes it — and each is measured where the system is actually deployed, not in a clean simulation.</p>
     <ul class="fields">
       <li>AI safety &amp; trustworthiness</li>
       <li>Agent &amp; tool-supply-chain security</li>
@@ -208,7 +202,7 @@
     <ul class="proj">
       <li>
         <div class="pt">Agent Skill Firewall</div>
-        <div class="pd">A runtime egress firewall for agent skills. It scans the skill statically, then verifies intent against action against result through an HTTP proxy seeded with canaries. Every PASS / DEFER / BLOCK decision keeps the evidence it was made from, so a block can be re-derived afterwards instead of taken on faith. Built with a four-student team at MBZUAI UGRIP 2026.</div>
+        <div class="pd">A runtime egress firewall for agent skills. It scans the skill statically, then verifies intent against action against result through an HTTP proxy seeded with canaries. Each PASS / DEFER / BLOCK decision is recorded with the evidence it was derived from. Built with a four-student team at MBZUAI UGRIP 2026.</div>
         <div class="pl"><a href="https://github.com/KuiyiGao/OpenClaw-Skill-Hack">github.com/KuiyiGao/OpenClaw-Skill-Hack</a></div>
       </li>
       <li>
@@ -222,18 +216,6 @@
         <div class="pl"><a href="https://github.com/KuiyiGao/QuickMotionDetection">github.com/KuiyiGao/QuickMotionDetection</a></div>
       </li>
     </ul>
-  </div>
-</section>
-
-<section id="how">
-  <div class="marg">How</div>
-  <div>
-    <h2>How I try to work</h2>
-    <ol class="creed">
-      <li><b>Report the measurement that complicates the story.</b> The 0-out-of-65 result above is the least flattering number in my own system, and it is the one worth publishing.</li>
-      <li><b>Every claim here should be checkable.</b> If a number is on this page, there is a paper, a repo, or a script behind it — and if it came from a corpus only I have, I say so.</li>
-      <li><b>Build it before writing about it.</b> Every paper above started as something that ran.</li>
-    </ol>
   </div>
 </section>
 
@@ -251,11 +233,21 @@
   </div>
 </section>
 
+<section id="epigraph">
+  <div class="marg"></div>
+  <div>
+    <blockquote class="epi">
+      <p>&ldquo;&hellip; we had better be quite sure that the purpose put into the machine is the purpose which we really desire.&rdquo;</p>
+      <cite>Norbert Wiener, <em>Some Moral and Technical Consequences of Automation</em>, Science, 1960</cite>
+    </blockquote>
+  </div>
+</section>
+
 <section id="contact">
   <div class="marg">Contact</div>
   <div>
     <h2>Get in touch</h2>
-    <p class="muted">I am applying to PhD programs for Fall 2027. If you work on agent safety, evaluation, or anything that has to hold up in deployment, I would like to hear from you — including if you think the framing above is wrong.</p>
+    <p class="muted">I am applying to PhD programs for Fall 2027. If you work on agent safety, evaluation, or anything that has to hold up in deployment, I would like to hear from you.</p>
     <p><a href="mailto:kuiyigao@unc.edu">kuiyigao@unc.edu</a></p>
   </div>
 </section>
