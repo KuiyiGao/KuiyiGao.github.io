@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kuiyi (Cory) Gao — AI agent safety</title>
-<meta name="description" content="Kuiyi (Cory) Gao — undergraduate at UNC-Chapel Hill working on AI agent safety: benchmarks that show how agents fail in the real world, and runtime defenses that catch it.">
-<meta property="og:title" content="Kuiyi (Cory) Gao — AI agent safety">
-<meta property="og:description" content="I build the benchmarks that show how AI agents fail once they leave the lab, and the runtime defenses that catch those failures in production.">
+<title>Kuiyi (Cory) Gao — trustworthy AI, evaluation and agent safety</title>
+<meta name="description" content="Kuiyi (Cory) Gao — undergraduate at UNC-Chapel Hill working on trustworthy AI: safety benchmarks, adversarial robustness, agent evaluation, and runtime evidence for what a system actually did.">
+<meta property="og:title" content="Kuiyi (Cory) Gao — trustworthy AI, evaluation and agent safety">
+<meta property="og:description" content="How AI systems behave once they leave the lab and meet real interfaces, real tools and real people.">
 <meta property="og:type" content="profile">
 <meta property="og:image" content="https://kuiyigao.github.io/og-card.png">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -118,10 +118,14 @@
 <header class="masthead">
   <div class="wrap mast">
     <div>
-      <h1 class="name">Kuiyi Gao <span>高揆一</span></h1>
-      <p class="role">Undergraduate · University of North Carolina at Chapel Hill · B.A. Computer Science, 2027</p>
-      <p class="intro">I work on <strong>AI agent safety</strong>. I build the benchmarks that show how agents fail once they leave the lab, and the runtime defenses that catch those failures in production.</p>
+      <h1 class="name">Kuiyi Gao</h1>
+      <p class="role">University of North Carolina at Chapel Hill · B.A. Computer Science, 2027</p>
+      <p class="intro">I work on <strong>trustworthy AI</strong> &mdash; how systems behave once they leave the lab and meet real interfaces, real tools and real people. So far that has meant multimodal safety benchmarks, jailbreak attacks and the defenses against them, agent robustness under interface noise, and runtime evidence for what an agent actually did. I am moving toward the human side of it: how persona and memory drift under interaction, and what it takes for a model&rsquo;s behaviour to be auditable rather than merely reported.</p>
       <p class="hook">The question I keep coming back to: when an agent does something it shouldn't, <em>does anything actually see it?</em> On stored runs of 65 malicious agent skills, our runtime detector flagged none of them — not because it judged wrongly, but because 46 of the 65 never produced traffic a monitor could observe. Reported recall was measuring the wrong thing. I'm writing that up now.</p>
+      <blockquote class="epi" style="margin:20px 0 24px">
+        <p>“… we had better be quite sure that the purpose put into the machine is the purpose which we really desire.”</p>
+        <cite>Norbert Wiener, <em>Some Moral and Technical Consequences of Automation</em>, Science, 1960</cite>
+      </blockquote>
       <div class="meta">
         <span><a href="mailto:kuiyigao@unc.edu">kuiyigao@unc.edu</a></span>
         <span><a href="Kuiyi_Gao_CV.pdf">CV</a></span>
@@ -140,8 +144,8 @@
   <div>
     <h2>News</h2>
     <ul class="news">
-      <li><time>Sep 2026</time><div class="new">Started at UNC-Chapel Hill as a junior transfer. Applying to PhD programs for Fall 2027.</div></li>
-      <li><time>Aug 2026</time><div>Submitted our GUI-agent robustness benchmark — 42 interface-noise types, seven agent frameworks (co-first author).</div></li>
+      <li><time>Sep 2026</time><div class="new">Applying to PhD programs for Fall 2027.</div></li>
+      <li><time>Aug 2026</time><div>Submitted our GUI-agent robustness benchmark (co-first author).</div></li>
       <li><time>Jul 2026</time><div>Finished the Agent Skill Firewall at MBZUAI UGRIP; now writing up the measurement study behind it.</div></li>
       <li><time>Jul 2025</time><div>Two papers at <b>ACL 2025</b> — one in the main conference, one in Findings.</div></li>
       <li><time>May 2025</time><div>Started summer research with Prof. Farzan Farnia on kernel-based novelty measures for text.</div></li>
@@ -167,10 +171,10 @@
         <p class="note">Never ask for the unsafe image at once. Each edit step is individually benign, so no single step is the one a filter can refuse — and the filter never sees the composition. I designed the attack, ran the attack and defense experiments, and wrote the paper.</p>
       </li>
       <li>
-        <p class="ptitle">A Dynamic Cross-Platform Benchmark for GUI-Agent Robustness under Real-World Interface Noise</p>
+        <p class="ptitle">GUI-agent robustness under interface noise</p>
         <p class="authors"><span class="me">Kuiyi Gao</span>* et al. — co-first author</p>
-        <div><span class="venue preprint">under review · 2026</span> <span class="links">preprint on request</span></div>
-        <p class="note">Real interfaces are noisy: overlays, dynamic content, deceptive widgets. Across 42 noise types and seven agent frameworks, noise does not simply lower success — it redirects the trajectory and raises the rate of unsafe actions. Success rate alone hides that.</p>
+        <div><span class="venue preprint">under review · 2026</span></div>
+        <p class="note">Real interfaces are noisy: overlays, dynamic content, deceptive widgets. Noise does not simply lower an agent&rsquo;s success rate — it redirects the trajectory and raises the rate of unsafe actions. Success rate alone hides that.</p>
       </li>
     </ol>
   </div>
@@ -182,14 +186,16 @@
     <h2>What I work on</h2>
     <p class="muted">One line runs through all of it: a benchmark locates the failure, an attack shows how it is reached, a defense closes it — and each is measured where the system is actually deployed, not in a clean simulation.</p>
     <ul class="fields">
-      <li>AI agent safety</li>
+      <li>AI safety &amp; trustworthiness</li>
       <li>Agent &amp; tool-supply-chain security</li>
       <li>Evaluation and benchmark design</li>
       <li>Red teaming &amp; adversarial robustness</li>
       <li>Multimodal (vision–language) safety</li>
       <li>Runtime monitoring &amp; auditable AI</li>
       <li>Human–AI interaction and trust</li>
+      <li>Interpretability &amp; model behaviour analysis</li>
       <li class="soft">Persona &amp; memory safety — starting</li>
+      <li class="soft">Human-grounded evaluation &amp; social simulation — starting</li>
       <li class="soft">Technical AI governance — starting</li>
     </ul>
   </div>
@@ -228,10 +234,6 @@
       <li><b>Every claim here should be checkable.</b> If a number is on this page, there is a paper, a repo, or a script behind it — and if it came from a corpus only I have, I say so.</li>
       <li><b>Build it before writing about it.</b> Every paper above started as something that ran.</li>
     </ol>
-    <blockquote class="epi" style="margin-top:22px">
-      <p>“… we had better be quite sure that the purpose put into the machine is the purpose which we really desire.”</p>
-      <cite>Norbert Wiener, <em>Some Moral and Technical Consequences of Automation</em>, Science, 1960</cite>
-    </blockquote>
   </div>
 </section>
 
