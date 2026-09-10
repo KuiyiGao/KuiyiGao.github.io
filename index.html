@@ -3,124 +3,126 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kuiyi (Cory) Gao</title>
-<meta name="description" content="Kuiyi (Cory) Gao — undergraduate researcher, UNC-Chapel Hill. Evaluations and runtime defenses at the boundary where AI systems meet people.">
-<meta property="og:title" content="Kuiyi (Cory) Gao">
-<meta property="og:description" content="Trust at the deployment boundary — evaluations and runtime defenses for AI systems that meet real interfaces, real tools and real people.">
+<title>Kuiyi (Cory) Gao — AI agent safety</title>
+<meta name="description" content="Kuiyi (Cory) Gao — undergraduate at UNC-Chapel Hill working on AI agent safety: benchmarks that show how agents fail in the real world, and runtime defenses that catch it.">
+<meta property="og:title" content="Kuiyi (Cory) Gao — AI agent safety">
+<meta property="og:description" content="I build the benchmarks that show how AI agents fail once they leave the lab, and the runtime defenses that catch those failures in production.">
 <meta property="og:type" content="profile">
 <meta property="og:image" content="https://kuiyigao.github.io/og-card.png">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  /* Dark is the design, not a mode. Light is available through the toggle. */
   :root{
     color-scheme:dark;
-    --bg:#0A0B0D; --surface:#131519; --ink:#F2F3F5; --ink-2:#AEB4BD; --ink-3:#828892;
-    --rule:#1D2025; --rule-2:#2B3039; --accent:#7FC7D1; --accent-soft:#7fc7d114;
-    --serif:"Newsreader",Georgia,"Times New Roman",serif;
-    --sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
-    --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+    --bg:#0B0C0F; --surface:#14161B; --ink:#F3F4F6; --ink-2:#B4BAC4; --ink-3:#868D99;
+    --rule:#1E2128; --rule-2:#2D323C; --accent:#8AD0DA; --accent-2:#E0C08A; --accent-soft:#8ad0da12;
+    --serif:"Newsreader",Georgia,serif; --sans:"Inter",system-ui,-apple-system,sans-serif; --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
   }
   :root[data-theme="light"]{
     color-scheme:light;
-    --bg:#F4F1E8; --surface:#FBF9F2; --ink:#16150F; --ink-2:#4C4839; --ink-3:#5D5849;
-    --rule:#E3DDCE; --rule-2:#CFC8B4; --accent:#12525E; --accent-soft:#12525e12;
+    --bg:#F5F2EA; --surface:#FCFAF4; --ink:#15140F; --ink-2:#4A4638; --ink-3:#5E5949;
+    --rule:#E4DED0; --rule-2:#CDC6B2; --accent:#0F5060; --accent-2:#8A6A22; --accent-soft:#0f506010;
   }
   *{box-sizing:border-box}
   html{background:var(--bg)}
-  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased}
   a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .12s}
   a:hover{border-bottom-color:var(--accent)}
-  .wrap{max-width:960px;margin:0 auto;padding:0 28px}
+  .wrap{max-width:900px;margin:0 auto;padding:0 28px}
 
-  /* masthead */
-  header.masthead{padding:80px 0 40px}
-  .mast{display:grid;grid-template-columns:1fr 124px;gap:52px;align-items:start}
-  .name{font-family:var(--serif);font-weight:400;font-size:56px;line-height:1.02;margin:0 0 18px;letter-spacing:-.014em}
-  .lede{font-size:18px;line-height:1.55;color:var(--ink);margin:0 0 8px;max-width:640px}
-  .lede b{font-weight:500;color:var(--accent)}
-  .sub{font-size:15px;color:var(--ink-2);margin:0 0 26px;max-width:640px}
-  .meta{font-family:var(--mono);font-size:12.5px;color:var(--ink-3);display:flex;flex-wrap:wrap;gap:6px 20px}
+  header.masthead{padding:76px 0 34px}
+  .mast{display:grid;grid-template-columns:1fr 116px;gap:44px;align-items:start}
+  .name{font-family:var(--serif);font-weight:600;font-size:44px;line-height:1.05;margin:0 0 4px;letter-spacing:-.02em}
+  .name span{font-weight:400;color:var(--ink-3);font-size:26px;letter-spacing:0}
+  .role{font-family:var(--mono);font-size:12.5px;color:var(--ink-3);margin:0 0 20px;letter-spacing:.03em}
+  .intro{font-size:17px;line-height:1.6;margin:0 0 14px;max-width:620px;color:var(--ink)}
+  .intro strong{font-weight:600;color:var(--accent)}
+  .hook{font-size:15.5px;line-height:1.62;color:var(--ink-2);margin:0 0 22px;max-width:620px;border-left:2px solid var(--rule-2);padding-left:16px}
+  .hook em{font-style:italic;color:var(--ink)}
+  .meta{font-family:var(--mono);font-size:12.5px;color:var(--ink-3);display:flex;flex-wrap:wrap;gap:6px 18px}
   .meta a{color:var(--ink-2)} .meta a:hover{color:var(--accent)}
-  .photo{width:124px;height:124px;object-fit:cover;border-radius:2px;border:1px solid var(--rule-2);filter:grayscale(.15) contrast(1.02)}
+  .photo{width:116px;height:116px;object-fit:cover;border-radius:2px;border:1px solid var(--rule-2)}
 
-  /* epigraph */
-  .epigraph{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:22px 0;margin:0 0 4px}
-  .epigraph p{font-family:var(--serif);font-size:19px;line-height:1.5;color:var(--ink-2);margin:0;max-width:720px}
-  .epigraph cite{display:block;font-family:var(--mono);font-style:normal;font-size:12px;color:var(--ink-3);margin-top:10px;letter-spacing:.02em}
-
-  /* sections */
-  section{display:grid;grid-template-columns:88px 1fr;gap:0 32px;padding:52px 0;border-bottom:1px solid var(--rule)}
-  section:last-of-type{border-bottom:0}
-  .marg{position:sticky;top:26px;align-self:start;font-family:var(--mono);font-size:12px;color:var(--ink-3);letter-spacing:.06em}
-  h2{font-family:var(--serif);font-weight:500;font-size:27px;margin:0 0 20px;line-height:1.15;letter-spacing:-.005em}
-  p{margin:0 0 14px;max-width:70ch}
+  section{display:grid;grid-template-columns:78px 1fr;gap:0 30px;padding:44px 0;border-top:1px solid var(--rule)}
+  .marg{position:sticky;top:26px;align-self:start;font-family:var(--mono);font-size:11.5px;color:var(--ink-3);letter-spacing:.08em;text-transform:uppercase}
+  h2{font-family:var(--serif);font-weight:600;font-size:25px;margin:0 0 18px;line-height:1.15;letter-spacing:-.01em}
+  p{margin:0 0 13px;max-width:68ch}
   .muted{color:var(--ink-2)}
+
+  /* news */
+  ul.news{list-style:none;margin:0;padding:0;max-width:700px}
+  ul.news li{display:grid;grid-template-columns:104px 1fr;gap:0 16px;padding:9px 0;border-bottom:1px dotted var(--rule-2);font-size:14.5px}
+  ul.news li:last-child{border-bottom:0}
+  ul.news time{font-family:var(--mono);font-size:12px;color:var(--ink-3);padding-top:2px}
+  ul.news .new{color:var(--accent-2)}
 
   /* publications */
   ol.refs{list-style:none;margin:0;padding:0;counter-reset:ref}
-  ol.refs li{position:relative;padding:0 0 26px 46px;counter-increment:ref;max-width:780px}
+  ol.refs li{position:relative;padding:0 0 24px 42px;counter-increment:ref;max-width:760px}
   ol.refs li:last-child{padding-bottom:0}
-  ol.refs li::before{content:"[" counter(ref) "]";position:absolute;left:0;top:3px;font-family:var(--mono);font-size:13px;color:var(--ink-3)}
-  .ptitle{font-family:var(--serif);font-size:20.5px;line-height:1.32;margin:0 0 5px;color:var(--ink)}
-  .authors{font-size:14.5px;color:var(--ink-2);margin:0 0 8px;line-height:1.5}
-  .authors .me{color:var(--ink);border-bottom:2px solid var(--accent);padding-bottom:1px}
-  .venue{display:inline-block;font-family:var(--mono);font-size:11.5px;color:var(--bg);background:var(--accent);border-radius:2px;padding:2px 8px;margin-right:10px;letter-spacing:.02em;font-weight:500}
+  ol.refs li::before{content:"[" counter(ref) "]";position:absolute;left:0;top:3px;font-family:var(--mono);font-size:12.5px;color:var(--ink-3)}
+  .ptitle{font-family:var(--serif);font-weight:500;font-size:19.5px;line-height:1.32;margin:0 0 4px}
+  .authors{font-size:14px;color:var(--ink-2);margin:0 0 7px;line-height:1.5}
+  .authors .me{color:var(--ink);font-weight:500;border-bottom:2px solid var(--accent);padding-bottom:1px}
+  .venue{display:inline-block;font-family:var(--mono);font-size:11px;color:var(--bg);background:var(--accent);border-radius:2px;padding:2px 8px;margin-right:10px;font-weight:500;letter-spacing:.02em}
   .venue.preprint{background:transparent;color:var(--ink-3);border:1px dashed var(--rule-2);font-weight:400}
-  .links{font-family:var(--mono);font-size:12px;color:var(--ink-3)}
-  .links a{margin-right:14px;color:var(--ink-3)} .links a:hover{color:var(--accent)}
-  .note{font-size:14px;color:var(--ink-2);margin-top:8px;max-width:70ch}
+  .links{font-family:var(--mono);font-size:11.5px}
+  .links a{margin-right:13px;color:var(--ink-3)} .links a:hover{color:var(--accent)}
+  .note{font-size:14px;color:var(--ink-2);margin-top:7px;max-width:66ch}
 
-  /* fields */
-  .fields{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px;padding:0;list-style:none;max-width:780px}
-  .fields li{font-family:var(--mono);font-size:12.5px;color:var(--ink-2);border:1px solid var(--rule-2);border-radius:2px;padding:4px 10px}
+  .fields{display:flex;flex-wrap:wrap;gap:7px;margin:2px 0 0;padding:0;list-style:none;max-width:740px}
+  .fields li{font-family:var(--mono);font-size:12px;color:var(--ink-2);border:1px solid var(--rule-2);border-radius:2px;padding:4px 9px}
   .fields li.soft{color:var(--ink-3);border-style:dashed}
 
-  /* systems */
-  ul.proj{list-style:none;padding:0;margin:0;max-width:780px}
-  ul.proj li{padding:16px 0;border-top:1px solid var(--rule)}
-  ul.proj li:last-child{border-bottom:1px solid var(--rule)}
-  ul.proj .pt{font-family:var(--serif);font-size:19px;color:var(--ink)}
-  ul.proj .pd{color:var(--ink-2);font-size:14.5px;margin-top:4px}
-  ul.proj .pl{font-family:var(--mono);font-size:12px;margin-top:6px}
+  ul.proj{list-style:none;padding:0;margin:0;max-width:760px}
+  ul.proj li{padding:15px 0;border-top:1px solid var(--rule)}
+  ul.proj li:first-child{border-top:0;padding-top:0}
+  ul.proj .pt{font-family:var(--serif);font-weight:500;font-size:18px}
+  ul.proj .pd{color:var(--ink-2);font-size:14px;margin-top:4px}
+  ul.proj .pl{font-family:var(--mono);font-size:11.5px;margin-top:5px}
   ul.proj .pl a{color:var(--ink-3)} ul.proj .pl a:hover{color:var(--accent)}
 
-  /* background */
-  dl.tl{margin:0;max-width:780px}
-  dl.tl div{display:grid;grid-template-columns:112px 1fr;gap:0 20px;padding:11px 0;border-top:1px solid var(--rule)}
-  dl.tl div:last-child{border-bottom:1px solid var(--rule)}
-  dl.tl dt{font-family:var(--mono);font-size:12.5px;color:var(--ink-3);margin:0}
-  dl.tl dd{margin:0;color:var(--ink-2);font-size:14.5px}
+  ol.creed{margin:0;padding-left:20px;max-width:66ch}
+  ol.creed li{margin:0 0 9px;color:var(--ink-2);font-size:15px}
+  ol.creed li b{color:var(--ink);font-weight:500}
 
-  .toggle{position:absolute;right:28px;top:24px;font-family:var(--mono);font-size:11.5px;color:var(--ink-3);background:none;border:1px solid var(--rule-2);border-radius:2px;padding:4px 10px;cursor:pointer;letter-spacing:.03em}
+  dl.tl{margin:0;max-width:760px}
+  dl.tl div{display:grid;grid-template-columns:104px 1fr;gap:0 18px;padding:9px 0;border-top:1px solid var(--rule)}
+  dl.tl div:first-child{border-top:0;padding-top:0}
+  dl.tl dt{font-family:var(--mono);font-size:12px;color:var(--ink-3);margin:0}
+  dl.tl dd{margin:0;color:var(--ink-2);font-size:14px}
+
+  blockquote.epi{margin:0;padding:0}
+  blockquote.epi p{font-family:var(--serif);font-size:16.5px;font-style:italic;color:var(--ink-2);margin:0 0 8px;max-width:60ch}
+  blockquote.epi cite{font-family:var(--mono);font-style:normal;font-size:11.5px;color:var(--ink-3)}
+
+  .toggle{position:absolute;right:28px;top:24px;font-family:var(--mono);font-size:11px;color:var(--ink-3);background:none;border:1px solid var(--rule-2);border-radius:2px;padding:4px 9px;cursor:pointer}
   .toggle:hover{color:var(--accent);border-color:var(--accent)}
-  footer{padding:34px 0 60px;font-family:var(--mono);font-size:11.5px;color:var(--ink-3)}
+  footer{padding:30px 0 56px;font-family:var(--mono);font-size:11.5px;color:var(--ink-3);border-top:1px solid var(--rule)}
 
-  @media (max-width:820px){
-    .mast{grid-template-columns:1fr;gap:28px}
-    .photo{width:104px;height:104px}
-    .name{font-size:40px}
-    section{grid-template-columns:1fr;padding:36px 0}
-    .marg{position:static;margin-bottom:12px}
-    dl.tl div{grid-template-columns:1fr;gap:2px}
+  @media (max-width:800px){
+    .mast{grid-template-columns:1fr;gap:24px} .photo{width:96px;height:96px}
+    .name{font-size:34px} .name span{font-size:20px}
+    section{grid-template-columns:1fr;padding:32px 0} .marg{position:static;margin-bottom:10px}
+    ul.news li,dl.tl div{grid-template-columns:1fr;gap:2px}
   }
   @media print{ .toggle{display:none} body{background:#fff;color:#000} a{color:#000} }
 </style>
 </head>
 <body>
 
-<button class="toggle" id="themeToggle" aria-label="Toggle theme">light</button>
+<button class="toggle" id="themeToggle">light</button>
 
 <header class="masthead">
   <div class="wrap mast">
     <div>
-      <h1 class="name">Kuiyi Gao</h1>
-      <p class="lede">I work on <b>trust at the deployment boundary</b> — the line an AI system crosses when it starts acting on real interfaces, real tools and real people.</p>
-      <p class="sub">Two things have to hold at that line: we must be able to <em>measure</em> what the system does once it is out there, and we must be able to <em>stop</em> what it should not do. I build both — benchmarks that find the failure, and runtime defenses that carry evidence for every decision they make.</p>
+      <h1 class="name">Kuiyi Gao <span>高揆一</span></h1>
+      <p class="role">Undergraduate · University of North Carolina at Chapel Hill · B.A. Computer Science, 2027</p>
+      <p class="intro">I work on <strong>AI agent safety</strong>. I build the benchmarks that show how agents fail once they leave the lab, and the runtime defenses that catch those failures in production.</p>
+      <p class="hook">The question I keep coming back to: when an agent does something it shouldn't, <em>does anything actually see it?</em> On stored runs of 65 malicious agent skills, our runtime detector flagged none of them — not because it judged wrongly, but because 46 of the 65 never produced traffic a monitor could observe. Reported recall was measuring the wrong thing. I'm writing that up now.</p>
       <div class="meta">
-        <span>UNC-Chapel Hill · B.A. Computer Science, 2027</span>
         <span><a href="mailto:kuiyigao@unc.edu">kuiyigao@unc.edu</a></span>
         <span><a href="Kuiyi_Gao_CV.pdf">CV</a></span>
         <span><a href="https://scholar.google.com/citations?user=Yobg_TQAAAAJ">Scholar</a></span>
@@ -131,17 +133,24 @@
   </div>
 </header>
 
-<div class="wrap">
-  <blockquote class="epigraph">
-    <p>“… we had better be quite sure that the purpose put into the machine is the purpose which we really desire.”</p>
-    <cite>Norbert Wiener, <em>Some Moral and Technical Consequences of Automation</em>, Science, 1960</cite>
-  </blockquote>
-</div>
-
 <main class="wrap">
 
+<section id="news">
+  <div class="marg">News</div>
+  <div>
+    <h2>News</h2>
+    <ul class="news">
+      <li><time>Sep 2026</time><div class="new">Started at UNC-Chapel Hill as a junior transfer. Applying to PhD programs for Fall 2027.</div></li>
+      <li><time>Aug 2026</time><div>Submitted our GUI-agent robustness benchmark — 42 interface-noise types, seven agent frameworks (co-first author).</div></li>
+      <li><time>Jul 2026</time><div>Finished the Agent Skill Firewall at MBZUAI UGRIP; now writing up the measurement study behind it.</div></li>
+      <li><time>Jul 2025</time><div>Two papers at <b>ACL 2025</b> — one in the main conference, one in Findings.</div></li>
+      <li><time>May 2025</time><div>Started summer research with Prof. Farzan Farnia on kernel-based novelty measures for text.</div></li>
+    </ul>
+  </div>
+</section>
+
 <section id="publications">
-  <div class="marg">§01</div>
+  <div class="marg">Papers</div>
   <div>
     <h2>Publications</h2>
     <ol class="refs">
@@ -149,69 +158,85 @@
         <p class="ptitle">Can't See the Forest for the Trees: Benchmarking Multimodal Safety Awareness for Multimodal LLMs</p>
         <p class="authors">Wenxuan Wang, Xiaoyuan Liu, <span class="me">Kuiyi Gao</span>, Jen-tse Huang, Youliang Yuan, Pinjia He, Shuai Wang, Zhaopeng Tu</p>
         <div><span class="venue">ACL 2025 · Main Conference</span> <span class="links"><a href="https://aclanthology.org/2025.acl-long.832/">anthology</a><a href="https://arxiv.org/abs/2502.11184">arXiv</a></span></div>
-        <p class="note">A benchmark for whether multimodal models notice unsafe intent that is split across image and text — and for the opposite failure, refusing what is harmless.</p>
+        <p class="note">Multimodal models miss unsafe intent when it is split across the image and the text — and refuse harmless requests for the same reason. We built the benchmark that separates the two failures, then fine-tuned against it.</p>
       </li>
       <li>
         <p class="ptitle">Chain-of-Jailbreak Attack for Image Generation Models via Step by Step Editing</p>
         <p class="authors">Wenxuan Wang, <span class="me">Kuiyi Gao</span>, Youliang Yuan, Jen-tse Huang, Qiuzhi Liu, Shuai Wang, Wenxiang Jiao, Zhaopeng Tu</p>
         <div><span class="venue">Findings of ACL 2025</span> <span class="links"><a href="https://aclanthology.org/2025.findings-acl.571/">anthology</a><a href="https://arxiv.org/abs/2410.03869">arXiv</a></span></div>
-        <p class="note">An attack that never asks for the unsafe image at once: each edit step is individually benign, and the safety filter has no step to refuse. With the defenses that answer it.</p>
+        <p class="note">Never ask for the unsafe image at once. Each edit step is individually benign, so no single step is the one a filter can refuse — and the filter never sees the composition. I designed the attack, ran the attack and defense experiments, and wrote the paper.</p>
       </li>
       <li>
         <p class="ptitle">A Dynamic Cross-Platform Benchmark for GUI-Agent Robustness under Real-World Interface Noise</p>
         <p class="authors"><span class="me">Kuiyi Gao</span>* et al. — co-first author</p>
         <div><span class="venue preprint">under review · 2026</span> <span class="links">preprint on request</span></div>
-        <p class="note">42 interface-noise types across web, desktop and mobile; seven agent frameworks run live against task-level rubrics. Noise does not only lower success — it redirects trajectories and raises unsafe-action rates.</p>
+        <p class="note">Real interfaces are noisy: overlays, dynamic content, deceptive widgets. Across 42 noise types and seven agent frameworks, noise does not simply lower success — it redirects the trajectory and raises the rate of unsafe actions. Success rate alone hides that.</p>
       </li>
     </ol>
   </div>
 </section>
 
 <section id="research">
-  <div class="marg">§02</div>
+  <div class="marg">Research</div>
   <div>
-    <h2>Research</h2>
-    <p class="muted">One line runs through the work: a benchmark locates the failure, an attack shows how it is reached, a defense closes it — and each is measured in the environment where the system is actually deployed.</p>
+    <h2>What I work on</h2>
+    <p class="muted">One line runs through all of it: a benchmark locates the failure, an attack shows how it is reached, a defense closes it — and each is measured where the system is actually deployed, not in a clean simulation.</p>
     <ul class="fields">
-      <li>AI safety</li>
-      <li>Agent security</li>
-      <li>Evaluation &amp; benchmark design</li>
+      <li>AI agent safety</li>
+      <li>Agent &amp; tool-supply-chain security</li>
+      <li>Evaluation and benchmark design</li>
       <li>Red teaming &amp; adversarial robustness</li>
       <li>Multimodal (vision–language) safety</li>
       <li>Runtime monitoring &amp; auditable AI</li>
       <li>Human–AI interaction and trust</li>
-      <li class="soft">Persona &amp; memory safety — emerging</li>
-      <li class="soft">Technical AI governance — emerging</li>
+      <li class="soft">Persona &amp; memory safety — starting</li>
+      <li class="soft">Technical AI governance — starting</li>
     </ul>
   </div>
 </section>
 
 <section id="systems">
-  <div class="marg">§03</div>
+  <div class="marg">Systems</div>
   <div>
-    <h2>Systems</h2>
+    <h2>Things I built</h2>
     <ul class="proj">
       <li>
         <div class="pt">Agent Skill Firewall</div>
-        <div class="pd">A runtime egress firewall for agent skills: static scan, then intent–action–result verification through an HTTP proxy with canaries. Every PASS / DEFER / BLOCK decision carries the evidence it was made from, so a blocked action can be re-derived after the fact. Built with a four-student team at MBZUAI UGRIP 2026.</div>
+        <div class="pd">A runtime egress firewall for agent skills. It scans the skill statically, then verifies intent against action against result through an HTTP proxy seeded with canaries. Every PASS / DEFER / BLOCK decision keeps the evidence it was made from, so a block can be re-derived afterwards instead of taken on faith. Built with a four-student team at MBZUAI UGRIP 2026.</div>
         <div class="pl"><a href="https://github.com/KuiyiGao/OpenClaw-Skill-Hack">github.com/KuiyiGao/OpenClaw-Skill-Hack</a></div>
       </li>
       <li>
         <div class="pt">MemSlot — saliency-guided compression for long documents</div>
-        <div class="pd">A frozen encoder with 32 learnable memory slots learns question-agnostic saliency; salient spans are rendered and compressed through an OCR model. Evaluated on CUAD against ten control arms.</div>
+        <div class="pd">A frozen encoder with 32 learnable memory slots learns which spans of a contract matter before anyone asks a question; the salient spans are then rendered and compressed through an OCR model. Evaluated on CUAD against ten control arms.</div>
         <div class="pl"><a href="https://github.com/KuiyiGao/Distorted-OCR-Compression">github.com/KuiyiGao/Distorted-OCR-Compression</a></div>
       </li>
       <li>
         <div class="pt">Movability segmentation</div>
-        <div class="pd">DeepLabV3 with a custom ASPP head over COCO-Stuff relabelled into four movability levels — a perception prior for embodied safety. mIoU 0.638 at 58 FPS.</div>
+        <div class="pd">COCO-Stuff relabelled into four levels of "can this move?", with DeepLabV3 and a custom ASPP head — a perception prior for embodied safety. mIoU 0.638 at 58 FPS.</div>
         <div class="pl"><a href="https://github.com/KuiyiGao/QuickMotionDetection">github.com/KuiyiGao/QuickMotionDetection</a></div>
       </li>
     </ul>
   </div>
 </section>
 
+<section id="how">
+  <div class="marg">How</div>
+  <div>
+    <h2>How I try to work</h2>
+    <ol class="creed">
+      <li><b>Report the measurement that complicates the story.</b> The 0-out-of-65 result above is the least flattering number in my own system, and it is the one worth publishing.</li>
+      <li><b>Every claim here should be checkable.</b> If a number is on this page, there is a paper, a repo, or a script behind it — and if it came from a corpus only I have, I say so.</li>
+      <li><b>Build it before writing about it.</b> Every paper above started as something that ran.</li>
+    </ol>
+    <blockquote class="epi" style="margin-top:22px">
+      <p>“… we had better be quite sure that the purpose put into the machine is the purpose which we really desire.”</p>
+      <cite>Norbert Wiener, <em>Some Moral and Technical Consequences of Automation</em>, Science, 1960</cite>
+    </blockquote>
+  </div>
+</section>
+
 <section id="background">
-  <div class="marg">§04</div>
+  <div class="marg">Bio</div>
   <div>
     <h2>Background</h2>
     <dl class="tl">
@@ -219,33 +244,34 @@
       <div><dt>2026</dt><dd>MBZUAI UGRIP — Skill Firewall for AI agents, with Dr. Steve Liu</dd></div>
       <div><dt>2025 –</dt><dd>The Chinese University of Hong Kong — GUI-agent robustness, with Prof. Michael R. Lyu</dd></div>
       <div><dt>2025</dt><dd>The Chinese University of Hong Kong — kernel-based novelty measures for text, with Prof. Farzan Farnia</dd></div>
-      <div><dt>2023 – 2025</dt><dd>Tencent AI Lab — research intern, multimodal safety and red teaming</dd></div>
+      <div><dt>2023 – 2025</dt><dd>Tencent AI Lab — research intern; multimodal safety and red teaming</dd></div>
     </dl>
   </div>
 </section>
 
 <section id="contact">
-  <div class="marg">§05</div>
+  <div class="marg">Contact</div>
   <div>
-    <h2>Contact</h2>
-    <p>Applying to PhD programs for Fall 2027. <a href="mailto:kuiyigao@unc.edu">kuiyigao@unc.edu</a></p>
+    <h2>Get in touch</h2>
+    <p class="muted">I am applying to PhD programs for Fall 2027. If you work on agent safety, evaluation, or anything that has to hold up in deployment, I would like to hear from you — including if you think the framing above is wrong.</p>
+    <p><a href="mailto:kuiyigao@unc.edu">kuiyigao@unc.edu</a></p>
   </div>
 </section>
 
 </main>
 
-<footer><div class="wrap">Kuiyi Gao · <span id="upd">September 2026</span></div></footer>
+<footer><div class="wrap">Kuiyi (Cory) Gao · updated September 2026</div></footer>
 
 <script>
   (function(){
     var root=document.documentElement, key='kg-theme', btn=document.getElementById('themeToggle');
     function label(){ btn.textContent = root.getAttribute('data-theme')==='light' ? 'dark' : 'light'; }
-    try{var saved=localStorage.getItem(key); if(saved==='light') root.setAttribute('data-theme','light');}catch(e){}
+    try{ if(localStorage.getItem(key)==='light') root.setAttribute('data-theme','light'); }catch(e){}
     label();
     btn.addEventListener('click',function(){
       var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
       if(next==='light'){ root.setAttribute('data-theme','light'); } else { root.removeAttribute('data-theme'); }
-      try{localStorage.setItem(key,next);}catch(e){}
+      try{ localStorage.setItem(key,next); }catch(e){}
       label();
     });
   })();
