@@ -84,6 +84,15 @@
   ul.proj .pl{font-family:var(--mono);font-size:11.5px;margin-top:5px}
   ul.proj .pl a{color:var(--ink-3)} ul.proj .pl a:hover{color:var(--accent)}
 
+
+  /* figure thumbnails (research-showcase layout) */
+  .entry{display:grid;grid-template-columns:212px 1fr;gap:0 24px;align-items:start}
+  .thumb{display:block;border:1px solid var(--rule-2);border-radius:3px;background:#fff;overflow:hidden;aspect-ratio:16/10;transition:border-color .12s}
+  .thumb:hover{border-color:var(--accent)}
+  .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+  :root:not([data-theme="light"]) .thumb img{filter:brightness(.96)}
+  ol.refs li{padding-left:42px}
+  ul.proj li .entry{padding:0}
   ol.creed{margin:0;padding-left:20px;max-width:66ch}
   ol.creed li{margin:0 0 9px;color:var(--ink-2);font-size:15px}
   ol.creed li b{color:var(--ink);font-weight:500}
@@ -107,6 +116,7 @@
     .name{font-size:34px} .name span{font-size:20px}
     section{grid-template-columns:1fr;padding:32px 0} .marg{position:static;margin-bottom:10px}
     ul.news li,dl.tl div{grid-template-columns:1fr;gap:2px}
+    .entry{grid-template-columns:1fr;gap:12px 0} .thumb{max-width:360px}
   }
   @media print{ .toggle{display:none} body{background:#fff;color:#000} a{color:#000} }
 </style>
@@ -140,22 +150,28 @@
     <h2>Publications</h2>
     <ol class="refs">
       <li>
-        <p class="ptitle">Can't See the Forest for the Trees: Benchmarking Multimodal Safety Awareness for Multimodal LLMs</p>
+        <div class="entry"><a class="thumb" href="figs/fig-mmsafeaware-two-failures.png" target="_blank" rel="noopener"><img src="figs/fig-mmsafeaware-two-failures.png" alt="MMSafeAware: safety awareness has two failure modes — missing unsafe intent split across image and text, and over-refusing benign input. GPT-4V calls 36.1% of unsafe inputs safe and 59.9% of benign inputs unsafe." loading="lazy"></a><div>
+<p class="ptitle">Can't See the Forest for the Trees: Benchmarking Multimodal Safety Awareness for Multimodal LLMs</p>
         <p class="authors">Wenxuan Wang, Xiaoyuan Liu, <span class="me">Kuiyi Gao</span>, Jen-tse Huang, Youliang Yuan, Pinjia He, Shuai Wang, Zhaopeng Tu</p>
-        <div><span class="venue">ACL 2025 · Main Conference</span> <span class="links"><a href="https://aclanthology.org/2025.acl-long.832/">anthology</a><a href="https://arxiv.org/abs/2502.11184">arXiv</a></span></div>
+        <div><span class="venue">ACL 2025 · Main Conference</span> <span class="links"><a href="https://aclanthology.org/2025.acl-long.832/">anthology</a><a href="https://arxiv.org/abs/2502.11184">arXiv</a><a href="https://github.com/Jarviswang94/MMSafetyAwareness">code &amp; data</a></span></div>
         <p class="note">Multimodal models miss unsafe intent when it is split across the image and the text, and refuse harmless requests for the same reason. The benchmark scores both failures separately; we then fine-tuned against it.</p>
+</div></div>
       </li>
       <li>
-        <p class="ptitle">Chain-of-Jailbreak Attack for Image Generation Models via Step by Step Editing</p>
+        <div class="entry"><a class="thumb" href="figs/fig-chain-of-jailbreak.png" target="_blank" rel="noopener"><img src="figs/fig-chain-of-jailbreak.png" alt="Chain-of-Jailbreak: one harmful request split into a chain of individually harmless edits; bypasses safeguards in over 60% of cases versus 14% for prior methods; Think Twice Prompting defends over 95%." loading="lazy"></a><div>
+<p class="ptitle">Chain-of-Jailbreak Attack for Image Generation Models via Step by Step Editing</p>
         <p class="authors">Wenxuan Wang, <span class="me">Kuiyi Gao</span>, Youliang Yuan, Jen-tse Huang, Qiuzhi Liu, Shuai Wang, Wenxiang Jiao, Zhaopeng Tu</p>
-        <div><span class="venue">Findings of ACL 2025</span> <span class="links"><a href="https://aclanthology.org/2025.findings-acl.571/">anthology</a><a href="https://arxiv.org/abs/2410.03869">arXiv</a></span></div>
-        <p class="note">The attack decomposes one harmful request into a chain of individually benign edits, so no single step is one a filter would refuse and the filter never sees the composition. I designed the attack methodology, ran the attack and defense experiments, and wrote the paper.</p>
+        <div><span class="venue">Findings of ACL 2025</span> <span class="links"><a href="https://aclanthology.org/2025.findings-acl.571/">anthology</a><a href="https://arxiv.org/abs/2410.03869">arXiv</a><a href="https://github.com/Jarviswang94/Chain-of-Jailbreak">code &amp; data</a></span></div>
+        <p class="note">The attack decomposes one harmful request into a chain of individually benign edits, so no single step is one a filter would refuse and the filter never sees the composition. I designed the attack methodology, ran most of the attack and defense experiments, and wrote the paper and the rebuttal.</p>
+</div></div>
       </li>
       <li>
-        <p class="ptitle">GUI-agent robustness under interface noise</p>
+        <div class="entry"><a class="thumb" href="figs/fig-gui-agent-interface-noise.png" target="_blank" rel="noopener"><img src="figs/fig-gui-agent-interface-noise.png" alt="The same task on a clean interface and on a noisy one with an overlay, shifted content and a look-alike control: the agent takes a different action, sometimes an unsafe one." loading="lazy"></a><div>
+<p class="ptitle">GUI-agent robustness under interface noise</p>
         <p class="authors"><span class="me">Kuiyi Gao</span>* et al. — co-first author</p>
         <div><span class="venue preprint">under review · 2026</span></div>
         <p class="note">Real interfaces are noisy: overlays, dynamic content, deceptive widgets. Interface noise does not only lower success rate; it also changes which action an agent takes and raises the rate of unsafe actions.</p>
+</div></div>
       </li>
     </ol>
   </div>
@@ -187,19 +203,25 @@
     <h2>Things I built</h2>
     <ul class="proj">
       <li>
-        <div class="pt">Agent Skill Firewall</div>
-        <div class="pd">A runtime egress firewall for agent skills. It scans the skill statically, then verifies intent against action against result through an HTTP proxy seeded with canaries. Each PASS / DEFER / BLOCK decision is recorded with the evidence it was derived from. Built with a four-student team at MBZUAI UGRIP 2026.</div>
+        <div class="entry"><a class="thumb" href="figs/fig-skill-firewall.png" target="_blank" rel="noopener"><img src="figs/fig-skill-firewall.png" alt="Agent Skill Firewall pipeline: skill bundle, static pre-scan, canary-seeded proxy, intent versus action versus result, PASS / DEFER / BLOCK. On stored runs of 65 malicious skills, 46 produced no proxy-visible egress and 0 were flagged." loading="lazy"></a><div>
+<div class="pt">Agent Skill Firewall</div>
+        <div class="pd">A runtime egress firewall for agent skills. It scans the skill statically, then verifies intent against action against result through an HTTP proxy seeded with canaries. Each PASS / DEFER / BLOCK decision is recorded with the evidence it was derived from. Built with a four-student team at MBZUAI UGRIP 2026; I built the runtime firewall. On stored runs of 65 malicious skills the detector flagged 0/65 — 46 of them produced no proxy-visible traffic at all, so the check was never reached. That measurement is a manuscript in preparation.</div>
         <div class="pl"><a href="https://github.com/KuiyiGao/OpenClaw-Skill-Hack">github.com/KuiyiGao/OpenClaw-Skill-Hack</a></div>
+</div></div>
       </li>
       <li>
-        <div class="pt">MemSlot — saliency-guided compression for long documents</div>
+        <div class="entry"><a class="thumb" href="figs/fig-memslot-pipeline.png" target="_blank" rel="noopener"><img src="figs/fig-memslot-pipeline.png" alt="MemSlot pipeline: contract text, frozen RoBERTa with 32 memory slots, saliency-distorted rendering, DeepSeek-OCR vision encoder, QA reader scored with CUAD metrics; next to a rendered page where larger, redder words are more important." loading="lazy"></a><div>
+<div class="pt">MemSlot — saliency-guided compression for long documents</div>
         <div class="pd">A frozen encoder with 32 learnable memory slots learns which spans of a contract matter before anyone asks a question; the salient spans are then rendered and compressed through an OCR model. Evaluated on CUAD against ten control arms.</div>
         <div class="pl"><a href="https://github.com/KuiyiGao/Distorted-OCR-Compression">github.com/KuiyiGao/Distorted-OCR-Compression</a></div>
+</div></div>
       </li>
       <li>
-        <div class="pt">Movability segmentation</div>
+        <div class="entry"><a class="thumb" href="figs/fig-movability-segmentation.jpg" target="_blank" rel="noopener"><img src="figs/fig-movability-segmentation.jpg" alt="Movability segmentation: four prediction tiles after 50 epochs beside the four movability levels; best mIoU 0.638 at 58 FPS." loading="lazy"></a><div>
+<div class="pt">Movability segmentation</div>
         <div class="pd">COCO-Stuff relabelled into four levels of "can this move?", with DeepLabV3 and a custom ASPP head — a perception prior for embodied safety. mIoU 0.638 at 58 FPS.</div>
         <div class="pl"><a href="https://github.com/KuiyiGao/QuickMotionDetection">github.com/KuiyiGao/QuickMotionDetection</a></div>
+</div></div>
       </li>
     </ul>
   </div>
