@@ -1,282 +1,77 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kuiyi (Cory) Gao — trustworthy AI, evaluation and agent safety</title>
-<meta name="description" content="Kuiyi (Cory) Gao — undergraduate at UNC-Chapel Hill working on trustworthy AI: safety benchmarks, adversarial robustness, agent evaluation, and runtime evidence for what a system actually did.">
-<meta property="og:title" content="Kuiyi (Cory) Gao — trustworthy AI, evaluation and agent safety">
-<meta property="og:description" content="How AI systems behave once they leave the lab and meet real interfaces, real tools and real people.">
-<meta property="og:type" content="profile">
-<meta property="og:image" content="https://kuiyigao.github.io/og-card.png">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root{
-    color-scheme:dark;
-    --bg:#0B0C0F; --surface:#14161B; --ink:#F3F4F6; --ink-2:#B4BAC4; --ink-3:#868D99;
-    --rule:#1E2128; --rule-2:#2D323C; --accent:#8AD0DA; --accent-2:#E0C08A; --accent-soft:#8ad0da12;
-    --serif:"Newsreader",Georgia,serif; --sans:"Inter",system-ui,-apple-system,sans-serif; --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
-  }
-  :root[data-theme="light"]{
-    color-scheme:light;
-    --bg:#F5F2EA; --surface:#FCFAF4; --ink:#15140F; --ink-2:#4A4638; --ink-3:#5E5949;
-    --rule:#E4DED0; --rule-2:#CDC6B2; --accent:#0F5060; --accent-2:#8A6A22; --accent-soft:#0f506010;
-  }
-  *{box-sizing:border-box}
-  html{background:var(--bg)}
-  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased}
-  a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .12s}
-  a:hover{border-bottom-color:var(--accent)}
-  .wrap{max-width:900px;margin:0 auto;padding:0 28px}
-
-  header.masthead{padding:76px 0 34px}
-  .mast{display:grid;grid-template-columns:1fr 116px;gap:44px;align-items:start}
-  .name{font-family:var(--serif);font-weight:600;font-size:44px;line-height:1.05;margin:0 0 4px;letter-spacing:-.02em}
-  .name span{font-weight:400;color:var(--ink-3);font-size:26px;letter-spacing:0}
-  .role{font-family:var(--mono);font-size:12.5px;color:var(--ink-3);margin:0 0 20px;letter-spacing:.03em}
-  .intro{font-size:17px;line-height:1.6;margin:0 0 14px;max-width:620px;color:var(--ink)}
-  .intro strong{font-weight:600;color:var(--accent)}
-  .hook{font-size:15.5px;line-height:1.62;color:var(--ink-2);margin:0 0 22px;max-width:620px;border-left:2px solid var(--rule-2);padding-left:16px}
-  .hook em{font-style:italic;color:var(--ink)}
-  .meta{font-family:var(--mono);font-size:12.5px;color:var(--ink-3);display:flex;flex-wrap:wrap;gap:6px 18px}
-  .meta a{color:var(--ink-2)} .meta a:hover{color:var(--accent)}
-  .photo{width:116px;height:116px;object-fit:cover;border-radius:2px;border:1px solid var(--rule-2)}
-
-  section{display:grid;grid-template-columns:78px 1fr;gap:0 30px;padding:44px 0;border-top:1px solid var(--rule)}
-  .marg{position:sticky;top:26px;align-self:start;font-family:var(--mono);font-size:11.5px;color:var(--ink-3);letter-spacing:.08em;text-transform:uppercase}
-  h2{font-family:var(--serif);font-weight:600;font-size:25px;margin:0 0 18px;line-height:1.15;letter-spacing:-.01em}
-  p{margin:0 0 13px;max-width:68ch}
-  .muted{color:var(--ink-2)}
-
-  /* news */
-  ul.news{list-style:none;margin:0;padding:0;max-width:700px}
-  ul.news li{display:grid;grid-template-columns:104px 1fr;gap:0 16px;padding:9px 0;border-bottom:1px dotted var(--rule-2);font-size:14.5px}
-  ul.news li:last-child{border-bottom:0}
-  ul.news time{font-family:var(--mono);font-size:12px;color:var(--ink-3);padding-top:2px}
-  ul.news .new{color:var(--accent-2)}
-
-  /* publications */
-  ol.refs{list-style:none;margin:0;padding:0;counter-reset:ref}
-  ol.refs li{position:relative;padding:0 0 24px 42px;counter-increment:ref;max-width:760px}
-  ol.refs li:last-child{padding-bottom:0}
-  ol.refs li::before{content:"[" counter(ref) "]";position:absolute;left:0;top:3px;font-family:var(--mono);font-size:12.5px;color:var(--ink-3)}
-  .ptitle{font-family:var(--serif);font-weight:500;font-size:19.5px;line-height:1.32;margin:0 0 4px}
-  .authors{font-size:14px;color:var(--ink-2);margin:0 0 7px;line-height:1.5}
-  .authors .me{color:var(--ink);font-weight:500;border-bottom:2px solid var(--accent);padding-bottom:1px}
-  .venue{display:inline-block;font-family:var(--mono);font-size:11px;color:var(--bg);background:var(--accent);border-radius:2px;padding:2px 8px;margin-right:10px;font-weight:500;letter-spacing:.02em}
-  .venue.preprint{background:transparent;color:var(--ink-3);border:1px dashed var(--rule-2);font-weight:400}
-  .links{font-family:var(--mono);font-size:11.5px}
-  .links a{margin-right:13px;color:var(--ink-3)} .links a:hover{color:var(--accent)}
-  .note{font-size:14px;color:var(--ink-2);margin-top:7px;max-width:66ch}
-
-  .fields{display:flex;flex-wrap:wrap;gap:7px;margin:2px 0 0;padding:0;list-style:none;max-width:740px}
-  .fields li{font-family:var(--mono);font-size:12px;color:var(--ink-2);border:1px solid var(--rule-2);border-radius:2px;padding:4px 9px}
-  .fields li.soft{color:var(--ink-3);border-style:dashed}
-
-  ul.proj{list-style:none;padding:0;margin:0;max-width:760px}
-  ul.proj li{padding:15px 0;border-top:1px solid var(--rule)}
-  ul.proj li:first-child{border-top:0;padding-top:0}
-  ul.proj .pt{font-family:var(--serif);font-weight:500;font-size:18px}
-  ul.proj .pd{color:var(--ink-2);font-size:14px;margin-top:4px}
-  ul.proj .pl{font-family:var(--mono);font-size:11.5px;margin-top:5px}
-  ul.proj .pl a{color:var(--ink-3)} ul.proj .pl a:hover{color:var(--accent)}
-
-
-  /* figure thumbnails (research-showcase layout) */
-  .entry{display:grid;grid-template-columns:212px 1fr;gap:0 24px;align-items:start}
-  .thumb{display:block;border:1px solid var(--rule-2);border-radius:3px;background:#fff;overflow:hidden;aspect-ratio:16/10;transition:border-color .12s}
-  .thumb:hover{border-color:var(--accent)}
-  .thumb img{width:100%;height:100%;object-fit:cover;display:block}
-  :root:not([data-theme="light"]) .thumb img{filter:brightness(.96)}
-  ol.refs li{padding-left:42px}
-  ul.proj li .entry{padding:0}
-  ol.creed{margin:0;padding-left:20px;max-width:66ch}
-  ol.creed li{margin:0 0 9px;color:var(--ink-2);font-size:15px}
-  ol.creed li b{color:var(--ink);font-weight:500}
-
-  dl.tl{margin:0;max-width:760px}
-  dl.tl div{display:grid;grid-template-columns:104px 1fr;gap:0 18px;padding:9px 0;border-top:1px solid var(--rule)}
-  dl.tl div:first-child{border-top:0;padding-top:0}
-  dl.tl dt{font-family:var(--mono);font-size:12px;color:var(--ink-3);margin:0}
-  dl.tl dd{margin:0;color:var(--ink-2);font-size:14px}
-
-  blockquote.epi{margin:0;padding:0}
-  blockquote.epi p{font-family:var(--serif);font-size:16.5px;font-style:italic;color:var(--ink-2);margin:0 0 8px;max-width:60ch}
-  blockquote.epi cite{font-family:var(--mono);font-style:normal;font-size:11.5px;color:var(--ink-3)}
-
-  .toggle{position:absolute;right:28px;top:24px;font-family:var(--mono);font-size:11px;color:var(--ink-3);background:none;border:1px solid var(--rule-2);border-radius:2px;padding:4px 9px;cursor:pointer}
-  .toggle:hover{color:var(--accent);border-color:var(--accent)}
-  footer{padding:30px 0 56px;font-family:var(--mono);font-size:11.5px;color:var(--ink-3);border-top:1px solid var(--rule)}
-
-  @media (max-width:800px){
-    .mast{grid-template-columns:1fr;gap:24px} .photo{width:96px;height:96px}
-    .name{font-size:34px} .name span{font-size:20px}
-    section{grid-template-columns:1fr;padding:32px 0} .marg{position:static;margin-bottom:10px}
-    ul.news li,dl.tl div{grid-template-columns:1fr;gap:2px}
-    .entry{grid-template-columns:1fr;gap:12px 0} .thumb{max-width:360px}
-  }
-  @media print{ .toggle{display:none} body{background:#fff;color:#000} a{color:#000} }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Kuiyi (Cory) Gao</title>
+  <meta name="description" content="Kuiyi Gao is an undergraduate at UNC-Chapel Hill working on multimodal safety and computer-use agents.">
+  <meta property="og:title" content="Kuiyi (Cory) Gao">
+  <meta property="og:description" content="Multimodal safety, computer-use agents, and selected projects.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <style>
+    :root{color-scheme:light;--ink:#252a30;--muted:#626a73;--link:#245982;--line:#e3e6e8}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fff;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:16px;line-height:1.65}
+    a{color:var(--link);text-decoration:none;text-underline-offset:3px}a:hover{text-decoration:underline}a:focus-visible{outline:2px solid var(--link);outline-offset:4px}.wrap{max-width:960px;margin:auto;padding:0 34px}
+    header{padding-top:70px;padding-bottom:42px;display:grid;grid-template-columns:1fr 148px;gap:50px;align-items:center}h1,h2{font-family:Georgia,"Times New Roman",serif;font-weight:500;letter-spacing:-.025em}h1{font-size:39px;line-height:1.2;margin:0 0 12px}h2{font-size:27px;margin:0 0 25px}h3{font-size:16px;line-height:1.5;margin:0 0 6px;font-weight:650}p{margin:0 0 12px}.intro{max-width:660px}.photo{width:148px;height:180px;object-fit:cover;border-radius:2px}.subtle,.caption{color:var(--muted)}.subtle{font-size:14px}.contact{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:17px;font-size:14px}
+    nav{display:flex;gap:24px;border-bottom:1px solid var(--line);padding-bottom:17px;font-size:14px}section{padding-top:38px;scroll-margin-top:24px}.entry{display:grid;grid-template-columns:216px 1fr;gap:28px;margin:0 0 32px;align-items:start}.figure{display:block;border:1px solid var(--line);background:#fff;padding:8px}.figure img{display:block;width:100%;height:132px;object-fit:contain}.figure.poetry img{height:154px}.authors{font-size:13px;color:var(--muted);line-height:1.6;margin:0 0 6px}.venue{font-size:13px;color:var(--muted);margin-bottom:8px}.links{display:flex;gap:18px;font-size:13px;margin-top:9px}.description{font-size:14px;line-height:1.7;margin-bottom:0}.caption{font-size:11px;line-height:1.5;margin-top:6px}.ongoing{border-top:1px solid var(--line);padding-top:21px}.ongoing p{font-size:14px;margin-bottom:15px}.project-text{padding-left:244px}.project-text p{font-size:14px}.background{font-size:14px;list-style:none;padding:0;margin:0}.background li{margin-bottom:10px}.year{display:inline-block;width:108px;color:var(--muted)}footer{font-size:12px;color:var(--muted);margin-top:45px;border-top:1px solid var(--line);padding:20px 0 32px}
+    @media(max-width:680px){.wrap{padding:0 23px}header{padding-top:34px;padding-bottom:28px;grid-template-columns:1fr 92px;gap:20px;align-items:start}h1{font-size:29px}.photo{width:92px;height:116px}.intro{font-size:14px}nav{gap:21px}.entry{grid-template-columns:1fr;gap:12px;margin-bottom:32px}.figure{max-width:100%;padding:12px}.figure img,.figure.poetry img{height:auto;max-height:215px}.project-text{padding-left:0}.year{display:block;width:auto}h2{font-size:25px}section{padding-top:31px}}
+    @media(max-width:680px){header{display:block;position:relative}header h1,header>.intro{margin-right:0}header h1,header .subtle{margin-right:112px}header .photo{position:absolute;right:0;top:34px}header .subtle{margin-bottom:22px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
 </head>
 <body>
-
-<button class="toggle" id="themeToggle">light</button>
-
-<header class="masthead">
-  <div class="wrap mast">
+<div class="wrap">
+  <header>
     <div>
-      <h1 class="name">Kuiyi Gao</h1>
-      <p class="role">University of North Carolina at Chapel Hill · B.A. Computer Science, 2027</p>
-      <p class="intro">I work on <strong>trustworthy AI</strong> &mdash; how systems behave once they leave the lab and meet real interfaces, real tools and real people. So far that has meant multimodal safety benchmarks, jailbreak attacks and the defenses against them, agent robustness under interface noise, and runtime evidence for what an agent actually did. I am moving toward the human side of it: how persona and memory drift under interaction, and what it takes to audit an agent&rsquo;s behaviour after the fact.</p>
-      <div class="meta">
-        <span><a href="mailto:kuiyigao@unc.edu">kuiyigao@unc.edu</a></span>
-        <span><a href="Kuiyi_Gao_CV.pdf">CV</a></span>
-        <span><a href="https://scholar.google.com/citations?user=Yobg_TQAAAAJ">Scholar</a></span>
-        <span><a href="https://github.com/KuiyiGao">GitHub</a></span>
-      </div>
+      <h1>Kuiyi (Cory) Gao</h1>
+      <p class="subtle">Undergraduate · University of North Carolina at Chapel Hill</p>
+      <p class="intro">I work on multimodal safety and the reliability of computer-use agents. My recent projects study how models interpret image–text inputs, how agents handle changes to an interface, and how to monitor third-party agent skills.</p>
+      <p class="intro">Before UNC, I studied at CUHK and worked with Tencent AI Lab. I'm applying to PhD programs for Fall 2027.</p>
+      <div class="contact"><a href="mailto:kuiyigao@unc.edu">Email</a><a href="Kuiyi_Gao_CV.pdf">CV</a><a href="https://scholar.google.com/citations?user=Yobg_TQAAAAJ">Google Scholar</a><a href="https://github.com/KuiyiGao">GitHub</a></div>
     </div>
-    <div><img class="photo" src="photo.jpg" alt="Kuiyi Gao"></div>
-  </div>
-</header>
-
-<main class="wrap">
-
-<section id="publications">
-  <div class="marg">Papers</div>
-  <div>
-    <h2>Publications</h2>
-    <ol class="refs">
-      <li>
-        <div class="entry"><a class="thumb" href="figs/fig-mmsafeaware-two-failures.png" target="_blank" rel="noopener"><img src="figs/fig-mmsafeaware-two-failures.png" alt="MMSafeAware: safety awareness has two failure modes — missing unsafe intent split across image and text, and over-refusing benign input. GPT-4V calls 36.1% of unsafe inputs safe and 59.9% of benign inputs unsafe." loading="lazy"></a><div>
-<p class="ptitle">Can't See the Forest for the Trees: Benchmarking Multimodal Safety Awareness for Multimodal LLMs</p>
-        <p class="authors">Wenxuan Wang, Xiaoyuan Liu, <span class="me">Kuiyi Gao</span>, Jen-tse Huang, Youliang Yuan, Pinjia He, Shuai Wang, Zhaopeng Tu</p>
-        <div><span class="venue">ACL 2025 · Main Conference</span> <span class="links"><a href="https://aclanthology.org/2025.acl-long.832/">anthology</a><a href="https://arxiv.org/abs/2502.11184">arXiv</a><a href="https://github.com/Jarviswang94/MMSafetyAwareness">code &amp; data</a></span></div>
-        <p class="note">Multimodal models miss unsafe intent when it is split across the image and the text, and refuse harmless requests for the same reason. The benchmark scores both failures separately; we then fine-tuned against it.</p>
-</div></div>
-      </li>
-      <li>
-        <div class="entry"><a class="thumb" href="figs/fig-chain-of-jailbreak.png" target="_blank" rel="noopener"><img src="figs/fig-chain-of-jailbreak.png" alt="Chain-of-Jailbreak: one harmful request split into a chain of individually harmless edits; bypasses safeguards in over 60% of cases versus 14% for prior methods; Think Twice Prompting defends over 95%." loading="lazy"></a><div>
-<p class="ptitle">Chain-of-Jailbreak Attack for Image Generation Models via Step by Step Editing</p>
-        <p class="authors">Wenxuan Wang, <span class="me">Kuiyi Gao</span>, Youliang Yuan, Jen-tse Huang, Qiuzhi Liu, Shuai Wang, Wenxiang Jiao, Zhaopeng Tu</p>
-        <div><span class="venue">Findings of ACL 2025</span> <span class="links"><a href="https://aclanthology.org/2025.findings-acl.571/">anthology</a><a href="https://arxiv.org/abs/2410.03869">arXiv</a><a href="https://github.com/Jarviswang94/Chain-of-Jailbreak">code &amp; data</a></span></div>
-        <p class="note">The attack decomposes one harmful request into a chain of individually benign edits, so no single step is one a filter would refuse and the filter never sees the composition. I designed the attack methodology, ran most of the attack and defense experiments, and wrote the paper and the rebuttal.</p>
-</div></div>
-      </li>
-      <li>
-        <div class="entry"><a class="thumb" href="figs/fig-gui-agent-interface-noise.png" target="_blank" rel="noopener"><img src="figs/fig-gui-agent-interface-noise.png" alt="The same task on a clean interface and on a noisy one with an overlay, shifted content and a look-alike control: the agent takes a different action, sometimes an unsafe one." loading="lazy"></a><div>
-<p class="ptitle">GUI-agent robustness under interface noise</p>
-        <p class="authors"><span class="me">Kuiyi Gao</span>* et al. — co-first author</p>
-        <div><span class="venue preprint">under review · 2026</span></div>
-        <p class="note">Real interfaces are noisy: overlays, dynamic content, deceptive widgets. Interface noise does not only lower success rate; it also changes which action an agent takes and raises the rate of unsafe actions.</p>
-</div></div>
-      </li>
-    </ol>
-  </div>
-</section>
-
-<section id="research">
-  <div class="marg">Research</div>
-  <div>
-    <h2>What I work on</h2>
-    <ul class="fields">
-      <li>AI safety &amp; trustworthiness</li>
-      <li>Agent &amp; tool-supply-chain security</li>
-      <li>Evaluation and benchmark design</li>
-      <li>Red teaming &amp; adversarial robustness</li>
-      <li>Multimodal (vision–language) safety</li>
-      <li>Runtime monitoring &amp; auditable AI</li>
-      <li>Human–AI interaction and trust</li>
-      <li>Interpretability &amp; model behaviour analysis</li>
-      <li class="soft">Persona &amp; memory safety — starting</li>
-      <li class="soft">Human-grounded evaluation &amp; social simulation — starting</li>
-      <li class="soft">Technical AI governance — starting</li>
-    </ul>
-  </div>
-</section>
-
-<section id="systems">
-  <div class="marg">Systems</div>
-  <div>
-    <h2>Things I built</h2>
-    <ul class="proj">
-      <li>
-        <div class="entry"><a class="thumb" href="figs/fig-skill-firewall.png" target="_blank" rel="noopener"><img src="figs/fig-skill-firewall.png" alt="Agent Skill Firewall pipeline: skill bundle, static pre-scan, canary-seeded proxy, intent versus action versus result, PASS / DEFER / BLOCK. On stored runs of 65 malicious skills, 46 produced no proxy-visible egress and 0 were flagged." loading="lazy"></a><div>
-<div class="pt">Agent Skill Firewall</div>
-        <div class="pd">A runtime egress firewall for agent skills. It scans the skill statically, then verifies intent against action against result through an HTTP proxy seeded with canaries. Each PASS / DEFER / BLOCK decision is recorded with the evidence it was derived from. Built with a four-student team at MBZUAI UGRIP 2026; I built the runtime firewall. On stored runs of 65 malicious skills the detector flagged 0/65 — 46 of them produced no proxy-visible traffic at all, so the check was never reached. That measurement is a manuscript in preparation.</div>
-        <div class="pl"><a href="https://github.com/KuiyiGao/OpenClaw-Skill-Hack">github.com/KuiyiGao/OpenClaw-Skill-Hack</a></div>
-</div></div>
-      </li>
-      <li>
-        <div class="entry"><a class="thumb" href="figs/fig-memslot-pipeline.png" target="_blank" rel="noopener"><img src="figs/fig-memslot-pipeline.png" alt="MemSlot pipeline: contract text, frozen RoBERTa with 32 memory slots, saliency-distorted rendering, DeepSeek-OCR vision encoder, QA reader scored with CUAD metrics; next to a rendered page where larger, redder words are more important." loading="lazy"></a><div>
-<div class="pt">MemSlot — saliency-guided compression for long documents</div>
-        <div class="pd">A frozen encoder with 32 learnable memory slots learns which spans of a contract matter before anyone asks a question; the salient spans are then rendered and compressed through an OCR model. Evaluated on CUAD against ten control arms.</div>
-        <div class="pl"><a href="https://github.com/KuiyiGao/Distorted-OCR-Compression">github.com/KuiyiGao/Distorted-OCR-Compression</a></div>
-</div></div>
-      </li>
-      <li>
-        <div class="entry"><a class="thumb" href="figs/fig-movability-segmentation.jpg" target="_blank" rel="noopener"><img src="figs/fig-movability-segmentation.jpg" alt="Movability segmentation: four prediction tiles after 50 epochs beside the four movability levels; best mIoU 0.638 at 58 FPS." loading="lazy"></a><div>
-<div class="pt">Movability segmentation</div>
-        <div class="pd">COCO-Stuff relabelled into four levels of "can this move?", with DeepLabV3 and a custom ASPP head — a perception prior for embodied safety. mIoU 0.638 at 58 FPS.</div>
-        <div class="pl"><a href="https://github.com/KuiyiGao/QuickMotionDetection">github.com/KuiyiGao/QuickMotionDetection</a></div>
-</div></div>
-      </li>
-    </ul>
-  </div>
-</section>
-
-<section id="background">
-  <div class="marg">Bio</div>
-  <div>
-    <h2>Background</h2>
-    <dl class="tl">
-      <div><dt>2026 –</dt><dd>University of North Carolina at Chapel Hill — B.A. Computer Science, 2027</dd></div>
-      <div><dt>2026</dt><dd>MBZUAI UGRIP — Skill Firewall for AI agents, with Dr. Steve Liu</dd></div>
-      <div><dt>2025 –</dt><dd>The Chinese University of Hong Kong — GUI-agent robustness, with Prof. Michael R. Lyu</dd></div>
-      <div><dt>2025</dt><dd>The Chinese University of Hong Kong — kernel-based novelty measures for text, with Prof. Farzan Farnia</dd></div>
-      <div><dt>2023 – 2025</dt><dd>Tencent AI Lab — research intern; multimodal safety and red teaming</dd></div>
-    </dl>
-  </div>
-</section>
-
-<section id="epigraph">
-  <div class="marg"></div>
-  <div>
-    <blockquote class="epi">
-      <p>&ldquo;&hellip; we had better be quite sure that the purpose put into the machine is the purpose which we really desire.&rdquo;</p>
-      <cite>Norbert Wiener, <em>Some Moral and Technical Consequences of Automation</em>, Science, 1960</cite>
-    </blockquote>
-  </div>
-</section>
-
-<section id="contact">
-  <div class="marg">Contact</div>
-  <div>
-    <h2>Get in touch</h2>
-    <p class="muted">I am applying to PhD programs for Fall 2027. If you work on agent safety, evaluation, or anything that has to hold up in deployment, I would like to hear from you.</p>
-    <p><a href="mailto:kuiyigao@unc.edu">kuiyigao@unc.edu</a></p>
-  </div>
-</section>
-
-</main>
-
-<footer><div class="wrap">Kuiyi (Cory) Gao · updated September 2026</div></footer>
-
-<script>
-  (function(){
-    var root=document.documentElement, key='kg-theme', btn=document.getElementById('themeToggle');
-    function label(){ btn.textContent = root.getAttribute('data-theme')==='light' ? 'dark' : 'light'; }
-    try{ if(localStorage.getItem(key)==='light') root.setAttribute('data-theme','light'); }catch(e){}
-    label();
-    btn.addEventListener('click',function(){
-      var next = root.getAttribute('data-theme')==='light' ? 'dark' : 'light';
-      if(next==='light'){ root.setAttribute('data-theme','light'); } else { root.removeAttribute('data-theme'); }
-      try{ localStorage.setItem(key,next); }catch(e){}
-      label();
-    });
-  })();
-</script>
+    <img class="photo" src="photo.jpg" alt="Kuiyi Gao" width="148" height="180">
+  </header>
+  <nav aria-label="Page sections"><a href="#publications">Publications</a><a href="#projects">Projects</a><a href="#background">Background</a></nav>
+  <main>
+    <section id="publications">
+      <h2>Publications</h2>
+      <article class="entry">
+        <div><a class="figure" href="figs/mmsafeaware-figure3.png" aria-label="View MMSafeAware Figure 3"><img src="figs/mmsafeaware-figure3.png" alt="Original Figure 3: model accuracy across unsafe and over-safe scenarios."></a><p class="caption">Figure 3 from the published paper.</p></div>
+        <div><h3>Can't See the Forest for the Trees: Benchmarking Multimodal Safety Awareness for Multimodal LLMs</h3><p class="authors">Wenxuan Wang, Xiaoyuan Liu, <strong>Kuiyi Gao</strong>, Jen-tse Huang, Youliang Yuan, Pinjia He, Shuai Wang, Zhaopeng Tu</p><p class="venue">ACL 2025 · Main Conference</p><p class="description">A benchmark for recognizing unsafe image–text inputs while avoiding false alarms on benign ones.</p><div class="links"><a href="https://aclanthology.org/2025.acl-long.832/">Paper</a><a href="https://github.com/Jarviswang94/MMSafetyAwareness">Code &amp; data</a></div></div>
+      </article>
+      <article class="entry">
+        <div><a class="figure" href="figs/coj-figure3.png" aria-label="View Chain-of-Jailbreak Figure 3"><img src="figs/coj-figure3.png" alt="Original Figure 3: results across safety scenarios for four image-generation services." loading="lazy"></a><p class="caption">Figure 3 from the published paper.</p></div>
+        <div><h3>Chain-of-Jailbreak Attack for Image Generation Models via Step by Step Editing</h3><p class="authors">Wenxuan Wang, <strong>Kuiyi Gao</strong>, Youliang Yuan, Jen-tse Huang, Qiuzhi Liu, Shuai Wang, Wenxiang Jiao, Zhaopeng Tu</p><p class="venue">Findings of ACL 2025</p><p class="description">A study of safety failures in multi-turn image editing and a prompting-based defense. I designed the study methodology and ran most of the experiments.</p><div class="links"><a href="https://aclanthology.org/2025.findings-acl.571/">Paper</a><a href="https://github.com/Jarviswang94/Chain-of-Jailbreak">Code &amp; data</a></div></div>
+      </article>
+      <div class="ongoing">
+        <h3>Ongoing research</h3>
+        <p><strong>GUI-agent robustness under interface noise.</strong> We study task completion, safety, and action changes on web and Android tasks. Co-first-authored manuscript under review.</p>
+        <p><strong>Runtime safety for agent skills.</strong> I built a runtime monitoring layer during MBZUAI UGRIP and am continuing work on records that connect safety decisions to observed behavior. <a href="https://github.com/KuiyiGao/OpenClaw-Skill-Hack">Project code</a></p>
+      </div>
+    </section>
+    <section id="projects">
+      <h2>Selected projects</h2>
+      <article class="entry" id="memslot">
+        <div><a class="figure" href="figs/memslot-saliency.png" aria-label="View saved MemSlot saliency output"><img src="figs/memslot-saliency.png" alt="Saved notebook plot comparing supervised and unsupervised saliency across contract words." loading="lazy"></a><p class="caption">Saved output from the project notebook.</p></div>
+        <div><h3>MemSlot: long-document compression</h3><p class="venue">COMP 586 · UNC · 2026</p><p class="description">Learned saliency scores guide how contract text is rendered before OCR and question answering. The project includes supervised and unsupervised variants and controls for rendering choices. End-to-end evaluation is ongoing.</p><div class="links"><a href="https://github.com/KuiyiGao/Distorted-OCR-Compression">Code &amp; notebooks</a></div></div>
+      </article>
+      <article class="entry" id="poetry">
+        <div><a class="figure poetry" href="figs/poetry-samples.jpg" aria-label="View archived poetry image samples"><img src="figs/poetry-samples.jpg" alt="Two archived FLUX image grids generated from Imagist and Romantic poetry excerpts." loading="lazy"></a><p class="caption">Images from the original course project.</p></div>
+        <div><h3>Poetry and image variation</h3><p class="venue">ENGE3940 · CUHK · 2025</p><p class="description">I compared images generated from ten Imagist and Romantic poems using CLIP-based variation scores. The project examines how prompt length and model choice affect the comparison, and what these measurements can say about literary interpretation.</p></div>
+      </article>
+      <article class="project-text" id="text-ken"><h3>Text-KEN: novelty in text embeddings</h3><p class="venue">Summer research · CUHK · 2025 · Prof. Farzan Farnia</p><p>An exploratory Python prototype for comparing sentence-embedding distributions with RBF kernels and spectral entropy, including centering and whitening.</p></article>
+    </section>
+    <section id="background">
+      <h2>Background</h2>
+      <ul class="background">
+        <li><span class="year">2026–present</span>University of North Carolina at Chapel Hill · undergraduate</li>
+        <li><span class="year">2026</span>MBZUAI UGRIP · Dr. Steve Liu</li>
+        <li><span class="year">2023–2026</span>The Chinese University of Hong Kong · undergraduate study before transfer</li>
+        <li><span class="year">2023–2025</span>Tencent AI Lab · research on multimodal safety</li>
+      </ul>
+    </section>
+  </main>
+  <footer>Kuiyi Gao · September 2026 · Paper figures reproduced with attribution under CC BY 4.0.</footer>
+</div>
 </body>
 </html>
