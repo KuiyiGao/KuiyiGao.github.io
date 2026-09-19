@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="220" viewBox="0 0 900 220" role="img" aria-labelledby="poetry-workflow-title poetry-workflow-desc">
+<title id="poetry-workflow-title">Poetry and image variation workflow</title>
+<desc id="poetry-workflow-desc">Poem excerpts prompt FLUX and Stable Diffusion to produce images. Archived CLIP-based variation scores support poem-level comparisons and prompt-length analysis. The workflow describes a course study, not a causal or literary conclusion.</desc>
+<rect width="900" height="220" fill="#ffffff"/>
+<g font-family="Arial, Helvetica, sans-serif" text-anchor="middle">
+<rect x="12" y="28" width="156" height="132" rx="6" fill="#f4f7f9"/>
+<text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" x="90" y="65" fill="#23445a" font-size="20" font-weight="600">Poem</text>
+<text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" x="90" y="89" fill="#23445a" font-size="20" font-weight="600">excerpts</text>
+<text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" x="90" y="122" fill="#525f69" font-size="18">Imagist + Romantic</text>
+<path d="M 172 92 H 185 M 181 88 L 185 92 L 181 96" fill="none" stroke="#7f929f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="192" y="28" width="156" height="132" rx="6" fill="#f4f7f9"/>
+<text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" x="270" y="65" fill="#23445a" font-size="20" font-weight="600">FLUX /</text>
+<text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" x="270" y="89" fill="#23445a" font-size="20" font-weight="600">Stable Diffusion</text>
+<text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" x="270" y="122" fill="#525f69" font-size="18">Image generation</text>
+<path d="M 352 92 H 365 M 361 88 L 365 92 L 361 96" fill="none" stroke="#7f929f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="372" y="28" width="156" height="132" rx="6" fill="#f4f7f9"/>
+<text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" x="450" y="65" fill="#23445a" font-size="20" font-weight="600">Generated</text>
+<text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" x="450" y="89" fill="#23445a" font-size="20" font-weight="600">images</text>
+<text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" x="450" y="122" fill="#525f69" font-size="18">Archived outputs</text>
+<path d="M 532 92 H 545 M 541 88 L 545 92 L 541 96" fill="none" stroke="#7f929f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="552" y="28" width="156" height="132" rx="6" fill="#f4f7f9"/>
+<text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" x="630" y="65" fill="#23445a" font-size="20" font-weight="600">CLIP-based</text>
+<text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" x="630" y="89" fill="#23445a" font-size="20" font-weight="600">variation</text>
+<text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" x="630" y="122" fill="#525f69" font-size="18">Archived scores</text>
+<path d="M 712 92 H 725 M 721 88 L 725 92 L 721 96" fill="none" stroke="#7f929f" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="732" y="28" width="156" height="132" rx="6" fill="#f4f7f9"/>
+<text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" x="810" y="65" fill="#23445a" font-size="20" font-weight="600">Poem-level</text>
+<text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" x="810" y="89" fill="#23445a" font-size="20" font-weight="600">comparisons</text>
+<text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" x="810" y="122" fill="#525f69" font-size="18">Group + prompt</text>
+<text font-family="Arial, Helvetica, sans-serif" text-anchor="middle" x="810" y="143" fill="#525f69" font-size="18">length analysis</text>
+</g>
+<text text-anchor="start" x="12" y="201" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#626b73">Analysis uses archived CLIP-based scores.</text>
+</svg>

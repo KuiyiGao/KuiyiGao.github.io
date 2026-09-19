@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="mmsafeaware-workflow" width="700" height="182" viewBox="0 0 700 182" role="img" aria-labelledby="title desc">
+<title id="title">MMSafeAware: Study workflow</title>
+<desc id="desc">Study workflow: a model judges an image–text pair, then its accuracy is evaluated separately on unsafe and benign inputs. Newly drawn schematic; no new measurements.</desc>
+<rect id="background" width="700" height="182" fill="#fff"/>
+<text id="study-workflow-label" x="26" y="26" font-family="Arial, Helvetica, sans-serif" font-size="14" text-anchor="start" fill="#607080" font-weight="400">Study workflow</text>
+<g id="node-input"><rect id="box-input" x="26" y="49" width="186" height="94" rx="3" fill="#f8fafb" stroke="#b8c3cc" stroke-width="1"/>
+<text id="label-input" x="119.0" y="88" font-family="Arial, Helvetica, sans-serif" font-size="18" text-anchor="middle" fill="#273746" font-weight="400">Image + text pair</text>
+<text id="subtitle-input" x="119.0" y="113" font-family="Arial, Helvetica, sans-serif" font-size="13" text-anchor="middle" fill="#607080" font-weight="400">multimodal input</text>
+</g>
+<g id="edge-input-judgement" stroke="#80909e" stroke-width="1.5" fill="none"><path d="M 221 96 L 247 96"/><path d="M 242.5 91.8 L 247 96 L 242.5 100.2"/></g>
+<g id="node-judgement"><rect id="box-judgement" x="257" y="49" width="186" height="94" rx="3" fill="#f8fafb" stroke="#b8c3cc" stroke-width="1"/>
+<text id="label-judgement" x="350.0" y="88" font-family="Arial, Helvetica, sans-serif" font-size="18" text-anchor="middle" fill="#273746" font-weight="400">Safety judgement</text>
+<text id="subtitle-judgement" x="350.0" y="113" font-family="Arial, Helvetica, sans-serif" font-size="13" text-anchor="middle" fill="#607080" font-weight="400">model prediction</text>
+</g>
+<g id="edge-judgement-evaluation" stroke="#80909e" stroke-width="1.5" fill="none"><path d="M 452 96 L 478 96"/><path d="M 473.5 91.8 L 478 96 L 473.5 100.2"/></g>
+<g id="node-evaluation"><rect id="box-evaluation" x="488" y="49" width="186" height="94" rx="3" fill="#f1f6f5" stroke="#b8c3cc" stroke-width="1"/>
+<text id="label-evaluation" x="581.0" y="88" font-family="Arial, Helvetica, sans-serif" font-size="18" text-anchor="middle" fill="#273746" font-weight="400">Accuracy by subset</text>
+<text id="subtitle-evaluation" x="581.0" y="113" font-family="Arial, Helvetica, sans-serif" font-size="13" text-anchor="middle" fill="#607080" font-weight="400">unsafe and benign inputs</text>
+</g>
+</svg>

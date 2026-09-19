@@ -24,3 +24,14 @@ These repository files are linked for source comparison. The figures hosted here
 
 - `figs/memslot-saliency.png`: Original PNG embedded in cell 6 (zero-based) of [MemSlot_Report.ipynb](https://github.com/KuiyiGao/Distorted-OCR-Compression/blob/b48f11cf7cdc05d194aa6bd33ec15369d654dfc1/notebooks/MemSlot_Report.ipynb). Saved course-project output, extracted without modification.
 - `figs/poetry-samples.jpg`: Two archived FLUX image grids from Kuiyi Gao's ENGE3940 project (2025), arranged with labels. The selected examples are illustrative and do not establish a measured difference between literary movements.
+
+## Workflow diagrams
+
+The eight `*-workflow*.svg` files are new schematic summaries, drawn for this portfolio from the published study descriptions and existing course-project workflows. They are not original paper figures or experimental results.
+
+- MMSafeAware: image–text pair → model safety judgment → accuracy on unsafe and benign subsets.
+- Chain-of-Jailbreak: image-editing session outputs → safety assessment → comparison across models and scenarios. This is an evaluation overview.
+- MemSlot: contract features → memory-slot saliency → selection/rendering → OCR-decoded text → separate QA reader. End-to-end QA evaluation is unfinished.
+- Poetry: poem excerpts → FLUX / Stable Diffusion images → CLIP-based variation → group comparisons. The displayed images and analysis are archived outputs.
+
+`figs/poetry-imagist-output.jpg` is the original Imagist FLUX grid from the ENGE3940 archive, used as a smaller homepage preview. It is included in the full poetry image gallery.
