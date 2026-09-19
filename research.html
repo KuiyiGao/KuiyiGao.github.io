@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kuiyi (Cory) Gao</title>
-<meta name="description" content="Kuiyi Gao, undergraduate at UNC-Chapel Hill. Research in multimodal safety and computer-use agents; projects in document NLP, text embeddings, and image generation.">
+<title>Research figures · Kuiyi Gao</title>
+<meta name="description" content="Original figures and repository artifacts from Kuiyi Gao’s published papers.">
 <meta property="og:title" content="Kuiyi (Cory) Gao">
 <meta property="og:description" content="Research, projects, and technical background.">
 <meta property="og:type" content="profile">
@@ -147,87 +147,20 @@
   @media(prefers-reduced-motion:reduce){*{transition:none!important}}
   @media print{:root{--ink:#15140F;--ink-2:#4A4638;--ink-3:#5E5949;--rule:#ccc;--rule-2:#bbb;--accent:#0F5060;--bg:#fff}.wrap{max-width:none}header.masthead{padding-top:20px}section{break-inside:avoid}nav{display:none}}
 </style>
-</head>
-<body>
+<style>
+.gallery-header{padding:72px 28px 28px}.gallery-header h1{font-family:var(--serif);font-size:38px;line-height:1.15;margin:20px 0 12px}.gallery-header p{color:var(--ink-2);font-size:15px}.back{font-family:var(--mono);font-size:12px}.fig-section{display:block;padding:36px 0}.fig-section h2{font-size:28px;margin-bottom:8px}.fig-section .summary{font-size:15px;color:var(--ink-2);max-width:76ch}.figure-meta{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);margin-bottom:18px}.figure-meta a{margin-right:18px}.paper-figure{margin:22px 0 28px}.paper-figure>a{display:block;padding:12px;background:white;border:1px solid var(--rule-2);border-radius:3px}.paper-figure img{display:block;width:100%;height:auto;max-height:560px;object-fit:contain}.paper-figure figcaption{font-size:12px;color:var(--ink-2);margin-top:9px;max-width:80ch}.source-line{font-size:11.5px;color:var(--ink-3)}.interface-pair{display:grid;grid-template-columns:1fr 1fr;gap:14px}.interface-pair .paper-figure{margin:10px 0 16px}.interface-pair .paper-figure>a{padding:5px}.interface-pair figcaption{font-family:var(--mono);font-size:11px}.download-links{font-size:12px;display:flex;flex-wrap:wrap;gap:8px 18px}.detail-link{font-size:12px;margin:0 0 18px}details{margin:20px 0}summary{cursor:pointer;color:var(--accent);font-size:13px}details p{margin-top:10px;font-size:13px;color:var(--ink-2)}.artifact-note{font-size:12px;color:var(--ink-3)}
+@media(max-width:640px){.gallery-header{padding:55px 22px 28px}.gallery-header h1{font-size:32px}.fig-section{padding:28px 0}.fig-section h2{font-size:24px}.interface-pair{grid-template-columns:1fr}.paper-figure>a{padding:6px}}
+</style></head><body>
 <button class="toggle" id="themeToggle" type="button" aria-label="Switch to light theme">light</button>
-<header class="masthead">
-  <div class="wrap mast">
-    <div class="mast-copy">
-      <div class="name-block"><h1 class="name">Kuiyi Gao <span>(Cory)</span></h1>
-      <p class="role">Undergraduate · UNC-Chapel Hill</p></div>
-      <p class="intro">I work on safety evaluation for multimodal models and computer-use agents.</p>
-      <p class="intro">Before UNC, I studied at CUHK and worked with Tencent AI Lab. I am applying to PhD programs for Fall 2027.</p>
-      <div class="meta"><a href="mailto:kuiyigao@unc.edu">kuiyigao@unc.edu</a><a href="Kuiyi_Gao_CV.pdf">CV</a><a href="https://scholar.google.com/citations?user=Yobg_TQAAAAJ">Scholar</a><a href="https://github.com/KuiyiGao">GitHub</a></div>
-    </div>
-    <div><img class="photo" src="photo.jpg" alt="Kuiyi Gao" width="116" height="116"></div>
-  </div>
-</header>
-<main class="wrap">
-<nav aria-label="Page sections"><a href="#publications">Papers</a><a href="#research">Research</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#background">Background</a></nav>
-<section id="publications">
-  <div class="marg">Papers</div>
-  <div><h2>Publications</h2><ol class="refs">
-    <li><div class="entry">
-      <div><a class="thumb" href="research.html#mmsafeaware" aria-label="View MMSafeAware figures"><img src="figs/mmsafeaware-figure3.png" alt="Model accuracy on unsafe and benign image–text scenarios, from the paper's Figure 3."></a><p class="caption">Original Figure 3.</p></div>
-      <div><h3 class="ptitle">Can't See the Forest for the Trees: Benchmarking Multimodal Safety Awareness for Multimodal LLMs</h3>
-      <p class="authors">Wenxuan Wang, Xiaoyuan Liu, <span class="me">Kuiyi Gao</span>, Jen-tse Huang, Youliang Yuan, Pinjia He, Shuai Wang, Zhaopeng Tu</p>
-      <div><span class="venue">ACL 2025 · Main</span><span class="links"><a href="https://aclanthology.org/2025.acl-long.832/">paper</a><a href="https://github.com/Jarviswang94/MMSafetyAwareness">code &amp; data</a><a href="research.html#mmsafeaware">figures</a></span></div>
-      <p class="note">We test whether models recognize unsafe intent across images and text without misclassifying benign inputs. I worked on the evaluation method, benchmark construction, and fine-tuning experiments.</p></div>
-    </div></li>
-    <li><div class="entry">
-      <div><a class="thumb" href="research.html#coj" aria-label="View Chain-of-Jailbreak figures"><img src="figs/coj-figure3.png" alt="Reported jailbreak success rates across safety scenarios for four image-generation services, from the paper's Figure 3." loading="lazy"></a><p class="caption">Original Figure 3.</p></div>
-      <div><h3 class="ptitle">Chain-of-Jailbreak Attack for Image Generation Models via Step by Step Editing</h3>
-      <p class="authors">Wenxuan Wang, <span class="me">Kuiyi Gao</span>, Youliang Yuan, Jen-tse Huang, Qiuzhi Liu, Shuai Wang, Wenxiang Jiao, Zhaopeng Tu</p>
-      <div><span class="venue">Findings of ACL 2025</span><span class="links"><a href="https://aclanthology.org/2025.findings-acl.571/">paper</a><a href="https://github.com/Jarviswang94/Chain-of-Jailbreak">code &amp; data</a><a href="research.html#coj">figures</a></span></div>
-      <p class="note">We study how a sequence of image edits can lead to unsafe outputs. I designed the study, built part of the dataset, ran most of the attack and defense experiments, and helped write the paper and rebuttal.</p></div>
-    </div></li>
-  </ol></div>
-</section>
-<section id="research">
-  <div class="marg">Research</div>
-  <div><h2>Ongoing work</h2>
-    <article class="research-item"><h3>RealGUINoise: GUI agents under interface changes</h3><p class="project-meta">CUHK · Prof. Michael R. Lyu · co-first-authored manuscript under review</p><p>We compare agent behavior on clean and altered web and Android interfaces. I designed metrics for task completion, unsafe actions, and changes in action sequences, and contributed to the evaluation harness.</p></article>
-    <article class="research-item"><h3>Runtime safety for agent skills</h3><p class="project-meta">MBZUAI UGRIP · Dr. Steve Liu · continuing research</p><p>I built the runtime monitoring layer in a four-student UGRIP project. Current work checks actions against approved permissions and records the observations and decisions in typed Tickets.</p><p class="links"><a href="https://github.com/KuiyiGao/OpenClaw-Skill-Hack">project code</a></p></article>
-  </div>
-</section>
-<section id="projects">
-  <div class="marg">Projects</div>
-  <div><h2>Selected projects</h2><ul class="proj">
-    <li id="memslot"><div class="entry">
-      <div><a class="thumb" href="figs/memslot-saliency.png" aria-label="View saved MemSlot saliency output"><img src="figs/memslot-saliency.png" alt="Saved notebook output comparing supervised and unsupervised word saliency in a contract." loading="lazy"></a><p class="caption">Saved project notebook output.</p></div>
-      <div><h3>MemSlot: saliency for long contracts</h3><p class="project-meta">COMP 586 · UNC · 2026</p><p class="pd">I implemented learnable memory-slot attention over frozen RoBERTa features to guide text selection and document rendering. The project includes supervised and unsupervised saliency, text-pruning baselines, and a pipeline that sends OCR-decoded text to a separate QA reader.</p><p class="pl"><a href="https://github.com/KuiyiGao/Distorted-OCR-Compression">code &amp; notebooks</a></p></div>
-    </div></li>
-    <li id="poetry"><div class="entry">
-      <div><a class="thumb" href="figs/poetry-samples.jpg" aria-label="View original poetry image samples"><img src="figs/poetry-samples.jpg" alt="FLUX image grids from Imagist and Romantic poetry excerpts in the course archive." loading="lazy"></a><p class="caption">Original course-project samples.</p></div>
-      <div><h3>Poetry and image variation</h3><p class="project-meta">ENGE3940 · CUHK · 2025</p><p class="pd">I analyzed CLIP-based variation scores for images generated with FLUX and Stable Diffusion from ten Imagist and Romantic poems. I compared the two poetry groups and examined the relationship between prompt length and image variation.</p></div>
-    </div></li>
-    <li id="text-ken"><h3>Text-KEN: novelty in text embeddings</h3><p class="project-meta">CUHK summer research · Prof. Farzan Farnia · 2025</p><p class="pd">I built a numerical prototype for comparing sentence-embedding distributions with RBF kernels and spectral entropy, and explored centering and whitening.</p></li>
-    <li id="movability"><h3>Movability segmentation</h3><p class="project-meta">ELEG5491 · CUHK · 2025</p><p class="pd">A DeepLabV3 project that groups COCO-Stuff labels into four movability classes, with a custom ASPP head.</p><p class="pl"><a href="https://github.com/KuiyiGao/QuickMotionDetection">code</a></p></li>
-  </ul></div>
-</section>
-<section id="skills">
-  <div class="marg">Skills</div>
-  <div><h2>Technical background</h2><dl class="skills">
-    <div><dt>Models &amp; representations</dt><dd><p>Model components in PyTorch: attention, frozen encoders, training losses, and semantic segmentation. NumPy implementations of kernel matrices, eigendecomposition, and whitening.</p><p class="tools">PyTorch · Hugging Face Transformers · NumPy</p><a href="#memslot">MemSlot</a> · <a href="#text-ken">Text-KEN</a> · <a href="#movability">Segmentation</a></dd></div>
-    <div><dt>Evaluation &amp; analysis</dt><dd><p>Benchmark construction, image–text safety evaluation, span-QA scoring, and analysis of agent action sequences. Course work includes CSV analysis, hypothesis tests, and plots for small datasets.</p><p class="tools">pandas · SciPy · Matplotlib · Jupyter</p><a href="#publications">Published studies</a> · <a href="#poetry">Poetry project</a></dd></div>
-    <div><dt>Research software</dt><dd><p>Python packages and command-line tools, document rendering, API-based experiment pipelines, runtime monitoring, and structured logs.</p><p class="tools">Python · Git · Linux · Docker · pytest</p><a href="#research">Agent projects</a> · <a href="https://github.com/KuiyiGao/Distorted-OCR-Compression">Document pipeline</a></dd></div>
-    <div><dt>CS foundations</dt><dd><p>Algorithms, machine learning, and NLP coursework at UNC; deep learning at CUHK. I am currently studying C/Unix systems and Java object-oriented design in COMP 211 and COMP 301.</p><p class="tools">Python · C and Java coursework · Maven/JUnit coursework</p></dd></div>
-  </dl></div>
-</section>
-<section id="background">
-  <div class="marg">Bio</div>
-  <div><h2>Background</h2><dl class="tl">
-    <div><dt>2026–present</dt><dd>University of North Carolina at Chapel Hill · undergraduate; expected graduation May 2027</dd></div>
-    <div><dt>2026</dt><dd>MBZUAI UGRIP · runtime safety for agent skills, with Dr. Steve Liu</dd></div>
-    <div><dt>2025–present</dt><dd>CUHK research · GUI-agent robustness, with Prof. Michael R. Lyu</dd></div>
-    <div><dt>2025</dt><dd>CUHK summer research · kernel-based text novelty, with Prof. Farzan Farnia</dd></div>
-    <div><dt>2023–2026</dt><dd>The Chinese University of Hong Kong · undergraduate study before transfer</dd></div>
-    <div><dt>2023–2025</dt><dd>Tencent AI Lab · research on multimodal safety</dd></div>
-  </dl></div>
-</section>
-<section id="contact"><div class="marg">Contact</div><div><h2>Contact</h2><p class="muted">For research discussions or questions about the projects above, email me at</p><a href="mailto:kuiyigao@unc.edu">kuiyigao@unc.edu</a></div></section>
-</main>
-<footer><div class="wrap">Kuiyi (Cory) Gao · September 2026 · <a href="research.html">Research figures</a> · <a href="FIGURE_SOURCES.md">Sources</a></div></footer>
+<header class="gallery-header wrap"><a class="back" href="index.html">← Kuiyi Gao</a><h1>Research figures</h1><p>Figures and materials from my published research. Click an image to open it at full size.</p></header>
+<main class="wrap"><nav aria-label="Research figures"><a href="#mmsafeaware">MMSafeAware</a><a href="#coj">Chain-of-Jailbreak</a></nav>
+<section class="fig-section" id="mmsafeaware"><h2>MMSafeAware</h2><p class="figure-meta">ACL 2025 · Main</p><p class="summary">The benchmark tests safety judgments on image–text pairs, including unsafe situations and benign inputs that models may incorrectly reject.</p><p class="figure-meta"><a href="https://aclanthology.org/2025.acl-long.832/">Paper</a><a href="https://github.com/Jarviswang94/MMSafetyAwareness">Code and data</a></p>
+<figure class="paper-figure"><a href="figs/mmsafeaware-table1.png" aria-label="Open full-size benchmark comparison"><img src="figs/mmsafeaware-table1.png" alt="MMSafeAware Table 1 compares input modalities and safety-scenario coverage across datasets." loading="lazy"></a><figcaption>Input modalities and safety-scenario coverage across datasets. Cropped from Table 1, page 3; Wang et al., ACL 2025. CC BY 4.0.</figcaption></figure>
+<figure class="paper-figure"><a href="figs/mmsafeaware-figure3.png" aria-label="Open full-size figure"><img src="figs/mmsafeaware-figure3.png" alt="Model accuracy across unsafe and benign image–text scenarios." loading="lazy"></a><figcaption>Reported model accuracy across the benchmark scenarios. Cropped from Figure 3, page 12; Wang et al., ACL 2025. CC BY 4.0.</figcaption></figure><p class="detail-link"><a href="https://github.com/Jarviswang94/MMSafetyAwareness/blob/500b595c82dfe73d5695bc994d9882a306d2aa1c/paper/result.png">Result table in the original repository</a></p><p class="summary">I worked on the evaluation method, benchmark construction, and fine-tuning experiments.</p></section>
+<section class="fig-section" id="coj"><h2>Chain-of-Jailbreak</h2><p class="figure-meta">Findings of ACL 2025</p><p class="summary">This study examines safety failures across a sequence of image edits. The figures show the paper’s aggregate results.</p><p class="figure-meta"><a href="https://aclanthology.org/2025.findings-acl.571/">Paper</a><a href="https://github.com/Jarviswang94/Chain-of-Jailbreak">Code and data</a></p>
+<figure class="paper-figure"><a href="figs/coj-figure3.png" aria-label="Open full-size figure"><img src="figs/coj-figure3.png" alt="Reported jailbreak success rates across scenarios for four image-generation services." loading="lazy"></a><figcaption>Reported jailbreak success rates across scenarios and image-generation services. Cropped from Figure 3, page 6; Wang et al., Findings of ACL 2025. CC BY 4.0.</figcaption></figure><figure class="paper-figure" style="max-width:580px"><a href="figs/coj-figure4.png" aria-label="Open full-size editing-step results"><img src="figs/coj-figure4.png" alt="Reported jailbreak success rate plotted against the number of image-editing steps." loading="lazy"></a><figcaption>Reported jailbreak success rate by number of editing steps. Cropped from Figure 4, page 7; Wang et al., Findings of ACL 2025. CC BY 4.0.</figcaption></figure>
+<p class="detail-link"><a href="https://github.com/Jarviswang94/Chain-of-Jailbreak/blob/15b4942f0e5d9606836d6d6199cdd831eab36de3/paper/result1.jpg">Result table in the original repository</a></p><p class="summary">I designed the study, built part of the dataset, ran most of the attack and defense experiments, and helped write the paper and rebuttal.</p></section>
+</main><footer><div class="wrap"><a href="index.html">Homepage</a> · <a href="FIGURE_SOURCES.md">Figure sources</a><p class="artifact-note">Figures reproduced from existing research materials. No experiments were rerun for this page.</p></div></footer>
 <script>
 (function(){
   const root=document.documentElement, key='kg-theme', button=document.getElementById('themeToggle');
