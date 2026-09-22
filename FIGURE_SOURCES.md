@@ -30,3 +30,11 @@ These repository files are linked for source comparison. The figures hosted here
 MMSafeAware uses the complete Figure 3, retaining both unsafe and benign subsets. Chain-of-Jailbreak uses Figure 4, the editing-step comparison. These are clickable previews of the original figures; no data or labels are redrawn.
 
 `figs/poetry-imagist-output.jpg` is the original Imagist FLUX grid from the ENGE3940 archive, used as the homepage preview. The full poetry gallery contains both Imagist and Romantic examples.
+
+## Movability segmentation
+
+`figs/movability-report-predictions.png` is the original embedded RGB image for Figure 5, page 5 of the public course report [`report-2.pdf`](https://github.com/KuiyiGao/QuickMotionDetection/blob/316c3881fe25c2f37aa30bc7f12ba721969a2438/report-2.pdf). The report labels it as predictions after 50 epochs. It was extracted without changing pixels or labels; no training was rerun. The photos are dataset examples contained in the original report.
+
+- Source PDF SHA-256: `376f206d540c3b0fe654b4d14f2417d2abcf0ac784ed9c4bd7b86f271aed1c5b`
+- Extracted PNG SHA-256: `9b39dccdf2039af1e77cd69b1efb37097789824e4942d25d8288dd2594381f02`
+- Image size: 2048 × 1024; PDF image object 23.
