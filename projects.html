@@ -8,7 +8,7 @@
   <meta property="og:title" content="Projects - Kuiyi Gao">
   <meta property="og:image" content="https://kuiyigao.github.io/photo.jpg">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="stylesheet" href="style.css?v=20261001-compact">
+  <link rel="stylesheet" href="style.css?v=20261001-quality">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -30,7 +30,7 @@
       <section class="detail" id="memslot">
         <h2>MemSlot: selecting text from long contracts</h2>
         <p class="meta">Natural language processing course project, UNC</p>
-        <p>MemSlot asks whether a compact set of words can preserve the information needed for document question answering. I trained attention slots over frozen RoBERTa representations to score words and used the scores to guide page selection before OCR and question answering.</p>
+        <p>MemSlot tests whether learned saliency can compress contracts before OCR and question answering. I implemented attention slots over frozen RoBERTa features, overlap-aware scoring, saliency-guided rendering, and pruning baselines.</p>
         <div class="overview-links"><a href="https://github.com/KuiyiGao/Distorted-OCR-Compression">Code and notebooks</a></div>
         <figure class="figure result figure-frame">
           <a href="figs/memslot-saliency.png" aria-label="Open full-size MemSlot saliency output"><img src="figs/memslot-saliency.png" alt="Saved notebook output comparing supervised and unsupervised saliency on contract words." loading="lazy" width="1945" height="761"></a>
@@ -40,7 +40,7 @@
       <section class="detail" id="poetry">
         <h2>Poetry and image variation</h2>
         <p class="meta">AI and language course project, CUHK</p>
-        <p>This project asks how poem style changes the variety of images generated from the same text. I generated image sets with FLUX and Stable Diffusion, then compared saved CLIP-based variation scores across Imagist and Romantic excerpts.</p>
+        <p>This project compares image variation across Imagist and Romantic poems. I generated images with FLUX and Stable Diffusion and analyzed saved CLIP-based scores with SciPy and Matplotlib.</p>
         <figure class="figure result figure-frame">
           <a href="figs/poetry-samples.jpg" aria-label="Open full-size poetry image samples"><img src="figs/poetry-samples.jpg" alt="Selected FLUX images generated from Imagist and Romantic poetry excerpts." loading="lazy" width="2080" height="1150"></a>
           <figcaption>Archived FLUX images grouped by poem excerpt. The examples show the output range; the comparison uses the saved variation scores.</figcaption>
@@ -49,12 +49,12 @@
       <section class="detail" id="text-ken">
         <h2>Text-KEN: comparing collections of text</h2>
         <p class="meta">Summer research with Prof. Farzan Farnia, CUHK</p>
-        <p>Text-KEN explores whether distributional differences between two text collections can be summarized from sentence embeddings. I implemented RBF-kernel comparisons and spectral-entropy analysis, then tested centering and whitening as embedding preprocessing choices.</p>
+        <p>Text-KEN compares two text collections without training a classifier. I built a MiniLM embedding pipeline with RBF kernels, spectral entropy, centering, and covariance whitening.</p>
       </section>
       <section class="detail" id="movability">
         <h2>Movability segmentation</h2>
         <p class="meta">Deep learning course project, CUHK</p>
-        <p>Movability segmentation treats semantic classes as a practical proxy for whether objects are fixed, movable, human, or vehicle-like. I adapted DeepLabV3 with a custom ASPP head and regrouped COCO-Stuff labels into four movability classes.</p>
+        <p>This project maps scene categories into four movability classes. I adapted DeepLabV3 with a custom ASPP head and implemented COCO-Stuff remapping, image-mask preprocessing, and checkpoint inference.</p>
         <div class="overview-links"><a href="https://github.com/KuiyiGao/QuickMotionDetection">Code and report</a></div>
         <figure class="figure result figure-frame">
           <a href="figs/movability-report-predictions.png" aria-label="Open movability prediction examples"><img src="figs/movability-report-predictions.png" alt="Archived photographs with predicted movability classes overlaid in color." loading="lazy" width="2048" height="1024"></a>

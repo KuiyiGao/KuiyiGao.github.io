@@ -8,7 +8,7 @@
   <meta property="og:title" content="Kuiyi (Cory) Gao">
   <meta property="og:image" content="https://kuiyigao.github.io/photo.jpg">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="stylesheet" href="style.css?v=20261001-compact">
+  <link rel="stylesheet" href="style.css?v=20261001-quality">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -26,8 +26,8 @@
         <div><img class="portrait" src="photo.jpg" alt="Kuiyi Gao" width="188" height="188"></div>
         <div class="bio">
           <h1>Kuiyi <span>(Cory)</span> Gao</h1>
-          <p>I am an undergraduate at the University of North Carolina at Chapel Hill, graduating in May 2027. I work on AI safety, with an emphasis on agent evaluation, multimodal safety, and runtime controls.</p>
-          <p>My research has included multimodal safety at Tencent AI Lab, GUI-agent robustness at CUHK, and agent runtime safety through MBZUAI UGRIP. I am applying to PhD programs for Fall 2027.</p>
+          <p>I am an undergraduate at UNC-Chapel Hill, graduating in May 2027. I study AI safety through evaluation and runtime controls, with work on multimodal models and GUI agents.</p>
+          <p>I have conducted research with Tencent AI Lab, CUHK, and MBZUAI UGRIP. I am applying to PhD programs for Fall 2027.</p>
           <div class="contact-links">
             <a href="mailto:kuiyigao@unc.edu">Email</a>
             <a href="Kuiyi_Gao_CV.pdf">CV</a>
@@ -42,12 +42,12 @@
         <article class="work">
           <h3><a href="research.html#realguinoise">RealGUINoise: A Dynamic Cross-Platform Benchmark for GUI Agent Robustness under Real-World Interface Noise</a></h3>
           <p class="meta">Co-first author. Under review.</p>
-          <p>RealGUINoise evaluates GUI agents on paired web and Android tasks before and after realistic interface changes. I built benchmark tasks, designed the evaluation protocol, implemented automated judging, and ran the paired experiments.</p>
+          <p>Each web and Android task is paired with an altered interface so robustness can be measured against the same goal. As co-first author, I built tasks, designed the protocol and automated judge, and ran the paired experiments.</p>
         </article>
         <article class="work">
           <h3><a href="research.html#runtimetickets">RuntimeTickets: Enforcing and Auditing Task-Specific Security Requirements for Third-Party Agent Skills</a></h3>
           <p class="meta">First author. Under review at ICLR 2027.</p>
-          <p>RuntimeTickets uses task-specific contracts to narrow an agent skill's permissions and records the requests and effects behind each decision. I designed the method, built the runtime firewall with the UGRIP team, and lead experiments and writing.</p>
+          <p>RuntimeTickets turns a task into a narrow permission contract, then records each runtime decision and effect. As first author, I designed the method, built the firewall with the UGRIP team, and lead experiments and writing.</p>
         </article>
         <article class="entry">
           <a class="preview paper" href="research.html#mmsafeaware" aria-label="MMSafeAware paper figure"><img src="figs/mmsafeaware-figure3.png" alt="MMSafeAware paper figure comparing model accuracy on unsafe and benign inputs." width="1392" height="621" loading="lazy"></a>
@@ -55,7 +55,7 @@
             <h3><a href="https://aclanthology.org/2025.acl-long.832/">Can't See the Forest for the Trees: Benchmarking Multimodal Safety Awareness for Multimodal LLMs</a></h3>
             <p class="authors">Wenxuan Wang, Xiaoyuan Liu, <strong>Kuiyi Gao</strong>, Jen-tse Huang, Youliang Yuan, Pinjia He, Shuai Wang, Zhaopeng Tu</p>
             <p class="venue">ACL 2025</p>
-            <p class="description">The benchmark separates missed unsafe content from false alarms on benign image and text pairs. As third author, I worked on benchmark construction, evaluation, vision-centric fine-tuning, submission, and rebuttal.</p>
+            <p class="description">The benchmark measures missed unsafe inputs and benign false alarms separately. As third author, I contributed data, evaluation, vision-centric fine-tuning, submission, and rebuttal.</p>
             <div class="entry-links"><a href="https://aclanthology.org/2025.acl-long.832/">Paper</a><a href="https://github.com/Jarviswang94/MMSafetyAwareness">Code and data</a><a href="research.html#mmsafeaware">Figure</a></div>
           </div>
         </article>
@@ -65,7 +65,7 @@
             <h3><a href="https://aclanthology.org/2025.findings-acl.571/">Chain-of-Jailbreak Attack for Image Generation Models via Step by Step Editing</a></h3>
             <p class="authors">Wenxuan Wang, <strong>Kuiyi Gao</strong>, Youliang Yuan, Jen-tse Huang, Qiuzhi Liu, Shuai Wang, Wenxiang Jiao, Zhaopeng Tu</p>
             <p class="venue">Findings of ACL 2025</p>
-            <p class="description">This study tests safety failures that emerge across multi-turn image editing. As second author, I designed the method and defense, contributed benchmark data, ran most experiments, and prepared figures, writing, and rebuttal.</p>
+            <p class="description">The study tests safety failures that emerge during multi-turn image editing. As second author, I designed the attack and defense, contributed data, ran most experiments, and prepared figures, writing, and rebuttal.</p>
             <div class="entry-links"><a href="https://aclanthology.org/2025.findings-acl.571/">Paper</a><a href="https://github.com/Jarviswang94/Chain-of-Jailbreak">Code and data</a><a href="research.html#coj">Figures</a></div>
           </div>
         </article>
@@ -78,7 +78,7 @@
           <div>
             <h3>MemSlot: selecting text from long contracts</h3>
             <p class="meta">Natural language processing course project, UNC</p>
-            <p class="description">MemSlot asks whether a compact set of words can preserve the information needed for document question answering. I trained attention slots over frozen RoBERTa representations to score words and used the scores to guide page selection before OCR and question answering.</p>
+            <p class="description">MemSlot tests whether learned saliency can compress contracts before OCR and question answering. I implemented attention slots over frozen RoBERTa features, overlap-aware scoring, saliency-guided rendering, and pruning baselines.</p>
             <div class="entry-links"><a href="https://github.com/KuiyiGao/Distorted-OCR-Compression">Code and notebooks</a><a href="projects.html#memslot">Output</a></div>
           </div>
         </article>
@@ -87,15 +87,15 @@
           <div>
             <h3>Poetry and image variation</h3>
             <p class="meta">AI and language course project, CUHK</p>
-            <p class="description">This project asks how poem style changes the variety of images generated from the same text. I generated image sets with FLUX and Stable Diffusion, then compared saved CLIP-based variation scores across Imagist and Romantic excerpts.</p>
+            <p class="description">This project compares image variation across Imagist and Romantic poems. I generated images with FLUX and Stable Diffusion and analyzed saved CLIP-based scores with SciPy and Matplotlib.</p>
             <div class="entry-links"><a href="projects.html#poetry">Generated images</a></div>
           </div>
         </article>
-        <article class="entry" id="text-ken">
+        <article class="work" id="text-ken">
           <div>
             <h3>Text-KEN: comparing collections of text</h3>
             <p class="meta">Summer research with Prof. Farzan Farnia, CUHK</p>
-            <p class="description">Text-KEN explores whether distributional differences between two text collections can be summarized from sentence embeddings. I implemented RBF-kernel comparisons and spectral-entropy analysis, then tested centering and whitening as embedding preprocessing choices.</p>
+            <p class="description">Text-KEN compares two text collections without training a classifier. I built a MiniLM embedding pipeline with RBF kernels, spectral entropy, centering, and covariance whitening.</p>
           </div>
         </article>
         <article class="entry" id="movability">
@@ -103,7 +103,7 @@
           <div>
             <h3>Movability segmentation</h3>
             <p class="meta">Deep learning course project, CUHK</p>
-            <p class="description">Movability segmentation treats semantic classes as a practical proxy for whether objects are fixed, movable, human, or vehicle-like. I adapted DeepLabV3 with a custom ASPP head and regrouped COCO-Stuff labels into four movability classes.</p>
+            <p class="description">This project maps scene categories into four movability classes. I adapted DeepLabV3 with a custom ASPP head and implemented COCO-Stuff remapping, image-mask preprocessing, and checkpoint inference.</p>
             <div class="entry-links"><a href="https://github.com/KuiyiGao/QuickMotionDetection">Code and report</a><a href="projects.html#movability">Predictions</a></div>
           </div>
         </article>
@@ -112,23 +112,10 @@
       <section id="skills">
         <h2>Skills</h2>
         <dl class="skills">
-          <div><dt>Machine learning and vision</dt><dd>PyTorch, Hugging Face Transformers, attention models, fine-tuning, semantic segmentation, DeepLabV3, ASPP, and COCO-Stuff label processing.</dd></div>
-          <div><dt>Text and statistical methods</dt><dd>RoBERTa representations, sentence embeddings, RBF kernels, eigendecomposition, spectral entropy, NumPy, SciPy, pandas, and Matplotlib.</dd></div>
-          <div><dt>Evaluation</dt><dd>Benchmark construction, task design, automated judging, paired experiments, multimodal safety evaluation, question-answering accuracy, and agent action analysis.</dd></div>
-          <div><dt>Research software</dt><dd>Python, Git, Linux, Docker, browser automation, document rendering, model APIs, and reproducible experiment records.</dd></div>
-          <div><dt>Course foundations</dt><dd>Algorithms, machine learning, natural language processing, deep learning, C and Unix systems, and object-oriented design.</dd></div>
-        </dl>
-      </section>
-
-      <section id="background">
-        <h2>Background</h2>
-        <dl class="timeline">
-          <div><dt>2026 to present</dt><dd>UNC-Chapel Hill, undergraduate, expected graduation May 2027</dd></div>
-          <div><dt>2026</dt><dd>MBZUAI UGRIP, runtime safety with Dr. Steve Liu</dd></div>
-          <div><dt>2025 to present</dt><dd>CUHK research, GUI-agent robustness with Prof. Michael R. Lyu</dd></div>
-          <div><dt>2025</dt><dd>CUHK summer research, text novelty with Prof. Farzan Farnia</dd></div>
-          <div><dt>2023 to 2026</dt><dd>The Chinese University of Hong Kong, undergraduate study before transfer</dd></div>
-          <div><dt>2023 to 2025</dt><dd>Tencent AI Lab, multimodal safety research</dd></div>
+          <div><dt>Model development</dt><dd>PyTorch, Hugging Face Transformers, attention, frozen encoders, fine-tuning, DeepLabV3, ASPP, and semantic segmentation.</dd></div>
+          <div><dt>Text and statistics</dt><dd>RoBERTa and MiniLM embeddings, RBF kernels, spectral entropy, eigendecomposition, NumPy, SciPy, pandas, and Matplotlib.</dd></div>
+          <div><dt>Evaluation</dt><dd>Benchmark and task design, automated judging, paired experiments, multimodal safety, span-QA EM/F1, and agent action metrics.</dd></div>
+          <div><dt>Research software</dt><dd>Python, Git, Linux, Docker, Playwright, HTTP/JSON APIs, document rendering, experiment configuration, and trace logging.</dd></div>
         </dl>
       </section>
     </main>
