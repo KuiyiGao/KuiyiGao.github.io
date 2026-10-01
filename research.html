@@ -1,2 +1,71 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Research · Kuiyi Gao</title><meta name="description" content="Kuiyi Gao, undergraduate at UNC-Chapel Hill. AI safety, multimodal evaluation, agent robustness, and auditable AI deployment."><meta property="og:title" content="Research · Kuiyi Gao"><meta property="og:image" content="https://kuiyigao.github.io/photo.jpg"><link rel="icon" type="image/svg+xml" href="favicon.svg"><link rel="stylesheet" href="style.css?v=222469369f69"></head><body><a class="skip" href="#main">Skip to content</a><div class="wrap"><nav class="site-nav" aria-label="Main navigation"><a class="brand" href="index.html">Kuiyi Gao</a><a href="index.html">Home</a><a href="index.html#publications" aria-current="page">Research</a><a href="index.html#projects">Projects</a><a href="index.html#skills">Skills</a><a href="Kuiyi_Gao_CV.pdf">CV</a></nav><main id="main"><header class="page-heading"><h1>Research</h1><p>Selected figures from two papers on multimodal safety.</p><nav class="subnav" aria-label="Studies"><a href="#mmsafeaware">MMSafeAware</a><a href="#coj">Chain-of-Jailbreak</a></nav></header><section class="detail" id="mmsafeaware"><h2>MMSafeAware</h2><p>We test whether models correctly classify an image and its accompanying text as safe or unsafe. We measure two kinds of mistakes separately: missing unsafe content and flagging harmless content. The study also examines changes to prompting, decoding, and fine-tuning.</p><div class="overview-links"><a href="https://aclanthology.org/2025.acl-long.832/">ACL 2025 paper</a><a href="https://github.com/Jarviswang94/MMSafetyAwareness">Code &amp; data</a></div><figure class="figure result figure-frame"><a href="figs/mmsafeaware-figure3.png" aria-label="Open full-size figure: Reported model accuracy across unsafe and benign scenarios."><img src="figs/mmsafeaware-figure3.png" alt="Reported model accuracy across unsafe and benign scenarios." loading="lazy" width="1392" height="621"></a><figcaption><strong>Accuracy by scenario.</strong> The two panels separate accuracy on unsafe inputs from accuracy on benign inputs.</figcaption></figure><details><summary>Benchmark coverage</summary><figure class="figure result figure-frame"><a href="figs/mmsafeaware-table1.png" aria-label="Open full-size figure: Comparison of safety benchmark input modalities and scenario coverage."><img src="figs/mmsafeaware-table1.png" alt="Comparison of safety benchmark input modalities and scenario coverage." loading="lazy" width="1377" height="750"></a><figcaption>The benchmark covers image–text safety scenarios alongside benign inputs.</figcaption></figure></details><p class="callout">As third author, I contributed to benchmark construction and evaluation methods, ran vision-centric fine-tuning experiments, and worked on submission and rebuttal.</p></section><section class="detail" id="coj"><h2>Chain-of-Jailbreak</h2><p>We evaluate whether image-generation services produce unsafe images during multi-turn editing. The study compares four services across nine safety scenarios and different editing-step counts, and evaluates a prompting-based defense.</p><div class="overview-links"><a href="https://aclanthology.org/2025.findings-acl.571/">Findings of ACL 2025 paper</a><a href="https://github.com/Jarviswang94/Chain-of-Jailbreak">Code &amp; data</a></div><figure class="figure result figure-frame"><a href="figs/coj-figure3.png" aria-label="Open full-size figure: Reported jailbreak success rates across scenarios and four image-generation services."><img src="figs/coj-figure3.png" alt="Reported jailbreak success rates across scenarios and four image-generation services." loading="lazy" width="1392" height="423"></a><figcaption><strong>Results by scenario and model.</strong> The figure reports jailbreak success rates: the proportion of benchmark cases that produced images judged unsafe.</figcaption></figure><figure class="figure narrow figure-frame"><a href="figs/coj-figure4.png" aria-label="Open full-size figure: Reported jailbreak success rates at different editing-step counts."><img src="figs/coj-figure4.png" alt="Reported jailbreak success rates at different editing-step counts." loading="lazy" width="669" height="453"></a><figcaption><strong>Editing-step comparison.</strong> The figure compares jailbreak success rates for different numbers of editing steps.</figcaption></figure><p class="callout">As second author, I designed the method and developed a prompting-based defense, contributed benchmark data, and ran most of the attack and defense experiments. I also prepared paper figures and contributed to the manuscript and rebuttal.</p></section><details class="credits"><summary>Figure credits</summary><p>Figures are cropped from Wang et al., <a href="https://aclanthology.org/2025.acl-long.832/">ACL 2025</a> (Figure 3 and Table 1) and <a href="https://aclanthology.org/2025.findings-acl.571/">Findings of ACL 2025</a> (Figures 3–4), under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Plotted values and labels are unchanged. <a href="FIGURE_SOURCES.md">Source details</a>.</p></details><p class="back-link"><a href="index.html#publications">← Back to publications</a></p></main></div><footer id="contact"><div class="wrap"><p>Kuiyi (Cory) Gao · September 2026</p><p><a href="mailto:kuiyigao@unc.edu">Email</a> · <a href="https://github.com/KuiyiGao">GitHub</a></p></div></footer></body></html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Research - Kuiyi Gao</title>
+  <meta name="description" content="Research by Kuiyi Gao on agent evaluation, runtime safety, and multimodal safety.">
+  <meta property="og:title" content="Research - Kuiyi Gao">
+  <meta property="og:image" content="https://kuiyigao.github.io/photo.jpg">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="style.css?v=20261001">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="wrap">
+    <nav class="site-nav" aria-label="Main navigation">
+      <a class="brand" href="index.html">Kuiyi Gao</a>
+      <a href="index.html">Home</a>
+      <a href="research.html" aria-current="page">Research</a>
+      <a href="projects.html">Projects</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="Kuiyi_Gao_CV.pdf">CV</a>
+    </nav>
+    <main id="main">
+      <header class="page-heading">
+        <h1>Research</h1>
+        <p>Work on safety evaluation and control for multimodal and agentic systems.</p>
+        <nav class="subnav" aria-label="Studies"><a href="#realguinoise">RealGUINoise</a><a href="#runtimetickets">RuntimeTickets</a><a href="#mmsafeaware">MMSafeAware</a><a href="#coj">Chain-of-Jailbreak</a></nav>
+      </header>
+      <section class="detail" id="realguinoise">
+        <h2>RealGUINoise</h2>
+        <p class="meta">Co-first author. Under review.</p>
+        <p>RealGUINoise evaluates GUI agents on paired web and Android tasks before and after realistic interface changes. I built benchmark tasks, designed the evaluation protocol, implemented automated judging, and ran the paired experiments for task completion, unsafe actions, and action-sequence differences.</p>
+      </section>
+      <section class="detail" id="runtimetickets">
+        <h2>RuntimeTickets</h2>
+        <p class="meta">First author. Under review at ICLR 2027.</p>
+        <p>RuntimeTickets enforces task-specific contracts that narrow the permissions available to third-party agent skills. I designed the method, built the runtime firewall with the UGRIP team, and lead the experiments and manuscript.</p>
+      </section>
+      <section class="detail" id="mmsafeaware">
+        <h2>MMSafeAware</h2>
+        <p class="meta">Third author. ACL 2025.</p>
+        <p>The study tests whether models classify an image and its accompanying text as safe or unsafe, separately measuring missed risks and false alarms. I contributed to benchmark construction and evaluation, ran vision-centric fine-tuning experiments, and worked on submission and rebuttal.</p>
+        <div class="overview-links"><a href="https://aclanthology.org/2025.acl-long.832/">Paper</a><a href="https://github.com/Jarviswang94/MMSafetyAwareness">Code and data</a></div>
+        <figure class="figure result figure-frame">
+          <a href="figs/mmsafeaware-figure3.png" aria-label="Open MMSafeAware result figure"><img src="figs/mmsafeaware-figure3.png" alt="Reported model accuracy across unsafe and benign scenarios." loading="lazy" width="1392" height="621"></a>
+          <figcaption>Accuracy by scenario. The panels separate unsafe inputs from benign inputs.</figcaption>
+        </figure>
+        <details><summary>Benchmark coverage</summary><figure class="figure result figure-frame"><a href="figs/mmsafeaware-table1.png" aria-label="Open benchmark coverage table"><img src="figs/mmsafeaware-table1.png" alt="Comparison of safety benchmark input modalities and scenario coverage." loading="lazy" width="1377" height="750"></a><figcaption>Benchmark coverage across image and text safety scenarios.</figcaption></figure></details>
+      </section>
+      <section class="detail" id="coj">
+        <h2>Chain-of-Jailbreak</h2>
+        <p class="meta">Second author. Findings of ACL 2025.</p>
+        <p>Chain-of-Jailbreak studies unsafe image generation that emerges across multi-turn editing. I designed the method and prompting-based defense, contributed benchmark data, ran most attack and defense experiments, and prepared figures, writing, and rebuttal.</p>
+        <div class="overview-links"><a href="https://aclanthology.org/2025.findings-acl.571/">Paper</a><a href="https://github.com/Jarviswang94/Chain-of-Jailbreak">Code and data</a></div>
+        <figure class="figure result figure-frame">
+          <a href="figs/coj-figure3.png" aria-label="Open Chain-of-Jailbreak results by scenario"><img src="figs/coj-figure3.png" alt="Reported jailbreak success rates across scenarios and image-generation services." loading="lazy" width="1392" height="423"></a>
+          <figcaption>Reported jailbreak success rates by scenario and model.</figcaption>
+        </figure>
+        <figure class="figure narrow figure-frame">
+          <a href="figs/coj-figure4.png" aria-label="Open Chain-of-Jailbreak editing-step comparison"><img src="figs/coj-figure4.png" alt="Reported jailbreak success rates at different editing-step counts." loading="lazy" width="669" height="453"></a>
+          <figcaption>Reported success rates at different editing-step counts.</figcaption>
+        </figure>
+      </section>
+      <details class="credits"><summary>Figure credits</summary><p>Figures are cropped from the published MMSafeAware and Chain-of-Jailbreak papers. Plotted values and labels are unchanged. <a href="FIGURE_SOURCES.md">Source details</a>.</p></details>
+      <p class="back-link"><a href="index.html#research">Back to home</a></p>
+    </main>
+  </div>
+  <footer id="contact"><div class="wrap"><p>Kuiyi (Cory) Gao, October 2026</p><p><a href="mailto:kuiyigao@unc.edu">Email</a> and <a href="https://github.com/KuiyiGao">GitHub</a></p></div></footer>
+</body>
+</html>
