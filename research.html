@@ -8,7 +8,7 @@
   <meta property="og:title" content="Research - Kuiyi Gao">
   <meta property="og:image" content="https://kuiyigao.github.io/photo.jpg">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="stylesheet" href="style.css?v=20261001-quality">
+  <link rel="stylesheet" href="style.css?v=20261002-bain">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -24,23 +24,23 @@
     <main id="main">
       <header class="page-heading">
         <h1>Research</h1>
-        <p>Work on safety evaluation and control for multimodal and agentic systems.</p>
+        <p>Research on how AI systems fail, how to measure those failures, and what a runtime can check before an action takes effect.</p>
         <nav class="subnav" aria-label="Studies"><a href="#realguinoise">RealGUINoise</a><a href="#runtimetickets">RuntimeTickets</a><a href="#mmsafeaware">MMSafeAware</a><a href="#coj">Chain-of-Jailbreak</a></nav>
       </header>
       <section class="detail" id="realguinoise">
         <h2>RealGUINoise</h2>
         <p class="meta">Co-first author. Under review.</p>
-        <p>Each web and Android task is paired with an altered interface so robustness can be measured against the same goal. I built tasks, designed the protocol and automated judge, and ran experiments on task completion, unsafe actions, and action-sequence changes.</p>
+        <p>What changes when a GUI agent meets a popup, delayed content, or a look-alike control? We run the same web and Android tasks on clean and altered interfaces. I built tasks, browser automation, the automated judge, and the paired evaluation of completion, unsafe actions, and action sequences.</p>
       </section>
       <section class="detail" id="runtimetickets">
         <h2>RuntimeTickets</h2>
         <p class="meta">First author. Under review at ICLR 2027.</p>
-        <p>RuntimeTickets turns a task into a narrow permission contract and records each runtime decision and effect. I designed the method, built the firewall with the UGRIP team, and lead the experiments and manuscript.</p>
+        <p>RuntimeTickets checks covered operations before they run and records both the decision and the observed effect. I designed the task-scoped contract, built the runtime layer with the UGRIP team, and lead the follow-up experiments and manuscript.</p>
       </section>
       <section class="detail" id="mmsafeaware">
         <h2>MMSafeAware</h2>
         <p class="meta">Third author. ACL 2025.</p>
-        <p>The benchmark measures missed unsafe inputs and benign false alarms separately. As third author, I contributed data and evaluation, ran vision-centric fine-tuning, and worked on submission and rebuttal.</p>
+        <p>The benchmark asks whether multimodal models notice risks in images without treating harmless inputs as unsafe. As third author, I contributed data and evaluation, ran vision-centric fine-tuning and error analysis, and worked on submission and rebuttal.</p>
         <div class="overview-links"><a href="https://aclanthology.org/2025.acl-long.832/">Paper</a><a href="https://github.com/Jarviswang94/MMSafetyAwareness">Code and data</a></div>
         <figure class="figure result figure-frame">
           <a href="figs/mmsafeaware-figure3.png" aria-label="Open MMSafeAware result figure"><img src="figs/mmsafeaware-figure3.png" alt="Reported model accuracy across unsafe and benign scenarios." loading="lazy" width="1392" height="621"></a>
@@ -51,7 +51,7 @@
       <section class="detail" id="coj">
         <h2>Chain-of-Jailbreak</h2>
         <p class="meta">Second author. Findings of ACL 2025.</p>
-        <p>The study tests safety failures that emerge during multi-turn image editing. As second author, I designed the attack and prompting defense, contributed data, ran most experiments, and prepared figures, writing, and rebuttal.</p>
+        <p>The study looks at safety failures that emerge over several image-editing turns. As second author, I designed the attack and prompting defense, contributed data, ran most experiments, and prepared figures, writing, and rebuttal.</p>
         <div class="overview-links"><a href="https://aclanthology.org/2025.findings-acl.571/">Paper</a><a href="https://github.com/Jarviswang94/Chain-of-Jailbreak">Code and data</a></div>
         <figure class="figure result figure-frame">
           <a href="figs/coj-figure3.png" aria-label="Open Chain-of-Jailbreak results by scenario"><img src="figs/coj-figure3.png" alt="Reported jailbreak success rates across scenarios and image-generation services." loading="lazy" width="1392" height="423"></a>
