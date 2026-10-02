@@ -27,7 +27,7 @@
         <div class="bio">
           <h1>Kuiyi <span>(Cory)</span> Gao</h1>
           <p><strong>[Focus]</strong> I work on a practical question: how can we tell when an AI system is reliable, and what should happen when it is not? My recent work covers GUI agents, runtime checks for third-party agent skills, and multimodal safety.</p>
-          <p><strong>[How I work]</strong> I like turning a broad question into something testable. That usually means building the tasks, evaluation code, automated judges, traces, and figures needed to inspect a system's behavior.</p>
+          <p><strong>[How I work]</strong> I like turning a broad question into something testable. That usually means building retrieval or agent pipelines, evaluation code, automated judges, traces, and figures needed to inspect a system's behavior.</p>
           <p><strong>[Background]</strong> I am a computer science undergraduate at UNC-Chapel Hill, graduating in May 2027. I have worked with Tencent AI Lab, CUHK, and MBZUAI UGRIP.</p>
           <div class="contact-links">
             <a href="mailto:kuiyigao@unc.edu">Email</a>
@@ -49,7 +49,7 @@
         <article class="work">
           <h3><a href="research.html#runtimetickets">RuntimeTickets: Source-Grounded Security Obligations for Agent Skills</a></h3>
           <p class="meta">First author. Under review at ICLR 2027.</p>
-          <p>RuntimeTickets checks covered operations before they run and records what the system decided and what actually happened. I designed the method, built the runtime layer with the UGRIP team, and lead the follow-up experiments and paper.</p>
+          <p>RuntimeTickets checks agent tool use before execution and records PASS, BLOCK, or DEFER decisions with the observed effect. I designed the method, built the runtime layer and reviewable traces with the UGRIP team, and lead the follow-up experiments and paper.</p>
         </article>
         <article class="entry">
           <a class="preview paper" href="research.html#mmsafeaware" aria-label="MMSafeAware paper figure"><img src="figs/mmsafeaware-figure3.png" alt="MMSafeAware paper figure comparing model accuracy on unsafe and benign inputs." width="1392" height="621" loading="lazy"></a>
@@ -78,9 +78,9 @@
         <article class="entry" id="memslot">
           <a class="preview output" href="projects.html#memslot" aria-label="MemSlot saved saliency output"><img src="figs/memslot-saliency.png" alt="Saved notebook output showing word-level saliency in a contract." loading="lazy" width="1945" height="761"></a>
           <div>
-            <h3>MemSlot: selecting text from long contracts</h3>
+            <h3>MemSlot: long-document retrieval and compression</h3>
             <p class="meta">Natural language processing course project, UNC</p>
-            <p class="description">MemSlot asks whether a model can keep the parts of a long contract that matter before OCR and question answering. I built the selection model, document rendering, pruning baselines, and evaluation notebooks.</p>
+            <p class="description">MemSlot treats long-document question answering as a retrieval and compression problem before OCR. I built the neural retriever, document rendering, pruning baselines, and evaluation notebooks.</p>
             <div class="entry-links"><a href="https://github.com/KuiyiGao/Distorted-OCR-Compression">Code and notebooks</a><a href="projects.html#memslot">Output</a></div>
           </div>
         </article>
@@ -114,10 +114,10 @@
       <section id="skills">
         <h2>Skills</h2>
         <dl class="skills">
-          <div><dt>AI and ML engineering</dt><dd>Python, PyTorch, Transformers, embeddings, fine-tuning, and semantic segmentation.</dd></div>
-          <div><dt>Agent systems</dt><dd>Browser automation, tool integration, runtime policies, decision records, and trace logging.</dd></div>
-          <div><dt>Evaluation</dt><dd>Task design, automated judging, paired experiments, multimodal evaluation, and error analysis.</dd></div>
-          <div><dt>Software and communication</dt><dd>Git, Linux, Docker, Playwright, HTTP/JSON APIs, testing, data visualization, and technical writing.</dd></div>
+          <div><dt>Generative AI and retrieval</dt><dd>Transformers, fine-tuning, embeddings, RAG, dense and keyword retrieval, reranking, and long-context QA.</dd></div>
+          <div><dt>Agent engineering</dt><dd>Tool use and function calling, orchestration, context and state management, runtime guardrails, and human-in-the-loop review.</dd></div>
+          <div><dt>Evaluation and observability</dt><dd>Task design, automated scoring, regression tests, paired experiments, trace logging, and error analysis.</dd></div>
+          <div><dt>Software and delivery</dt><dd>Python, PyTorch, REST/JSON APIs, Git, Linux, Docker, Playwright, testing, data visualization, and technical writing.</dd></div>
         </dl>
       </section>
     </main>
