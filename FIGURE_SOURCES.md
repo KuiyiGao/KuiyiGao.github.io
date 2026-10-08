@@ -22,7 +22,7 @@ These repository files are linked for source comparison. The figures hosted here
 
 ## Course projects
 
-- `figs/memslot-saliency.png`: Original PNG embedded in cell 6 (zero-based) of [MemSlot_Report.ipynb](https://github.com/KuiyiGao/Distorted-OCR-Compression/blob/b48f11cf7cdc05d194aa6bd33ec15369d654dfc1/notebooks/MemSlot_Report.ipynb). Saved course-project output, extracted without modification.
+- `figs/memslot-saliency.png`: Original PNG embedded in cell 6 (zero-based) of [MemSlot_Report.ipynb](https://github.com/KuiyiGao/memslot/blob/b48f11cf7cdc05d194aa6bd33ec15369d654dfc1/notebooks/MemSlot_Report.ipynb). Saved course-project output, extracted without modification.
 - `figs/poetry-samples.jpg`: Two archived FLUX image grids from Kuiyi Gao's ENGE3940 project (2025), arranged with labels. The selected examples are illustrative and do not establish a measured difference between literary movements.
 
 ## Homepage image selection
@@ -33,7 +33,7 @@ MMSafeAware uses the complete Figure 3, retaining both unsafe and benign subsets
 
 ## Movability segmentation
 
-`figs/movability-report-predictions.png` is the original embedded RGB image for Figure 5, page 5 of the public course report [`report-2.pdf`](https://github.com/KuiyiGao/QuickMotionDetection/blob/316c3881fe25c2f37aa30bc7f12ba721969a2438/report-2.pdf). The report labels it as predictions after 50 epochs. It was extracted without changing pixels or labels; no training was rerun. The photos are dataset examples contained in the original report.
+`figs/movability-report-predictions.png` is the original embedded RGB image for Figure 5, page 5 of the public course report [`report-2.pdf`](https://github.com/KuiyiGao/movability-segmentation/blob/316c3881fe25c2f37aa30bc7f12ba721969a2438/report-2.pdf). The report labels it as predictions after 50 epochs. It was extracted without changing pixels or labels; no training was rerun. The photos are dataset examples contained in the original report.
 
 - Source PDF SHA-256: `376f206d540c3b0fe654b4d14f2417d2abcf0ac784ed9c4bd7b86f271aed1c5b`
 - Extracted PNG SHA-256: `9b39dccdf2039af1e77cd69b1efb37097789824e4942d25d8288dd2594381f02`

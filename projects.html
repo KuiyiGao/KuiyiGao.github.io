@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
   <title>Projects - Kuiyi Gao</title>
   <meta name="description" content="Selected course and summer research projects by Kuiyi Gao.">
   <meta property="og:title" content="Projects - Kuiyi Gao">
@@ -30,8 +31,8 @@
       <section class="detail" id="memslot">
         <h2>MemSlot: long-document retrieval and compression</h2>
         <p class="meta">Natural language processing course project, UNC</p>
-        <p>MemSlot treats long-document question answering as a retrieval and compression problem before OCR. I built the neural retriever, document rendering, pruning baselines, and evaluation notebooks. End-to-end OCR-to-QA evaluation is still incomplete.</p>
-        <div class="overview-links"><a href="https://github.com/KuiyiGao/Distorted-OCR-Compression">Code and notebooks</a></div>
+        <p>MemSlot treats long-document question answering as a retrieval and compression problem before OCR. I built the neural retriever, document rendering, pruning baselines, and evaluation notebooks.</p>
+        <div class="overview-links"><a href="https://github.com/KuiyiGao/memslot">Code and notebooks</a></div>
         <figure class="figure result figure-frame">
           <a href="figs/memslot-saliency.png" aria-label="Open full-size MemSlot saliency output"><img src="figs/memslot-saliency.png" alt="Saved notebook output comparing supervised and unsupervised saliency on contract words." loading="lazy" width="1945" height="761"></a>
           <figcaption>Saved saliency output along a contract. The horizontal axis is word position; the bars are word-importance scores from two checkpoints.</figcaption>
@@ -40,11 +41,12 @@
       <section class="detail" id="poetry">
         <h2>Poetry and image variation</h2>
         <p class="meta">AI and language course project, CUHK</p>
-        <p>This project asks whether Imagist and Romantic poems lead image models toward different kinds of visual variation. I generated images with FLUX and Stable Diffusion, then compared the saved variation scores in Python.</p>
+        <p>Images generated from Imagist poems varied less than images from Romantic poems: a CLIP-based score of 0.12 against 0.28 with FLUX.1-dev, five poems per group. I generated images with FLUX and Stable Diffusion and compared the scores in Python.</p>
         <figure class="figure result figure-frame">
           <a href="figs/poetry-samples.jpg" aria-label="Open full-size poetry image samples"><img src="figs/poetry-samples.jpg" alt="Selected FLUX images generated from Imagist and Romantic poetry excerpts." loading="lazy" width="2080" height="1150"></a>
-          <figcaption>Archived FLUX images grouped by poem excerpt. The examples show the output range; the comparison uses the saved variation scores.</figcaption>
+          <figcaption>FLUX images grouped by poem excerpt.</figcaption>
         </figure>
+        <div class="overview-links"><a href="https://github.com/KuiyiGao/poetry-image-variation">Code and data</a></div>
       </section>
       <section class="detail" id="text-ken">
         <h2>Text-KEN: comparing collections of text</h2>
@@ -54,8 +56,8 @@
       <section class="detail" id="movability">
         <h2>Movability segmentation</h2>
         <p class="meta">Deep learning course project, CUHK</p>
-        <p>This project groups objects by how they can move, then predicts those classes across a scene. I adapted a semantic-segmentation model and built the data remapping, preprocessing, training, and checkpoint-inference pipeline.</p>
-        <div class="overview-links"><a href="https://github.com/KuiyiGao/QuickMotionDetection">Code and report</a></div>
+        <p>This project groups objects by how they can move, then predicts those classes across a scene. I adapted a semantic-segmentation model and built the data remapping, preprocessing, training, and checkpoint-inference pipeline. In the course report it reached 0.638 validation mIoU at 58 FPS.</p>
+        <div class="overview-links"><a href="https://github.com/KuiyiGao/movability-segmentation">Code and report</a></div>
         <figure class="figure result figure-frame">
           <a href="figs/movability-report-predictions.png" aria-label="Open movability prediction examples"><img src="figs/movability-report-predictions.png" alt="Archived photographs with predicted movability classes overlaid in color." loading="lazy" width="2048" height="1024"></a>
           <figcaption>Prediction examples saved in the course report after 50 training epochs.</figcaption>

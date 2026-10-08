@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
   <title>Kuiyi (Cory) Gao</title>
   <meta name="description" content="Kuiyi Gao is an undergraduate at UNC-Chapel Hill working on AI safety, agent evaluation, and runtime controls.">
   <meta property="og:title" content="Kuiyi (Cory) Gao">
@@ -26,7 +27,7 @@
         <div><img class="portrait" src="photo.jpg" alt="Kuiyi Gao" width="188" height="188"></div>
         <div class="bio">
           <h1>Kuiyi <span>(Cory)</span> Gao</h1>
-          <p><strong>[Focus]</strong> I work on a practical question: how can we tell when an AI system is reliable, and what should happen when it is not? My recent work covers GUI agents, runtime checks for third-party agent skills, and multimodal safety.</p>
+          <p><strong>[Focus]</strong> I build, evaluate and improve AI that people can trust, with a particular interest in where machine intelligence meets human values. My recent work covers GUI agents, runtime checks for third-party agent skills, and multimodal safety.</p>
           <p><strong>[How I work]</strong> I like turning a broad question into something testable. That usually means building retrieval or agent pipelines, evaluation code, automated judges, traces, and figures needed to inspect a system's behavior.</p>
           <p><strong>[Background]</strong> I am a computer science undergraduate at UNC-Chapel Hill, graduating in May 2027. I have worked with Tencent AI Lab, CUHK, and MBZUAI UGRIP.</p>
           <div class="contact-links">
@@ -43,7 +44,7 @@
         <article class="work">
           <h3><a href="research.html#realguinoise">RealGUINoise: An Interactive Cross-Platform Benchmark for GUI Agent Robustness under Real-World Interface Noise</a></h3>
           <p class="meta">Co-first author. Under review.</p>
-          <p>What changes when a GUI agent meets a popup, delayed content, or a look-alike control? We run the same web and Android tasks on clean and altered interfaces. I built tasks, the automated judge, and the paired evaluation.</p>
+          <p>RealGUINoise runs the same web and Android tasks on clean interfaces and on interfaces with popups, delayed content or look-alike controls. I built the tasks, the automated judge, and the paired evaluation.</p>
           <div class="entry-links"><a href="https://arxiv.org/abs/2609.38184">arXiv</a></div>
         </article>
         <article class="work">
@@ -81,7 +82,7 @@
             <h3>MemSlot: long-document retrieval and compression</h3>
             <p class="meta">Natural language processing course project, UNC</p>
             <p class="description">MemSlot treats long-document question answering as a retrieval and compression problem before OCR. I built the neural retriever, document rendering, pruning baselines, and evaluation notebooks.</p>
-            <div class="entry-links"><a href="https://github.com/KuiyiGao/Distorted-OCR-Compression">Code and notebooks</a><a href="projects.html#memslot">Output</a></div>
+            <div class="entry-links"><a href="https://github.com/KuiyiGao/memslot">Code and notebooks</a><a href="projects.html#memslot">Output</a></div>
           </div>
         </article>
         <article class="entry" id="poetry">
@@ -89,8 +90,8 @@
           <div>
             <h3>Poetry and image variation</h3>
             <p class="meta">AI and language course project, CUHK</p>
-            <p class="description">This project asks whether Imagist and Romantic poems lead image models toward different kinds of visual variation. I generated the images and compared the saved variation scores in Python.</p>
-            <div class="entry-links"><a href="projects.html#poetry">Generated images</a></div>
+            <p class="description">Images generated from Imagist poems varied less than images from Romantic poems: a CLIP-based score of 0.12 against 0.28 with FLUX.1-dev. I generated the images and compared the scores in Python.</p>
+            <div class="entry-links"><a href="https://github.com/KuiyiGao/poetry-image-variation">Code and data</a><a href="projects.html#poetry">Generated images</a></div>
           </div>
         </article>
         <article class="work" id="text-ken">
@@ -105,8 +106,8 @@
           <div>
             <h3>Movability segmentation</h3>
             <p class="meta">Deep learning course project, CUHK</p>
-            <p class="description">This project groups objects by how they can move, then predicts those classes across a scene. I adapted a semantic-segmentation model and built the data, training, and checkpoint-inference pipeline.</p>
-            <div class="entry-links"><a href="https://github.com/KuiyiGao/QuickMotionDetection">Code and report</a><a href="projects.html#movability">Predictions</a></div>
+            <p class="description">This project groups objects by how they can move, then predicts those classes across a scene. I adapted a semantic-segmentation model and built the data, training, and checkpoint-inference pipeline; it reached 0.638 validation mIoU at 58 FPS.</p>
+            <div class="entry-links"><a href="https://github.com/KuiyiGao/movability-segmentation">Code and report</a><a href="projects.html#movability">Predictions</a></div>
           </div>
         </article>
       </section>
