@@ -25,11 +25,16 @@ These repository files are linked for source comparison. The figures hosted here
 - `figs/memslot-saliency.png`: Original PNG embedded in cell 6 (zero-based) of [MemSlot_Report.ipynb](https://github.com/KuiyiGao/memslot/blob/5054ba262005f4074f453550459d014d93c06738/notebooks/MemSlot_Report.ipynb). Saved course-project output, extracted without modification.
 - `figs/poetry-samples.jpg`: Two archived FLUX image grids from Kuiyi Gao's ENGE3940 project (2025), arranged with labels. The selected examples are illustrative and do not establish a measured difference between literary movements.
 
-## Homepage image selection
+## Homepage diagrams
 
-MMSafeAware uses the complete Figure 3, retaining both unsafe and benign subsets. Chain-of-Jailbreak uses Figure 4, the editing-step comparison. These are clickable previews of the original figures; no data or labels are redrawn.
+The four images next to the papers on the homepage are diagrams drawn by Kuiyi Gao. Each shows the paper's setting with one real example.
 
-`figs/poetry-imagist-output.jpg` is the original Imagist FLUX grid from the ENGE3940 archive, used as the homepage preview. The full poetry gallery contains both Imagist and Romantic examples.
+- `figs/flow-mmsafeaware.png`: uses the example images of Figure 1 of [Wang et al., ACL 2025](https://aclanthology.org/2025.acl-long.832/), under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+- `figs/flow-chain-of-jailbreak.png`: uses the generated images of Figure 1 of [Wang et al., Findings of ACL 2025](https://aclanthology.org/2025.findings-acl.571/), under CC BY 4.0.
+- `figs/flow-realguinoise.png`: uses the case-study screenshots of Table 15 of [RealGUINoise](https://arxiv.org/abs/2609.38184). Screenshots © 2026 the authors.
+- `figs/flow-runtimetickets.png`: concept diagram of [RuntimeTickets](https://arxiv.org/abs/2611.03772). It contains no figure from the paper.
+
+Creator and copyright fields are embedded in each file.
 
 ## Movability segmentation
 

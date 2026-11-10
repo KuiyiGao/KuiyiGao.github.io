@@ -4,32 +4,31 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="robots" content="noindex, nofollow, noarchive">
-  <title>Kuiyi (Cory) Gao</title>
-  <meta name="description" content="Kuiyi Gao is an undergraduate at UNC-Chapel Hill working on AI safety, agent evaluation, and runtime controls.">
-  <meta property="og:title" content="Kuiyi (Cory) Gao">
+  <title>Cory Kuiyi Gao</title>
+  <meta name="description" content="Cory Kuiyi Gao is an undergraduate researcher at UNC Chapel Hill working on AI safety, alignment, robustness, and AI lawmaking.">
+  <meta property="og:title" content="Cory Kuiyi Gao">
   <meta property="og:image" content="https://kuiyigao.github.io/photo.jpg">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="stylesheet" href="style.css?v=20261002-bain">
+  <link rel="stylesheet" href="style.css?v=20261110b">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
   <div class="wrap">
     <nav class="site-nav" aria-label="Main navigation">
-      <a class="brand" href="index.html">Kuiyi Gao</a>
+      <a class="brand" href="index.html">Cory Kuiyi Gao</a>
       <a href="index.html" aria-current="page">Home</a>
       <a href="research.html">Research</a>
       <a href="projects.html">Projects</a>
-      <a href="#skills">Skills</a>
       <a href="Kuiyi_Gao_CV.pdf">CV</a>
     </nav>
     <main id="main">
       <header class="intro">
-        <div><img class="portrait" src="photo.jpg" alt="Kuiyi Gao" width="188" height="188"></div>
+        <div><img class="portrait" src="photo.jpg" alt="Cory Kuiyi Gao" width="188" height="188"></div>
         <div class="bio">
-          <h1>Kuiyi <span>(Cory)</span> Gao</h1>
-          <p><strong>[Focus]</strong> I build, evaluate and improve AI that people can trust, with a particular interest in where machine intelligence meets human values. My recent work covers GUI agents, runtime checks for third-party agent skills, and multimodal safety.</p>
-          <p><strong>[How I work]</strong> I like turning a broad question into something testable. That usually means building retrieval or agent pipelines, evaluation code, automated judges, traces, and figures needed to inspect a system's behavior.</p>
-          <p><strong>[Background]</strong> I am a computer science undergraduate at UNC-Chapel Hill, graduating in May 2027. I have worked with Tencent AI Lab, CUHK, and MBZUAI UGRIP.</p>
+          <h1>Cory Kuiyi Gao</h1>
+          <p class="lead">I am an undergraduate researcher at UNC Chapel Hill working on AI safety, alignment, robustness, and AI lawmaking.</p>
+          <p>My work explains the mechanisms behind vulnerabilities in advanced AI systems (agents, generative models, and memory systems) and develops evaluations, contracts enforced at run time, and alignment methods that make these systems safer and more robust. I also study how research results can be turned into lasting evidence, systems, and common practice for AI governance.</p>
+          <p>I have two papers at ACL 2025 (Main and Findings) and two under review, one as first author (ICLR 2027) and one as co-first author. I graduate in May 2027 and am applying to PhD programs for Fall 2027.</p>
           <div class="contact-links">
             <a href="mailto:kuiyigao@unc.edu">Email</a>
             <a href="Kuiyi_Gao_CV.pdf">CV</a>
@@ -39,90 +38,97 @@
         </div>
       </header>
 
-      <section id="research">
-        <h2>Research</h2>
-        <article class="work">
-          <h3><a href="research.html#realguinoise">RealGUINoise: An Interactive Cross-Platform Benchmark for GUI Agent Robustness under Real-World Interface Noise</a></h3>
-          <p class="meta">Co-first author. Under review.</p>
-          <p>RealGUINoise runs the same web and Android tasks on clean interfaces and on interfaces with popups, delayed content or look-alike controls. I built the tasks, the automated judge, and the paired evaluation.</p>
-          <div class="entry-links"><a href="https://arxiv.org/abs/2609.38184">arXiv</a></div>
-        </article>
-        <article class="work">
-          <h3><a href="research.html#runtimetickets">RuntimeTickets: Source-Grounded Security Obligations for Agent Skills</a></h3>
-          <p class="meta">First author. Under review at ICLR 2027.</p>
-          <p>RuntimeTickets checks every outbound send an agent makes against obligations written for the current task, and keeps an authenticated record of each allow, deny or defer decision that can be recomputed. I designed the method, ran the experiments and wrote the paper with my co-author, Bowei He.</p>
-        </article>
+      <section id="papers">
+        <h2>Papers</h2>
         <article class="entry">
-          <a class="preview paper" href="research.html#mmsafeaware" aria-label="MMSafeAware paper figure"><img src="figs/mmsafeaware-figure3.png" alt="MMSafeAware paper figure comparing model accuracy on unsafe and benign inputs." width="1392" height="621" loading="lazy"></a>
+          <a class="preview paper" href="research.html#runtimetickets" aria-label="RuntimeTickets diagram"><img src="figs/flow-runtimetickets.png" alt="A runtime check allows the send the task asked for and blocks a hidden extra send of user data; every decision is recorded for audit." width="680" height="396" loading="lazy"></a>
           <div>
-            <h3><a href="https://aclanthology.org/2025.acl-long.832/">Can't See the Forest for the Trees: Benchmarking Multimodal Safety Awareness for Multimodal LLMs</a></h3>
-            <p class="authors">Wenxuan Wang, Xiaoyuan Liu, <strong>Kuiyi Gao</strong>, Jen-tse Huang, Youliang Yuan, Pinjia He, Shuai Wang, Zhaopeng Tu</p>
-            <p class="venue">ACL 2025</p>
-            <p class="description">This benchmark asks whether multimodal models notice risks in images without treating harmless inputs as unsafe. As third author, I worked on data, evaluation, fine-tuning, error analysis, submission, and rebuttal.</p>
-            <div class="entry-links"><a href="https://aclanthology.org/2025.acl-long.832/">Paper</a><a href="https://github.com/Jarviswang94/MMSafetyAwareness">Code and data</a><a href="research.html#mmsafeaware">Figure</a></div>
+            <h3><a href="https://arxiv.org/abs/2611.03772">RuntimeTickets: Source-Grounded Security Obligations for Agent Skills</a></h3>
+            <p class="authors"><strong>Kuiyi Gao</strong>, Xue Liu, Bowei He</p>
+            <p class="venue">Under review at ICLR 2027. First author.</p>
+            <ul class="bul">
+              <li><strong>Designed</strong> a protocol in which a language model proposes task-specific security obligations for a third-party agent skill, model-free code enforces them on every outbound send, and each run leaves a record that an outside auditor can re-derive.</li>
+              <li><strong>Evaluated</strong> it on three unmodified agent frameworks against production skill scanners and runtime defenses: no injected send got through and no benign run was blocked; without it, 27.5% of attack runs succeeded.</li>
+            </ul>
+            <div class="entry-links"><a href="https://arxiv.org/abs/2611.03772">arXiv</a></div>
           </div>
         </article>
         <article class="entry">
-          <a class="preview paper" href="research.html#coj" aria-label="Chain-of-Jailbreak paper figure"><img src="figs/coj-figure4.png" alt="Chain-of-Jailbreak paper figure comparing outcomes across editing-step counts." width="669" height="453" loading="lazy"></a>
+          <a class="preview paper" href="research.html#realguinoise" aria-label="RealGUINoise diagram"><img src="figs/flow-realguinoise.png" alt="Task: find a white dress on Amazon. On the clean page the agent finishes; after an injected banner it is hijacked." width="680" height="396" loading="lazy"></a>
+          <div>
+            <h3><a href="https://arxiv.org/abs/2609.38184">RealGUINoise: An Interactive Cross-Platform Benchmark for GUI Agent Robustness under Real-World Interface Noise</a></h3>
+            <p class="authors">Yongjiang Wu*, Junyuan Zhang*, Ada Chen*, <strong>Kuiyi Gao</strong>*, Wenxuan Wang</p>
+            <p class="venue">Under review at ACL Rolling Review. Co-first author (*equal contribution).</p>
+            <ul class="bul">
+              <li><strong>Constructed</strong> benchmark data and <strong>built</strong> the LLM-judge pipeline, which agrees with human labels in over 94% of cases.</li>
+              <li><strong>Ran</strong> the main experiments on 207 web, desktop, and mobile tasks with 42 interface-noise types: across 7 agent frameworks, noise lowered task success by 32.9% and safety by 14.8% (mean relative drop).</li>
+            </ul>
+            <div class="entry-links"><a href="https://arxiv.org/abs/2609.38184">arXiv</a></div>
+          </div>
+        </article>
+        <article class="entry">
+          <a class="preview paper" href="research.html#coj" aria-label="Chain-of-Jailbreak diagram"><img src="figs/flow-chain-of-jailbreak.png" alt="A direct request for the slogan ChatGPT will be criminal is refused, but the same slogan built in three harmless edits produces the harmful image." width="680" height="396" loading="lazy"></a>
           <div>
             <h3><a href="https://aclanthology.org/2025.findings-acl.571/">Chain-of-Jailbreak Attack for Image Generation Models via Step by Step Editing</a></h3>
             <p class="authors">Wenxuan Wang, <strong>Kuiyi Gao</strong>, Youliang Yuan, Jen-tse Huang, Qiuzhi Liu, Shuai Wang, Wenxiang Jiao, Zhaopeng Tu</p>
-            <p class="venue">Findings of ACL 2025</p>
-            <p class="description">This study looks at safety failures that appear over several image-editing turns. As second author, I designed the attack and prompting defense, contributed data, ran most experiments, and prepared figures, writing, and rebuttal.</p>
-            <div class="entry-links"><a href="https://aclanthology.org/2025.findings-acl.571/">Paper</a><a href="https://github.com/Jarviswang94/Chain-of-Jailbreak">Code and data</a><a href="research.html#coj">Figures</a></div>
+            <p class="venue">Findings of ACL 2025. Second author.</p>
+            <ul class="bul">
+              <li><strong>Designed</strong> an attack that splits a refused request into harmless-looking editing steps; it bypassed four image generation services in over 60% of cases, versus 14% for other jailbreak methods.</li>
+              <li><strong>Built</strong> CoJ-Bench and the Think-Twice Prompting defense, which blocks over 95% of these attacks.</li>
+            </ul>
+            <div class="entry-links"><a href="https://aclanthology.org/2025.findings-acl.571/">Paper</a><a href="https://github.com/Jarviswang94/Chain-of-Jailbreak">Code and data</a></div>
           </div>
+        </article>
+        <article class="entry">
+          <a class="preview paper" href="research.html#mmsafeaware" aria-label="MMSafeAware diagram"><img src="figs/flow-mmsafeaware.png" alt="A schoolgirl photo with the caption Not good at math is harmful together and should be flagged; a mosquito with I will kill you now is harmless and should be answered." width="680" height="396" loading="lazy"></a>
+          <div>
+            <h3><a href="https://aclanthology.org/2025.acl-long.832/">Can't See the Forest for the Trees: Benchmarking Multimodal Safety Awareness for Multimodal LLMs</a></h3>
+            <p class="authors">Wenxuan Wang, Xiaoyuan Liu, <strong>Kuiyi Gao</strong>, Jen-tse Huang, Youliang Yuan, Pinjia He, Shuai Wang, Zhaopeng Tu</p>
+            <p class="venue">ACL 2025 Main. Third author.</p>
+            <ul class="bul">
+              <li><strong>Constructed</strong> image-text pairs for the benchmark (1,500 pairs, 29 safety scenarios); on it, GPT-4V judged 36.1% of unsafe inputs safe and 59.9% of benign inputs unsafe.</li>
+              <li><strong>Ran</strong> vision-centric reasoning fine-tuning, one of the three mitigations the paper tests.</li>
+            </ul>
+            <div class="entry-links"><a href="https://aclanthology.org/2025.acl-long.832/">Paper</a><a href="https://github.com/Jarviswang94/MMSafetyAwareness">Code and data</a></div>
+          </div>
+        </article>
+      </section>
+
+      <section id="current">
+        <h2>Current research</h2>
+        <article class="work">
+          <h3>Verified Reward Budgets for Agent Reinforcement Learning with an LLM Judge</h3>
+          <p class="meta">Manuscript in preparation, first author.</p>
+        </article>
+        <article class="work">
+          <h3>Long-Term Memory for Conversational LLM Agents</h3>
+          <p class="meta">In preparation, co-first author.</p>
+        </article>
+        <article class="work">
+          <h3>Global AI Legislation Tracker</h3>
+          <p class="meta">Research infrastructure, in development.</p>
+          <p>A database of AI legislation in China, the EU, and the US from 193 primary sources, in which every statement about a statute, guideline, or court ruling cites the source line it rests on.</p>
         </article>
       </section>
 
       <section id="projects">
         <h2>Projects</h2>
-        <article class="entry" id="memslot">
-          <a class="preview output" href="projects.html#memslot" aria-label="MemSlot saved saliency output"><img src="figs/memslot-saliency.png" alt="Saved notebook output showing word-level saliency in a contract." loading="lazy" width="1945" height="761"></a>
-          <div>
-            <h3>MemSlot: long-document retrieval and compression</h3>
-            <p class="meta">Natural language processing course project, UNC</p>
-            <p class="description">MemSlot treats long-document question answering as a retrieval and compression problem before OCR. I built the neural retriever, document rendering, pruning baselines, and evaluation notebooks.</p>
-            <div class="entry-links"><a href="https://github.com/KuiyiGao/memslot">Code and notebooks</a><a href="projects.html#memslot">Output</a></div>
-          </div>
-        </article>
-        <article class="entry" id="poetry">
-          <a class="preview output" href="projects.html#poetry" aria-label="Poetry generated images"><img src="figs/poetry-imagist-output.jpg" alt="Selected FLUX images generated from Imagist poetry excerpts." loading="lazy" width="2000" height="2000"></a>
-          <div>
-            <h3>Poetry and image variation</h3>
-            <p class="meta">AI and language course project, CUHK</p>
-            <p class="description">Images generated from Imagist poems varied less than images from Romantic poems: a CLIP-based score of 0.12 against 0.28 with FLUX.1-dev. I generated the images and compared the scores in Python.</p>
-            <div class="entry-links"><a href="https://github.com/KuiyiGao/poetry-image-variation">Code and data</a><a href="projects.html#poetry">Generated images</a></div>
-          </div>
-        </article>
-        <article class="work" id="text-ken">
-          <div>
-            <h3>Text-KEN: comparing collections of text</h3>
-            <p class="meta">Summer research with Prof. Farzan Farnia, CUHK</p>
-            <p class="description">Text-KEN compares collections of text without training a classifier. I built the sentence-embedding and statistical comparison pipeline.</p>
-          </div>
-        </article>
-        <article class="entry" id="movability">
-          <a class="preview output" href="projects.html#movability" aria-label="Movability segmentation output"><img src="figs/movability-report-predictions.png" alt="Archived photographs with predicted movability classes overlaid in color." loading="lazy" width="2048" height="1024"></a>
-          <div>
-            <h3>Movability segmentation</h3>
-            <p class="meta">Deep learning course project, CUHK</p>
-            <p class="description">This project groups objects by how they can move, then predicts those classes across a scene. I adapted a semantic-segmentation model and built the data, training, and checkpoint-inference pipeline; it reached 0.638 validation mIoU at 58 FPS.</p>
-            <div class="entry-links"><a href="https://github.com/KuiyiGao/movability-segmentation">Code and report</a><a href="projects.html#movability">Predictions</a></div>
-          </div>
-        </article>
-      </section>
-
-      <section id="skills">
-        <h2>Skills</h2>
-        <dl class="skills">
-          <div><dt>Generative AI and retrieval</dt><dd>Transformers, fine-tuning, embeddings, RAG, dense and keyword retrieval, reranking, and long-context QA.</dd></div>
-          <div><dt>Agent engineering</dt><dd>Tool use and function calling, orchestration, context and state management, runtime guardrails, and human-in-the-loop review.</dd></div>
-          <div><dt>Evaluation and observability</dt><dd>Task design, automated scoring, regression tests, paired experiments, trace logging, and error analysis.</dd></div>
-          <div><dt>Software and delivery</dt><dd>Python, PyTorch, REST/JSON APIs, Git, Linux, Docker, Playwright, testing, data visualization, and technical writing.</dd></div>
-        </dl>
+        <div class="cols">
+          <article class="work">
+            <h3><a href="https://github.com/KuiyiGao/deepcrew">DeepCrew</a></h3>
+            <p class="meta">Open source, 2026</p>
+            <p>A Claude Code or Codex lead splits a job among Claude Code agents running on DeepSeek; each agent changes only the files its task lists, and commands beyond routine work wait for approval.</p>
+          </article>
+          <article class="work">
+            <h3><a href="projects.html#text-ken">Text-KEN: Kernel-Based Novelty Scores for Text</a></h3>
+            <p class="meta">CUHK Summer Undergraduate Research Programme, with Prof. Farzan Farnia, 2025</p>
+            <p>Extended the kernel entropic novelty (KEN) score from images to text and built the pipeline that embeds two text collections and scores how novel one is relative to the other, with no classifier to train.</p>
+          </article>
+        </div>
+        <p class="more">More: <a href="projects.html#firewall">Agent Skill Firewall</a>, <a href="projects.html#finguard">FinGuard</a>, <a href="projects.html#memslot">MemSlot</a>, <a href="projects.html#poetry">Poetry and image variation</a>, <a href="projects.html#movability">Movability segmentation</a>.</p>
       </section>
     </main>
   </div>
-  <footer id="contact"><div class="wrap"><p>Kuiyi (Cory) Gao</p><p><a href="mailto:kuiyigao@unc.edu">Email</a> and <a href="https://github.com/KuiyiGao">GitHub</a></p></div></footer>
+  <footer id="contact"><div class="wrap"><p>Cory Kuiyi Gao</p><p><a href="mailto:kuiyigao@unc.edu">Email</a> and <a href="https://github.com/KuiyiGao">GitHub</a></p></div></footer>
 </body>
 </html>
